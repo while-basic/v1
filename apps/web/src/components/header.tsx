@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@v1/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -8,9 +9,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@v1/ui/dialog";
-import { Button } from "@v1/ui/button";
-import Link from "next/link";
 import { Github } from "lucide-react";
+import Link from "next/link";
 import { SubscribeForm } from "./subscribe-form";
 
 export function Header() {
@@ -23,30 +23,42 @@ export function Header() {
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
-            <Link href="/about" className="text-sm hover:text-primary transition-colors">
+            <Link
+              href="/about"
+              className="text-sm hover:text-primary transition-colors"
+            >
               About
             </Link>
-            <Link href="/projects" className="text-sm hover:text-primary transition-colors">
+            <Link
+              href="/projects"
+              className="text-sm hover:text-primary transition-colors"
+            >
               Projects
             </Link>
-            <Link href="/experience" className="text-sm hover:text-primary transition-colors">
+            <Link
+              href="/experience"
+              className="text-sm hover:text-primary transition-colors"
+            >
               Experience
             </Link>
-            <Link href="/audio" className="text-sm hover:text-primary transition-colors">
+            <Link
+              href="/audio"
+              className="text-sm hover:text-primary transition-colors"
+            >
               Audio
             </Link>
           </nav>
 
           <div className="flex items-center gap-4">
             <a
-              href="https://github.com/christophercelaya"
+              href="https://github.com/while-basic"
               className="text-sm px-4 py-2 bg-primary text-secondary rounded-full font-medium"
               target="_blank"
               rel="noreferrer"
             >
-              Github
+              Sign In
             </a>
-            
+
             <Dialog>
               <DialogTrigger asChild>
                 <span className="text-sm px-4 py-2 bg-secondary text-primary rounded-full font-medium cursor-pointer">
@@ -57,7 +69,8 @@ export function Header() {
                 <DialogHeader>
                   <DialogTitle>Stay updated</DialogTitle>
                   <DialogDescription>
-                    Subscribe to our newsletter to get the latest news and updates.
+                    Subscribe to our newsletter to get the latest news and
+                    updates.
                   </DialogDescription>
                 </DialogHeader>
 

@@ -1,4 +1,3 @@
-import { Avatar } from "@/components/avatar";
 import { Button } from "@v1/ui/button";
 import { ArrowRight } from "lucide-react";
 
@@ -6,10 +5,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen pt-16">
       <div className="container px-4 mx-auto py-12">
-        <div className="flex flex-col items-center mb-12">
-          <Avatar />
-          <h1 className="text-4xl md:text-5xl font-bold mt-8">About Me</h1>
-        </div>
+        <h1 className="text-4xl md:text-5xl font-bold mb-8">About Me</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="space-y-6">
@@ -31,7 +27,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex justify-start">
               <Button className="gap-2" asChild>
                 <a href="/projects">
                   View Projects <ArrowRight size={16} />
