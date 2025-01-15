@@ -29,14 +29,11 @@ export function Header() {
             <Link href="/projects" className="text-sm hover:text-primary transition-colors">
               Projects
             </Link>
-            <Link href="/skills" className="text-sm hover:text-primary transition-colors">
-              Skills
-            </Link>
             <Link href="/experience" className="text-sm hover:text-primary transition-colors">
               Experience
             </Link>
-            <Link href="/resume" className="text-sm hover:text-primary transition-colors">
-              Resume
+            <Link href="/audio" className="text-sm hover:text-primary transition-colors">
+              Audio
             </Link>
           </nav>
 
