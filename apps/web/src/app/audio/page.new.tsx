@@ -10,7 +10,7 @@ import {
   Youtube,
 } from "lucide-react";
 import Image from "next/image";
-import { useState, useRef, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface Track {
   title: string;
@@ -35,7 +35,8 @@ const tracks: Track[] = [
     artist: "Christopher Celaya",
     duration: "3:45",
     cover: "/music/ambient-dreams.jpg",
-    description: "A journey through atmospheric soundscapes and ethereal textures.",
+    description:
+      "A journey through atmospheric soundscapes and ethereal textures.",
     category: "Electronic",
     audioUrl: "/music/ambient-dreams.mp3",
   },
@@ -44,7 +45,8 @@ const tracks: Track[] = [
     artist: "Christopher Celaya",
     duration: "4:20",
     cover: "/music/electronic-journey.jpg",
-    description: "Modern electronic beats mixed with classic synthesizer sounds.",
+    description:
+      "Modern electronic beats mixed with classic synthesizer sounds.",
     category: "Electronic",
     audioUrl: "/music/electronic-journey.mp3",
   },
@@ -62,7 +64,8 @@ const tracks: Track[] = [
     artist: "Christopher Celaya",
     duration: "4:30",
     cover: "/music/urban-echoes.jpg",
-    description: "City-inspired rhythms blended with atmospheric field recordings.",
+    description:
+      "City-inspired rhythms blended with atmospheric field recordings.",
     category: "Experimental",
     audioUrl: "/music/urban-echoes.mp3",
   },
@@ -71,7 +74,8 @@ const tracks: Track[] = [
     artist: "Christopher Celaya",
     duration: "6:10",
     cover: "/music/digital-dreams.jpg",
-    description: "An exploration of generative music and algorithmic composition.",
+    description:
+      "An exploration of generative music and algorithmic composition.",
     category: "Experimental",
     audioUrl: "/music/digital-dreams.mp3",
   },
@@ -80,7 +84,8 @@ const tracks: Track[] = [
     artist: "Christopher Celaya",
     duration: "4:45",
     cover: "/music/neural-waves.jpg",
-    description: "AI-assisted composition merging human creativity with machine learning.",
+    description:
+      "AI-assisted composition merging human creativity with machine learning.",
     category: "Electronic",
     audioUrl: "/music/neural-waves.mp3",
   },
@@ -159,9 +164,12 @@ export default function AudioPage() {
         <div className="absolute inset-0 bg-[url('/music/studio-bg.jpg')] bg-cover bg-center opacity-10" />
         <div className="container px-4 mx-auto relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Audio Production</h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+              Audio Production
+            </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Exploring the intersection of technology and music through electronic and ambient soundscapes
+              Exploring the intersection of technology and music through
+              electronic and ambient soundscapes
             </p>
             <Button size="lg" className="gap-2" onClick={togglePlay}>
               {isPlaying ? (
@@ -193,7 +201,9 @@ export default function AudioPage() {
               {categories.map((category) => (
                 <Button
                   key={category}
-                  variant={selectedCategory === category ? "default" : "outline"}
+                  variant={
+                    selectedCategory === category ? "default" : "outline"
+                  }
                   onClick={() => setSelectedCategory(category)}
                 >
                   {category}
@@ -234,7 +244,9 @@ export default function AudioPage() {
                       {track.category}
                     </span>
                   </div>
-                  <p className="text-muted-foreground mb-4 line-clamp-2">{track.description}</p>
+                  <p className="text-muted-foreground mb-4 line-clamp-2">
+                    {track.description}
+                  </p>
                   <div className="flex items-center justify-between text-sm text-muted-foreground">
                     <span>{track.artist}</span>
                     <span>{track.duration}</span>
@@ -286,4 +298,4 @@ export default function AudioPage() {
       </div>
     </div>
   );
-} 
+}

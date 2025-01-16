@@ -183,10 +183,7 @@
       "title": "Christopher Celaya | Software Developer & Mechatronic Technician",
       "author": "Christopher Celaya",
       "og:url": "https://chriscelaya.com",
-      "robots": [
-        "noindex",
-        "index, follow"
-      ],
+      "robots": ["noindex", "index, follow"],
       "creator": "Christopher Celaya",
       "favicon": "https://www.chriscelaya.com/favicon.ico",
       "og:type": "website",
@@ -302,10 +299,7 @@
       "title": "Christopher Celaya | Software Developer & Mechatronic Technician",
       "author": "Christopher Celaya",
       "og:url": "https://chriscelaya.com",
-      "robots": [
-        "noindex",
-        "index, follow"
-      ],
+      "robots": ["noindex", "index, follow"],
       "creator": "Christopher Celaya",
       "favicon": "https://www.chriscelaya.com/favicon.ico",
       "og:type": "website",

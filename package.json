@@ -14,10 +14,15 @@
     "start:app": "turbo start --filter=@v1/app",
     "test": "turbo test --parallel",
     "format": "biome format --write .",
+    "format:check": "biome format .",
     "lint": "turbo lint && bun lint:repo",
+    "lint:fix": "biome check --apply .",
+    "lint:check": "biome check .",
     "lint:repo": "bunx sherif@latest",
     "lint:repo:fix": "bunx sherif@latest --fix",
-    "typecheck": "turbo typecheck"
+    "lint:staged": "biome check --staged",
+    "typecheck": "turbo typecheck",
+    "validate": "bun run lint && bun run typecheck && bun run format:check"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",

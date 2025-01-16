@@ -1,4 +1,4 @@
-import { MobileNav } from "../components/mobile-nav"
+import { MobileNav } from "../components/mobile-nav";
 
 export function Header() {
   return (
@@ -11,5 +11,5 @@ export function Header() {
         </div>
       </div>
     </header>
-  )
-} 
+  );
+}

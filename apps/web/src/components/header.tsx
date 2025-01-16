@@ -11,8 +11,8 @@ import {
 } from "@v1/ui/dialog";
 import { Github } from "lucide-react";
 import Link from "next/link";
-import { SubscribeForm } from "./subscribe-form";
 import { MobileNav } from "./mobile-nav";
+import { SubscribeForm } from "./subscribe-form";
 
 export function Header() {
   return (
@@ -70,7 +70,8 @@ export function Header() {
                 <DialogHeader>
                   <DialogTitle>Stay updated</DialogTitle>
                   <DialogDescription>
-                    Subscribe to our newsletter to get the latest news and updates.
+                    Subscribe to our newsletter to get the latest news and
+                    updates.
                   </DialogDescription>
                 </DialogHeader>
 

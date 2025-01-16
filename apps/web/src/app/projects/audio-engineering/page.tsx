@@ -1,0 +1,320 @@
+import { Button } from "@v1/ui/button";
+import {
+  ArrowRight,
+  Headphones,
+  Mic2,
+  Music,
+  Play,
+  Radio,
+  Settings2,
+  Volume2,
+  Waves,
+} from "lucide-react";
+import type { Metadata } from "next";
+import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Audio Engineering & Music Production | Christopher Celaya",
+  description:
+    "Professional audio engineering, sound design, and music production services",
+};
+
+export default function AudioEngineering() {
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section with Waveform Animation */}
+      <div className="relative min-h-[80vh] pt-24 flex items-center overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#222_1px,transparent_1px),linear-gradient(to_bottom,#222_1px,transparent_1px)] bg-[size:4.5rem_2rem] z-20" />
+        <div className="relative z-30 h-full flex items-center">
+          {/* Animated waveform background */}
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 flex items-center justify-center opacity-10">
+              <div className="flex gap-1">
+                {Array.from({ length: 50 }).map((_, i) => (
+                  <div
+                    key={`waveform-bar-${i}`}
+                    className="w-1 bg-primary rounded-full animate-waveform"
+                    style={{
+                      height: `${Math.sin(i * 0.2) * 50 + 100}px`,
+                      animationDelay: `${i * 0.05}s`,
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
+          </div>
+
+          <div className="container relative z-10 px-4 mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 mb-6">
+                  <Music className="w-4 h-4 text-primary" />
+                  <span className="text-primary font-semibold">
+                    Professional Audio Services
+                  </span>
+                </div>
+                <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                  Audio Engineering
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary/80 to-primary/60">
+                    & Music Production
+                  </span>
+                </h1>
+                <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+                  Specializing in modern music production, sound design, and audio
+                  post-production with a focus on electronic and hybrid musical
+                  elements.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Button size="lg" className="gap-2" asChild>
+                    <a
+                      href="https://cal.com/chriscelaya/30min"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Book Studio Time <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </Button>
+                  <Button size="lg" variant="outline" className="gap-2">
+                    Listen to Samples
+                  </Button>
+                </div>
+              </div>
+              <div className="relative">
+                <div className="relative h-[500px] w-full rounded-lg overflow-hidden">
+                  <Image
+                    src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2070&auto=format&fit=crop"
+                    alt="Recording Studio"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+                </div>
+                {/* Studio Features */}
+                <div className="absolute -bottom-6 left-6 right-6">
+                  <div className="grid grid-cols-3 gap-4 bg-background/80 backdrop-blur-sm p-6 rounded-lg border">
+                    {studioFeatures.map((feature) => (
+                      <div key={feature.label} className="text-center">
+                        <feature.icon className="w-6 h-6 text-primary mx-auto mb-2" />
+                        <div className="text-sm font-medium">{feature.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Services Section with Interactive Cards */}
+      <div className="container px-4 mx-auto py-24">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold mb-4">Audio Services</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Comprehensive audio solutions for musicians, podcasters, and content
+            creators
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service) => (
+            <div
+              key={service.title}
+              className="group relative p-8 rounded-lg border bg-card hover:bg-primary/5 transition-all duration-300"
+            >
+              <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-lg" />
+              <div className="relative">
+                <service.icon className="w-12 h-12 text-primary mb-6" />
+                <h3 className="text-xl font-bold mb-4">{service.title}</h3>
+                <p className="text-muted-foreground mb-6">
+                  {service.description}
+                </p>
+                <ul className="space-y-2">
+                  {service.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex items-center gap-2 text-sm"
+                    >
+                      <Play className="w-4 h-4 text-primary" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Equipment Showcase */}
+      <div className="bg-gradient-to-b from-background to-primary/5 py-24">
+        <div className="container px-4 mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-16">
+            Studio Equipment
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {Object.entries(equipment).map(([category, items]) => (
+              <div key={category} className="p-6 rounded-lg border bg-card">
+                <h3 className="font-bold text-lg mb-4 capitalize">
+                  {category}
+                </h3>
+                <ul className="space-y-3">
+                  {items.map((item) => (
+                    <li key={item} className="flex items-center gap-2">
+                      <Settings2 className="w-4 h-4 text-primary" />
+                      <span className="text-muted-foreground">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Recent Work */}
+      <div className="container px-4 mx-auto py-24">
+        <h2 className="text-3xl font-bold text-center mb-16">
+          Recent Projects
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {recentWork.map((work) => (
+            <div key={work.title} className="group relative">
+              <div className="relative h-[300px] rounded-lg overflow-hidden">
+                <Image
+                  src={work.image}
+                  alt={work.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <Button variant="outline" size="lg" className="gap-2">
+                    Listen Now <Play className="w-4 h-4" />
+                  </Button>
+                </div>
+              </div>
+              <div className="mt-4">
+                <h3 className="text-lg font-bold mb-1">{work.title}</h3>
+                <p className="text-muted-foreground text-sm">
+                  {work.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-background to-primary/10" />
+        <div className="container relative z-10 px-4 mx-auto">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-6">
+              Ready to Create Something Amazing?
+            </h2>
+            <p className="text-xl text-muted-foreground mb-8">
+              Let's bring your musical vision to life with professional audio
+              production and engineering services.
+            </p>
+            <div className="flex gap-4 justify-center">
+              <Button size="lg" className="gap-2">
+                Book a Session <ArrowRight className="w-4 h-4" />
+              </Button>
+              <Button size="lg" variant="outline">
+                View Pricing
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const studioFeatures = [
+  { icon: Headphones, label: "Pro Monitoring" },
+  { icon: Mic2, label: "Premium Mics" },
+  { icon: Settings2, label: "Top-tier Gear" },
+];
+
+const services = [
+  {
+    icon: Mic2,
+    title: "Music Production",
+    description:
+      "Modern production techniques for electronic and hybrid music.",
+    features: [
+      "Electronic Music Production",
+      "Sound Design",
+      "Arrangement & Composition",
+      "Virtual Instrument Programming",
+    ],
+  },
+  {
+    icon: Waves,
+    title: "Audio Engineering",
+    description:
+      "Professional mixing and sound shaping for contemporary productions.",
+    features: [
+      "Digital Audio Mixing",
+      "Sound Processing",
+      "Electronic Music Mixing",
+      "Spatial Audio Design",
+    ],
+  },
+  {
+    icon: Volume2,
+    title: "Post Production",
+    description: "Comprehensive audio post-production for various media.",
+    features: [
+      "Sound Design",
+      "Audio Restoration",
+      "Podcast Production",
+      "Audio Programming",
+    ],
+  },
+];
+
+const equipment = {
+  software: ["Ableton Live", "Pro Tools", "Logic Pro X", "Max/MSP"],
+  plugins: [
+    "Native Instruments",
+    "Fabfilter Suite",
+    "Soundtoys Bundle",
+    "Waves Plugins",
+  ],
+  hardware: [
+    "Universal Audio Apollo",
+    "Ableton Push 2",
+    "Native Instruments Komplete",
+    "Elektron Digitakt",
+  ],
+  instruments: [
+    "Moog Subsequent 37",
+    "Dave Smith Prophet",
+    "Roland TR-8S",
+    "Eurorack Modular",
+  ],
+};
+
+const recentWork = [
+  {
+    title: "Electronic EP Production",
+    description: "Full production and mixing for electronic music release",
+    image:
+      "https://images.unsplash.com/photo-1598653222000-6b7b7a552625?q=80&w=2070&auto=format&fit=crop",
+  },
+  {
+    title: "Sound Design Project",
+    description: "Custom sound design for interactive media",
+    image:
+      "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2070&auto=format&fit=crop",
+  },
+  {
+    title: "Hybrid Music Production",
+    description: "Electronic and acoustic fusion project",
+    image:
+      "https://images.unsplash.com/photo-1598520106830-8c45c2035460?q=80&w=2070&auto=format&fit=crop",
+  },
+];

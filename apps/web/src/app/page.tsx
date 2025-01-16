@@ -1,6 +1,13 @@
 import { AnimatedText } from "@/components/animated-text";
 import { Button } from "@v1/ui/button";
-import { ArrowRight, Github, Twitter, Linkedin, Mail, Download } from "lucide-react";
+import {
+  ArrowRight,
+  Download,
+  Github,
+  Linkedin,
+  Mail,
+  Twitter,
+} from "lucide-react";
 
 export default function Page() {
   return (
@@ -20,12 +27,17 @@ export default function Page() {
           </h2>
 
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8">
-            Designing innovative web applications and automation solutions, blending technical precision with seamless user experiences.
+            Designing innovative web applications and automation solutions,
+            blending technical precision with seamless user experiences.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button size="lg" className="gap-2" asChild>
-              <a href="#contact">
+              <a
+                href="https://cal.com/chriscelaya/30min"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Get in Touch <ArrowRight size={16} />
               </a>
             </Button>
@@ -78,13 +90,15 @@ export default function Page() {
       <div className="container px-4 mx-auto py-24">
         <h2 className="text-3xl font-bold mb-12 text-center">What I Do</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <div
-              key={index}
+              key={service.title}
               className="p-8 rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow"
             >
               <h3 className="text-xl font-bold mb-4">{service.title}</h3>
-              <p className="text-muted-foreground mb-6">{service.description}</p>
+              <p className="text-muted-foreground mb-6">
+                {service.description}
+              </p>
               <Button variant="ghost" className="gap-2" asChild>
                 <a href={service.link}>
                   Learn More <ArrowRight size={16} />
@@ -97,11 +111,13 @@ export default function Page() {
 
       {/* Technical Skills Section */}
       <div className="container px-4 mx-auto py-24">
-        <h2 className="text-3xl font-bold mb-12 text-center">Technical Skills</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center">
+          Technical Skills
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skills.map((skill, index) => (
+          {skills.map((skill) => (
             <div
-              key={index}
+              key={skill.title}
               className="p-6 rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow"
             >
               <h3 className="text-lg font-semibold mb-2">{skill.title}</h3>
@@ -115,7 +131,8 @@ export default function Page() {
       <div id="contact" className="container px-4 mx-auto py-24">
         <h2 className="text-3xl font-bold mb-8 text-center">Let's Connect</h2>
         <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-8">
-          Schedule a 30-minute call to discuss potential opportunities and how I can contribute to your team.
+          Schedule a 30-minute call to discuss potential opportunities and how I
+          can contribute to your team.
         </p>
         <div className="flex flex-col items-center gap-6">
           <div className="text-center mb-8">
@@ -128,8 +145,12 @@ export default function Page() {
             </ul>
           </div>
           <Button size="lg" asChild>
-            <a href="https://cal.com/chriscelaya/30min" target="_blank" rel="noreferrer">
-              Schedule an Interview
+            <a
+              href="https://cal.com/chriscelaya/30min"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Schedule an Call
             </a>
           </Button>
         </div>
@@ -141,24 +162,28 @@ export default function Page() {
 const services = [
   {
     title: "SYSTEMS INTEGRATION",
-    description: "Specializing in connecting integrated systems, from industrial machinery to modern software platforms, ensuring seamless operation and optimal performance.",
-    link: "/services#integration"
+    description:
+      "Specializing in connecting integrated systems, from industrial machinery to modern software platforms, ensuring seamless operation and optimal performance.",
+    link: "/projects/system-integration",
   },
   {
     title: "SOFTWARE DEVELOPMENT",
-    description: "Self-taught programmer, creating efficient solutions that solve real-world problems.",
-    link: "/services#software"
+    description:
+      "Self-taught programmer, creating efficient solutions that solve real-world problems.",
+    link: "/projects/software-development",
   },
   {
     title: "INDUSTRIAL TECHNOLOGY",
-    description: "Experienced in maintaining and optimizing pneumatic, hydraulic, water, and electrical systems, bringing reliability to complex industrial operations.",
-    link: "/services#industrial"
+    description:
+      "Experienced in maintaining and optimizing pneumatic, hydraulic, water, and electrical systems, bringing reliability to complex industrial operations.",
+    link: "/projects/industrial-technology",
   },
   {
     title: "AUDIO ENGINEERING & MUSIC PRODUCTION",
-    description: "Passionate about crafting high-quality sound experiences through recording, mixing, and music production, combining technical expertise with creative vision.",
-    link: "/services#audio"
-  }
+    description:
+      "Passionate about crafting high-quality sound experiences through recording, mixing, and music production, combining technical expertise with creative vision.",
+    link: "/projects/audio-engineering",
+  },
 ];
 
 const skills = [
@@ -172,7 +197,8 @@ const skills = [
   },
   {
     title: "Industrial & Automation",
-    description: "PLC Programming, SCADA Systems, Industrial IoT, Robotics, Control Systems, HMI Development",
+    description:
+      "PLC Programming, SCADA Systems, Industrial IoT, Robotics, Control Systems, HMI Development",
   },
   {
     title: "DevOps & Cloud",
@@ -180,10 +206,12 @@ const skills = [
   },
   {
     title: "Machine Learning & AI",
-    description: "Large Language Models, Computer Vision, Natural Language Processing, TensorFlow, PyTorch",
+    description:
+      "Large Language Models, Computer Vision, Natural Language Processing, TensorFlow, PyTorch",
   },
   {
     title: "Project Management",
-    description: "Team Leadership, Problem Solving, Technical Documentation, Process Optimization",
-  }
+    description:
+      "Team Leadership, Problem Solving, Technical Documentation, Process Optimization",
+  },
 ];

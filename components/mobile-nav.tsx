@@ -1,21 +1,21 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { Button } from "../components/ui/button"
+import { Menu } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { Button } from "../components/ui/button";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "../components/ui/sheet"
-import { Menu } from "lucide-react"
+} from "../components/ui/sheet";
 
 interface NavItem {
-  title: string
-  href: string
+  title: string;
+  href: string;
 }
 
 const navItems: NavItem[] = [
@@ -25,11 +25,11 @@ const navItems: NavItem[] = [
   { title: "Industrial Technology", href: "/industrial-technology" },
   { title: "Audio Engineering", href: "/audio-engineering" },
   { title: "Contact", href: "/contact" },
-]
+];
 
 export function MobileNav() {
-  const [isOpen, setIsOpen] = useState(false)
-  const pathname = usePathname()
+  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -59,5 +59,5 @@ export function MobileNav() {
         </nav>
       </SheetContent>
     </Sheet>
-  )
-} 
+  );
+}

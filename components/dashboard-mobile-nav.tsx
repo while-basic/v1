@@ -1,21 +1,21 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { Button } from "./ui/button"
+import { Menu } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { Button } from "./ui/button";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "./ui/sheet"
-import { Menu } from "lucide-react"
+} from "./ui/sheet";
 
 interface NavItem {
-  title: string
-  href: string
+  title: string;
+  href: string;
 }
 
 const navItems: NavItem[] = [
@@ -26,11 +26,11 @@ const navItems: NavItem[] = [
   { title: "Users", href: "/users" },
   { title: "Settings", href: "/settings" },
   { title: "System Status", href: "/system-status" },
-]
+];
 
 export function DashboardMobileNav() {
-  const [isOpen, setIsOpen] = useState(false)
-  const pathname = usePathname()
+  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -60,5 +60,5 @@ export function DashboardMobileNav() {
         </nav>
       </SheetContent>
     </Sheet>
-  )
-} 
+  );
+}
