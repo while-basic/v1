@@ -12,6 +12,7 @@ import {
 import { Github } from "lucide-react";
 import Link from "next/link";
 import { SubscribeForm } from "./subscribe-form";
+import { MobileNav } from "./mobile-nav";
 
 export function Header() {
   return (
@@ -69,8 +70,7 @@ export function Header() {
                 <DialogHeader>
                   <DialogTitle>Stay updated</DialogTitle>
                   <DialogDescription>
-                    Subscribe to our newsletter to get the latest news and
-                    updates.
+                    Subscribe to our newsletter to get the latest news and updates.
                   </DialogDescription>
                 </DialogHeader>
 
@@ -84,24 +84,7 @@ export function Header() {
             </Dialog>
 
             <div className="md:hidden">
-              <Button variant="ghost" size="sm">
-                <span className="sr-only">Open menu</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <line x1="3" y1="12" x2="21" y2="12" />
-                  <line x1="3" y1="6" x2="21" y2="6" />
-                  <line x1="3" y1="18" x2="21" y2="18" />
-                </svg>
-              </Button>
+              <MobileNav />
             </div>
           </div>
         </div>

@@ -2,10 +2,11 @@
 
 import { useAuth } from "@/lib/auth-context";
 import { cn } from "@/lib/utils";
-import { LogOut, User } from "lucide-react";
+import { LogOut } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
+import { DashboardMobileNav } from "../dashboard-mobile-nav";
 
 export function Header() {
   const pathname = usePathname();
@@ -39,8 +40,8 @@ export function Header() {
         </div>
 
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-          <nav className="flex items-center space-x-2">
-            {user ? (
+          {user && (
+            <nav className="flex items-center space-x-2">
               <div className="flex items-center gap-4">
                 <div className="text-sm text-muted-foreground">
                   {user.email}
@@ -61,23 +62,11 @@ export function Header() {
                   {isLoading ? "Signing out..." : "Sign out"}
                 </button>
               </div>
-            ) : (
-              <button
-                type="button"
-                onClick={() => router.push(`/${locale}/sign-in`)}
-                className={cn(
-                  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors",
-                  "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring",
-                  "disabled:pointer-events-none disabled:opacity-50",
-                  "hover:bg-accent hover:text-accent-foreground",
-                  "h-9 px-4 py-2",
-                )}
-              >
-                <User className="mr-2 h-4 w-4" />
-                Sign in
-              </button>
-            )}
-          </nav>
+            </nav>
+          )}
+          <div className="flex md:hidden">
+            <DashboardMobileNav />
+          </div>
         </div>
       </div>
     </header>
