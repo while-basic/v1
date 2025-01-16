@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
-import { AudioPlayer } from "@/components/audio-player";
 
 interface Track {
   title: string;
@@ -91,10 +90,40 @@ export default function AudioPage() {
   const [currentTrack, setCurrentTrack] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const handleTrackEnded = () => {
-    handleNextTrack();
-  };
+  useEffect(() => {
+    // Initialize audio element
+    if (!audioRef.current) {
+      audioRef.current = new Audio();
+    }
+
+    // Update source when track changes
+    audioRef.current.src = tracks[currentTrack].audioUrl;
+
+    // Auto play when track changes
+    if (isPlaying) {
+      audioRef.current.play();
+    }
+
+    // Cleanup
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+    };
+  }, [currentTrack]);
+
+  useEffect(() => {
+    // Handle play/pause
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.play();
+      } else {
+        audioRef.current.pause();
+      }
+    }
+  }, [isPlaying]);
 
   const handlePrevTrack = () => {
     setCurrentTrack((prev) => (prev > 0 ? prev - 1 : tracks.length - 1));
@@ -122,8 +151,6 @@ export default function AudioPage() {
     : tracks;
 
   const categories = Array.from(new Set(tracks.map((track) => track.category)));
-
-  const currentTrackData = tracks[currentTrack];
 
   return (
     <div className="min-h-screen">
@@ -245,9 +272,9 @@ export default function AudioPage() {
                 </Button>
               </div>
               <div>
-                <div className="font-medium">{currentTrackData.title}</div>
+                <div className="font-medium">{tracks[currentTrack].title}</div>
                 <div className="text-sm text-muted-foreground">
-                  {currentTrackData.artist}
+                  {tracks[currentTrack].artist}
                 </div>
               </div>
             </div>
@@ -257,12 +284,6 @@ export default function AudioPage() {
           </div>
         </div>
       </div>
-
-      <AudioPlayer
-        isPlaying={isPlaying}
-        currentTrack={currentTrackData.audioUrl}
-        onEnded={handleTrackEnded}
-      />
     </div>
   );
 } 
