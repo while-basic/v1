@@ -3,6 +3,13 @@
 import { AudioPlayer } from "@/components/audio-player";
 import { Button } from "@v1/ui/button";
 import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@v1/ui/dialog";
+import {
   Pause,
   Play,
   SkipBack,
@@ -93,20 +100,22 @@ const tracks: Track[] = [
 ];
 
 export default function AudioPage() {
-  const [currentTrack, setCurrentTrack] = useState(0);
+  const [isDialogOpen, setIsDialogOpen] = useState(true);
+  const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   const handleTrackEnded = () => {
     handleNextTrack();
   };
 
   const handlePrevTrack = () => {
-    setCurrentTrack((prev) => (prev > 0 ? prev - 1 : tracks.length - 1));
+    setCurrentTrackIndex((prev) => (prev > 0 ? prev - 1 : tracks.length - 1));
   };
 
   const handleNextTrack = () => {
-    setCurrentTrack((prev) => (prev < tracks.length - 1 ? prev + 1 : 0));
+    setCurrentTrackIndex((prev) => (prev < tracks.length - 1 ? prev + 1 : 0));
   };
 
   const togglePlay = () => {
@@ -114,10 +123,10 @@ export default function AudioPage() {
   };
 
   const handleTrackClick = (index: number) => {
-    if (currentTrack === index) {
+    if (currentTrackIndex === index) {
       togglePlay();
     } else {
-      setCurrentTrack(index);
+      setCurrentTrackIndex(index);
       setIsPlaying(true);
     }
   };
@@ -128,155 +137,168 @@ export default function AudioPage() {
 
   const categories = Array.from(new Set(tracks.map((track) => track.category)));
 
-  const currentTrackData = tracks[currentTrack];
+  const currentTrackData = tracks[currentTrackIndex];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center justify-center bg-gradient-to-br from-primary/5 via-secondary/5 to-background">
-        <div className="absolute inset-0 bg-[url('/music/studio-bg.jpg')] bg-cover bg-center opacity-10" />
-        <div className="container px-4 mx-auto relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Audio Production
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8">
-              Exploring the intersection of technology and music through
-              electronic and ambient soundscapes
-            </p>
-            <Button size="lg" className="gap-2" onClick={togglePlay}>
-              {isPlaying ? (
-                <>
-                  <Pause className="w-5 h-5" /> Pause Featured Track
-                </>
-              ) : (
-                <>
-                  <Play className="w-5 h-5" /> Play Featured Track
-                </>
-              )}
-            </Button>
-          </div>
-        </div>
-      </section>
+    <>
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Under Construction</DialogTitle>
+            <DialogDescription>
+              The audio section is currently being enhanced. Music samples and portfolio pieces will be available soon. Check back for updates!
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
 
-      {/* Featured Tracks with Category Filter */}
-      <section className="py-24">
-        <div className="container px-4 mx-auto">
-          <div className="flex flex-col md:flex-row md:items-center justify-between mb-12">
-            <h2 className="text-3xl font-bold mb-6 md:mb-0">Featured Tracks</h2>
-            <div className="flex gap-4 flex-wrap">
-              <Button
-                variant={selectedCategory === null ? "default" : "outline"}
-                onClick={() => setSelectedCategory(null)}
-              >
-                All
+      <div className="container mx-auto px-4 py-8">
+        {/* Hero Section */}
+        <section className="relative h-[70vh] flex items-center justify-center bg-gradient-to-br from-primary/5 via-secondary/5 to-background">
+          <div className="absolute inset-0 bg-[url('/music/studio-bg.jpg')] bg-cover bg-center opacity-10" />
+          <div className="container px-4 mx-auto relative z-10">
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6">
+                Audio Production
+              </h1>
+              <p className="text-xl text-muted-foreground mb-8">
+                Exploring the intersection of technology and music through
+                electronic and ambient soundscapes
+              </p>
+              <Button size="lg" className="gap-2" onClick={togglePlay}>
+                {isPlaying ? (
+                  <>
+                    <Pause className="w-5 h-5" /> Pause Featured Track
+                  </>
+                ) : (
+                  <>
+                    <Play className="w-5 h-5" /> Play Featured Track
+                  </>
+                )}
               </Button>
-              {categories.map((category) => (
-                <Button
-                  key={category}
-                  variant={
-                    selectedCategory === category ? "default" : "outline"
-                  }
-                  onClick={() => setSelectedCategory(category)}
-                >
-                  {category}
-                </Button>
-              ))}
             </div>
           </div>
+        </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredTracks.map((track, index) => (
-              <div
-                key={track.title}
-                className="group relative rounded-lg border bg-card overflow-hidden hover:border-primary transition-colors cursor-pointer"
-                onClick={() => handleTrackClick(tracks.indexOf(track))}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    handleTrackClick(tracks.indexOf(track));
-                  }
-                }}
-                tabIndex={0}
-                role="button"
-              >
-                <div className="aspect-video relative bg-gradient-to-br from-primary/10 to-secondary/10">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      {currentTrack === tracks.indexOf(track) && isPlaying ? (
-                        <Pause className="w-8 h-8" />
-                      ) : (
-                        <Play className="w-8 h-8 ml-1" />
-                      )}
+        {/* Featured Tracks with Category Filter */}
+        <section className="py-24">
+          <div className="container px-4 mx-auto">
+            <div className="flex flex-col md:flex-row md:items-center justify-between mb-12">
+              <h2 className="text-3xl font-bold mb-6 md:mb-0">Featured Tracks</h2>
+              <div className="flex gap-4 flex-wrap">
+                <Button
+                  variant={selectedCategory === null ? "default" : "outline"}
+                  onClick={() => setSelectedCategory(null)}
+                >
+                  All
+                </Button>
+                {categories.map((category) => (
+                  <Button
+                    key={category}
+                    variant={
+                      selectedCategory === category ? "default" : "outline"
+                    }
+                    onClick={() => setSelectedCategory(category)}
+                  >
+                    {category}
+                  </Button>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredTracks.map((track, index) => (
+                <div
+                  key={track.title}
+                  className="group relative rounded-lg border bg-card overflow-hidden hover:border-primary transition-colors cursor-pointer"
+                  onClick={() => handleTrackClick(index)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      handleTrackClick(index);
+                    }
+                  }}
+                  tabIndex={0}
+                  role="button"
+                >
+                  <div className="aspect-video relative bg-gradient-to-br from-primary/10 to-secondary/10">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        {currentTrackIndex === index && isPlaying ? (
+                          <Pause className="w-8 h-8" />
+                        ) : (
+                          <Play className="w-8 h-8 ml-1" />
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-xl font-bold">{track.title}</h3>
+                      <span className="text-xs text-muted-foreground px-2 py-1 rounded-full border">
+                        {track.category}
+                      </span>
+                    </div>
+                    <p className="text-muted-foreground mb-4 line-clamp-2">
+                      {track.description}
+                    </p>
+                    <div className="flex items-center justify-between text-sm text-muted-foreground">
+                      <span>{track.artist}</span>
+                      <span>{track.duration}</span>
                     </div>
                   </div>
                 </div>
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-xl font-bold">{track.title}</h3>
-                    <span className="text-xs text-muted-foreground px-2 py-1 rounded-full border">
-                      {track.category}
-                    </span>
-                  </div>
-                  <p className="text-muted-foreground mb-4 line-clamp-2">
-                    {track.description}
-                  </p>
-                  <div className="flex items-center justify-between text-sm text-muted-foreground">
-                    <span>{track.artist}</span>
-                    <span>{track.duration}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Persistent Player */}
-      <div className="fixed bottom-0 left-0 right-0 bg-background/80 backdrop-blur-xl border-t">
-        <div className="container px-4 mx-auto">
-          <div className="flex items-center justify-between h-20">
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2">
-                <Button variant="ghost" size="icon" onClick={handlePrevTrack}>
-                  <SkipBack className="w-5 h-5" />
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="w-10 h-10 rounded-full"
-                  onClick={togglePlay}
-                >
-                  {isPlaying ? (
-                    <Pause className="w-5 h-5" />
-                  ) : (
-                    <Play className="w-5 h-5 ml-0.5" />
-                  )}
-                </Button>
-                <Button variant="ghost" size="icon" onClick={handleNextTrack}>
-                  <SkipForward className="w-5 h-5" />
-                </Button>
-              </div>
-              <div>
-                <div className="font-medium">
-                  {currentTrackData?.title || 'No track selected'}
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  {currentTrackData?.artist || 'Unknown artist'}
-                </div>
-              </div>
+              ))}
             </div>
-            <Button variant="ghost" size="icon">
-              <Volume2 className="w-5 h-5" />
-            </Button>
+          </div>
+        </section>
+
+        {/* Persistent Player */}
+        <div className="fixed bottom-0 left-0 right-0 bg-background/80 backdrop-blur-xl border-t">
+          <div className="container px-4 mx-auto">
+            <div className="flex items-center justify-between h-20">
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2">
+                  <Button variant="ghost" size="icon" onClick={handlePrevTrack}>
+                    <SkipBack className="w-5 h-5" />
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="w-10 h-10 rounded-full"
+                    onClick={togglePlay}
+                  >
+                    {isPlaying ? (
+                      <Pause className="w-5 h-5" />
+                    ) : (
+                      <Play className="w-5 h-5 ml-0.5" />
+                    )}
+                  </Button>
+                  <Button variant="ghost" size="icon" onClick={handleNextTrack}>
+                    <SkipForward className="w-5 h-5" />
+                  </Button>
+                </div>
+                <div>
+                  <div className="font-medium">
+                    {currentTrackData?.title || 'No track selected'}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    {currentTrackData?.artist || 'Unknown artist'}
+                  </div>
+                </div>
+              </div>
+              <Button variant="ghost" size="icon">
+                <Volume2 className="w-5 h-5" />
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <AudioPlayer
-        isPlaying={isPlaying}
-        currentTrack={currentTrackData?.audioUrl || ''}
-        onEnded={handleTrackEnded}
-      />
-    </div>
+        <AudioPlayer
+          isPlaying={isPlaying}
+          currentTrack={currentTrackData?.audioUrl || ''}
+          onEnded={handleTrackEnded}
+        />
+      </div>
+    </>
   );
 }
