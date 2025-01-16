@@ -6,7 +6,7 @@ import {
   Music,
   Play,
   Radio,
-  Settings2,
+  Settings,
   Volume2,
   Waves,
 } from "lucide-react";
@@ -21,77 +21,59 @@ export const metadata: Metadata = {
 
 export default function AudioEngineering() {
   return (
-    <div className="min-h-screen">
-      {/* Hero Section with Waveform Animation */}
-      <div className="relative min-h-[80vh] pt-24 flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#222_1px,transparent_1px),linear-gradient(to_bottom,#222_1px,transparent_1px)] bg-[size:4.5rem_2rem] z-20" />
-        <div className="relative z-30 h-full flex items-center">
-          {/* Animated waveform background */}
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 flex items-center justify-center opacity-10">
-              <div className="flex gap-1">
-                {Array.from({ length: 50 }).map((_, i) => (
-                  <div
-                    key={`waveform-bar-${i}`}
-                    className="w-1 bg-primary rounded-full animate-waveform"
-                    style={{
-                      height: `${Math.sin(i * 0.2) * 50 + 100}px`,
-                      animationDelay: `${i * 0.05}s`,
-                    }}
-                  />
-                ))}
+    <main className="relative min-h-screen">
+      {/* Hero Section with Animated Grid */}
+      <div className="relative min-h-[80vh] pt-24 flex items-center">
+        {/* Animated background with industrial pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#222_1px,transparent_1px),linear-gradient(to_bottom,#222_1px,transparent_1px)] bg-[size:4.5rem_2rem] animate-[grid_20s_linear_infinite] opacity-20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-background/90" />
+
+        <div className="container relative z-10 px-4 mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            <div className="flex-1">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 mb-6">
+                <Waves className="w-4 h-4 text-primary animate-spin-slow" />
+                <span className="text-primary font-semibold">
+                  Professional Audio
+                </span>
+              </div>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                Audio Engineering
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary/80 to-primary/60">
+                  & Music Production
+                </span>
+              </h1>
+              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+                Specializing in modern music production, sound design, and audio
+                post-production with a focus on electronic and hybrid musical
+                elements.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Button size="lg" className="gap-2" asChild>
+                  <a
+                    href="https://cal.com/chriscelaya/30min"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Book Studio Time <ArrowRight className="w-4 h-4" />
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" className="gap-2">
+                  Listen to Samples
+                </Button>
               </div>
             </div>
-            <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
-          </div>
-
-          <div className="container relative z-10 px-4 mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 mb-6">
-                  <Music className="w-4 h-4 text-primary" />
-                  <span className="text-primary font-semibold">
-                    Professional Audio Services
-                  </span>
-                </div>
-                <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                  Audio Engineering
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary/80 to-primary/60">
-                    & Music Production
-                  </span>
-                </h1>
-                <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                  Specializing in modern music production, sound design, and audio
-                  post-production with a focus on electronic and hybrid musical
-                  elements.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <Button size="lg" className="gap-2" asChild>
-                    <a
-                      href="https://cal.com/chriscelaya/30min"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Book Studio Time <ArrowRight className="w-4 h-4" />
-                    </a>
-                  </Button>
-                  <Button size="lg" variant="outline" className="gap-2">
-                    Listen to Samples
-                  </Button>
-                </div>
-              </div>
-              <div className="relative">
-                <div className="relative h-[500px] w-full rounded-lg overflow-hidden">
-                  <Image
-                    src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2070&auto=format&fit=crop"
-                    alt="Recording Studio"
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-                </div>
+            <div className="flex-1">
+              <div className="relative h-[500px] w-full rounded-lg overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2070&auto=format&fit=crop"
+                  alt="Recording Studio"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
                 {/* Studio Features */}
-                <div className="absolute -bottom-6 left-6 right-6">
+                <div className="absolute bottom-6 left-6 right-6">
                   <div className="grid grid-cols-3 gap-4 bg-background/80 backdrop-blur-sm p-6 rounded-lg border">
                     {studioFeatures.map((feature) => (
                       <div key={feature.label} className="text-center">
@@ -161,7 +143,7 @@ export default function AudioEngineering() {
                 <ul className="space-y-3">
                   {items.map((item) => (
                     <li key={item} className="flex items-center gap-2">
-                      <Settings2 className="w-4 h-4 text-primary" />
+                      <Settings className="w-4 h-4 text-primary" />
                       <span className="text-muted-foreground">{item}</span>
                     </li>
                   ))}
@@ -228,14 +210,14 @@ export default function AudioEngineering() {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 
 const studioFeatures = [
   { icon: Headphones, label: "Pro Monitoring" },
   { icon: Mic2, label: "Premium Mics" },
-  { icon: Settings2, label: "Top-tier Gear" },
+  { icon: Settings, label: "Top-tier Gear" },
 ];
 
 const services = [
