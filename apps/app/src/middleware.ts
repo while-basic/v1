@@ -11,7 +11,7 @@ const I18nMiddleware = createI18nMiddleware({
   urlMappingStrategy: "rewrite",
 });
 
-const PUBLIC_PATHS = ["/sign-in", "/sign-up", "/forgot-password"];
+const PUBLIC_PATHS = ["/login", "/sign-up", "/forgot-password"];
 
 export async function middleware(request: NextRequest) {
   const { response, user } = await updateSession(
@@ -42,7 +42,7 @@ export async function middleware(request: NextRequest) {
   // If the path is not public and user is not authenticated,
   // redirect to sign-in page
   if (!isPublicPath && !user) {
-    return NextResponse.redirect(new URL(`/${locale}/sign-in`, request.url));
+    return NextResponse.redirect(new URL(`/${locale}/login`, request.url));
   }
 
   // If the user is authenticated and trying to access auth pages,

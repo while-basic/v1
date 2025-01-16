@@ -19,7 +19,7 @@ export function Header() {
     try {
       setIsLoading(true);
       await signOut();
-      router.push(`/${locale}/sign-in`);
+      router.push(`/${locale}/login`);
     } catch (error) {
       console.error("Sign out error:", error);
     } finally {
