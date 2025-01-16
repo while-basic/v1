@@ -1,0 +1,6 @@
+{
+  "name": "app",
+  "root": "apps/app",
+  "buildCommand": "cd ../.. && npx pnpm install --no-frozen-lockfile && npx pnpm build",
+  "outputDirectory": ".next"
+}
