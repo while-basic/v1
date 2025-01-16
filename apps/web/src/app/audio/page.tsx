@@ -257,9 +257,11 @@ export default function AudioPage() {
                 </Button>
               </div>
               <div>
-                <div className="font-medium">{currentTrackData.title}</div>
+                <div className="font-medium">
+                  {currentTrackData?.title || 'No track selected'}
+                </div>
                 <div className="text-sm text-muted-foreground">
-                  {currentTrackData.artist}
+                  {currentTrackData?.artist || 'Unknown artist'}
                 </div>
               </div>
             </div>
@@ -272,7 +274,7 @@ export default function AudioPage() {
 
       <AudioPlayer
         isPlaying={isPlaying}
-        currentTrack={currentTrackData.audioUrl}
+        currentTrack={currentTrackData?.audioUrl || ''}
         onEnded={handleTrackEnded}
       />
     </div>
