@@ -2,6 +2,7 @@ import { Button } from "@v1/ui/button";
 import {
   ArrowRight,
   Headphones,
+  Info,
   Mic2,
   Music,
   Play,
@@ -22,6 +23,18 @@ export const metadata: Metadata = {
 export default function AudioEngineering() {
   return (
     <main className="relative min-h-screen">
+      <div className="container mx-auto px-4 pt-8">
+        <div className="rounded-lg border border-primary/20 bg-primary/5 p-4 text-primary">
+          <div className="flex items-center gap-2">
+            <Info className="h-4 w-4" />
+            <div className="font-medium">Under Construction</div>
+          </div>
+          <div className="mt-2 text-sm text-muted-foreground">
+            This section is currently being enhanced. Music samples and portfolio pieces will be available soon. Check back for updates!
+          </div>
+        </div>
+      </div>
+      
       {/* Hero Section with Animated Grid */}
       <div className="relative min-h-[80vh] pt-24 flex items-center">
         {/* Animated background with industrial pattern */}
@@ -64,6 +77,18 @@ export default function AudioEngineering() {
               </div>
             </div>
             <div className="flex-1">
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                {metrics.map((metric) => (
+                  <div
+                    key={metric.label}
+                    className="p-6 rounded-lg border bg-card hover:bg-primary/5 transition-all"
+                  >
+                    <metric.icon className="w-8 h-8 text-primary mb-4" />
+                    <div className="text-2xl font-bold mb-2">{metric.value}</div>
+                    <div className="text-muted-foreground">{metric.label}</div>
+                  </div>
+                ))}
+              </div>
               <div className="relative h-[500px] w-full rounded-lg overflow-hidden">
                 <Image
                   src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2070&auto=format&fit=crop"
@@ -214,6 +239,7 @@ export default function AudioEngineering() {
   );
 }
 
+
 const studioFeatures = [
   { icon: Headphones, label: "Pro Monitoring" },
   { icon: Mic2, label: "Premium Mics" },
@@ -299,4 +325,11 @@ const recentWork = [
     image:
       "https://images.unsplash.com/photo-1598520106830-8c45c2035460?q=80&w=2070&auto=format&fit=crop",
   },
+];
+
+const metrics = [
+  { icon: Music, label: "Projects Completed", value: "500+" },
+  { icon: Headphones, label: "Studio Hours", value: "10k+" },
+  { icon: Radio, label: "Tracks Mixed", value: "1000+" },
+  { icon: Volume2, label: "Years Experience", value: "15+" },
 ];
