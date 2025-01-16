@@ -104,11 +104,14 @@ export default function AudioPage() {
     }
 
     // Update source when track changes
-    audioRef.current.src = tracks[currentTrack].audioUrl;
+    const currentTrackData = tracks[currentTrack];
+    if (audioRef.current && currentTrackData) {
+      audioRef.current.src = currentTrackData.audioUrl;
 
-    // Auto play when track changes
-    if (isPlaying) {
-      audioRef.current.play();
+      // Auto play when track changes
+      if (isPlaying) {
+        void audioRef.current.play();
+      }
     }
 
     // Cleanup
@@ -117,13 +120,13 @@ export default function AudioPage() {
         audioRef.current.pause();
       }
     };
-  }, [currentTrack]);
+  }, [currentTrack, isPlaying]);
 
   useEffect(() => {
     // Handle play/pause
     if (audioRef.current) {
       if (isPlaying) {
-        audioRef.current.play();
+        void audioRef.current.play();
       } else {
         audioRef.current.pause();
       }
@@ -284,9 +287,11 @@ export default function AudioPage() {
                 </Button>
               </div>
               <div>
-                <div className="font-medium">{tracks[currentTrack].title}</div>
+                <div className="font-medium">
+                  {tracks[currentTrack]?.title || 'No track selected'}
+                </div>
                 <div className="text-sm text-muted-foreground">
-                  {tracks[currentTrack].artist}
+                  {tracks[currentTrack]?.artist || 'Unknown artist'}
                 </div>
               </div>
             </div>
