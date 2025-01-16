@@ -21,53 +21,54 @@ export const metadata: Metadata = {
 export default function SystemIntegration() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section with Grid Pattern */}
-      <div className="relative min-h-[80vh] pt-24 flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#222_1px,transparent_1px),linear-gradient(to_bottom,#222_1px,transparent_1px)] bg-[size:4.5rem_2rem] z-20" />
-        <div className="relative z-30 h-full flex items-center">
-          <div className="container relative z-10 px-4 mx-auto">
-            <div className="flex flex-col lg:flex-row items-center gap-12">
-              <div className="flex-1">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 mb-6">
-                  <Settings className="w-4 h-4 text-primary animate-spin-slow" />
-                  <span className="text-primary font-semibold">
-                    Industrial Automation
-                  </span>
-                </div>
-                <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                  System
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary/80 to-primary/60">
-                    Integration
-                  </span>
-                </h1>
-                <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-xl">
-                  Christopher Celaya specializes in industrial automation and control systems integration 
-                  for factories, warehouses, cannabis facilities, data centers, and critical infrastructure.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <Button size="lg" className="gap-2">
-                    Explore Solutions <ArrowRight className="w-4 h-4" />
-                  </Button>
-                  <Button size="lg" variant="outline" className="gap-2">
-                    View Case Studies
-                  </Button>
-                </div>
+      {/* Hero Section with Animated Grid */}
+      <div className="relative min-h-[80vh] pt-24 flex items-center">
+        {/* Animated background with industrial pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#222_1px,transparent_1px),linear-gradient(to_bottom,#222_1px,transparent_1px)] bg-[size:4.5rem_2rem] animate-[grid_20s_linear_infinite] opacity-20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-background/90" />
+
+        <div className="container relative z-10 px-4 mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            <div className="flex-1">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 mb-6">
+                <Settings className="w-4 h-4 text-primary animate-spin-slow" />
+                <span className="text-primary font-semibold">
+                  Industrial Automation
+                </span>
               </div>
-              <div className="flex-1">
-                <div className="grid grid-cols-2 gap-4">
-                  {metrics.map((metric) => (
-                    <div
-                      key={metric.label}
-                      className="p-6 rounded-lg border bg-card hover:bg-primary/5 transition-all"
-                    >
-                      <metric.icon className="w-8 h-8 text-primary mb-4" />
-                      <div className="text-2xl font-bold mb-2">
-                        {metric.value}
-                      </div>
-                      <div className="text-muted-foreground">{metric.label}</div>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                System
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary/80 to-primary/60">
+                  Integration
+                </span>
+              </h1>
+              <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-xl">
+                Christopher Celaya specializes in industrial automation and control systems integration 
+                for factories, warehouses, cannabis facilities, data centers, and critical infrastructure.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Button size="lg" className="gap-2">
+                  Explore Solutions <ArrowRight className="w-4 h-4" />
+                </Button>
+                <Button size="lg" variant="outline" className="gap-2">
+                  View Case Studies
+                </Button>
+              </div>
+            </div>
+            <div className="flex-1">
+              <div className="grid grid-cols-2 gap-4">
+                {metrics.map((metric) => (
+                  <div
+                    key={metric.label}
+                    className="p-6 rounded-lg border bg-card hover:bg-primary/5 transition-all"
+                  >
+                    <metric.icon className="w-8 h-8 text-primary mb-4" />
+                    <div className="text-2xl font-bold mb-2">
+                      {metric.value}
                     </div>
-                  ))}
-                </div>
+                    <div className="text-muted-foreground">{metric.label}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

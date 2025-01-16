@@ -70,8 +70,11 @@ export function Header() {
                 <DialogHeader>
                   <DialogTitle>Stay updated</DialogTitle>
                   <DialogDescription>
-                    Subscribe to our newsletter to get the latest news and
+                    Subscribe to my newsletter to get the latest news and
                     updates.
+                  </DialogDescription>
+                  <DialogDescription>
+                    Don't worry, I hate spam too.
                   </DialogDescription>
                 </DialogHeader>
 
