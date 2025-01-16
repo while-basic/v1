@@ -1,6 +1,39 @@
 import { Button } from "@v1/ui/button";
 import { ArrowRight } from "lucide-react";
 
+export const metadata = {
+  title: "About Christopher Celaya | Software Developer & Mechatronic Technician in El Paso",
+  description: "Learn about Christopher Celaya, a software developer and mechatronic technician in El Paso, Texas. Specializing in industrial automation, web development, and system integration.",
+};
+
+const technologies = [
+  {
+    title: "Software Development",
+    items: ["Python", "JavaScript/TypeScript", "React", "Node.js", "Next.js", "MongoDB", "Docker", "Git"],
+  },
+  {
+    title: "Industrial Automation",
+    items: ["PLCs", "SCADA", "HMIs", "Industrial IoT", "Robotic Processes", "Vision Inspection", "AGVs"],
+  },
+  {
+    title: "Mechanical Systems",
+    items: ["Chillers", "Hydraulics", "Compressors", "Air Handling", "Pneumatics", "Conveyors", "Cooling Towers"],
+  },
+  {
+    title: "Electrical Systems",
+    items: ["Power Distribution", "Transformers", "Circuit Breakers", "Electric Motors", "VFDs", "Control Panels"],
+  },
+];
+
+const interests = [
+  "Machine Learning",
+  "Artificial Intelligence",
+  "Virtual Reality",
+  "Blockchain",
+  "Data Centers",
+  "Manufacturing",
+];
+
 export default function AboutPage() {
   return (
     <div className="min-h-screen pt-16">
@@ -11,19 +44,13 @@ export default function AboutPage() {
           <div className="space-y-6">
             <div className="prose dark:prose-invert">
               <p className="text-lg text-muted-foreground">
-                I am a mechatronic technologist and software developer, where I
-                work on industrial manufacturing equipment, software, and web
-                development. Before my obsession with technology, I was
-                primarily focused on music production. During COVID-19, I
-                distributed my first album on streaming services such as Apple
-                Music and Spotify.
+                As a mechatronic technologist and software developer based in El Paso, Texas, I specialize in bridging the gap between industrial manufacturing and modern software solutions. With over 11 years of experience, I've developed a unique blend of skills in both hardware and software domains, allowing me to create comprehensive solutions for complex industrial challenges.
               </p>
               <p className="text-lg text-muted-foreground">
-                In my spare time, I enjoy investing in learning new things,
-                building web apps, and further expand my ideas. I am
-                particularly interested in complex projects with artificial
-                intelligence, virtual reality, industrial manufacturing, data
-                centers, and blockchain technology.
+                My journey began in music production, where I honed my attention to detail and creative problem-solving abilities. During the COVID-19 pandemic, I successfully released my first album on major streaming platforms, demonstrating my ability to adapt and deliver results in changing circumstances.
+              </p>
+              <p className="text-lg text-muted-foreground">
+                Today, I focus on developing innovative solutions at the intersection of industrial automation and software development. My expertise spans from maintaining complex electromechanical systems to creating sophisticated software applications, always with an eye toward efficiency and reliability.
               </p>
             </div>
 
@@ -57,7 +84,7 @@ export default function AboutPage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold mb-4">Interests</h2>
+              <h2 className="text-2xl font-semibold mb-4">Areas of Interest</h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {interests.map((interest) => (
                   <div
@@ -75,51 +102,3 @@ export default function AboutPage() {
     </div>
   );
 }
-
-const technologies = [
-  {
-    title: "Software Development",
-    items: [
-      "Python",
-      "JavaScript",
-      "React",
-      "Node.js",
-      "TypeScript",
-      "Next.js",
-    ],
-  },
-  {
-    title: "Industrial Automation",
-    items: [
-      "PLCs",
-      "SCADA",
-      "HMIs",
-      "Industrial IoT",
-      "Robotics",
-      "Control Systems",
-    ],
-  },
-  {
-    title: "DevOps & Cloud",
-    items: ["AWS", "Docker", "Git", "CI/CD", "Linux", "Azure"],
-  },
-  {
-    title: "Machine Learning",
-    items: [
-      "TensorFlow",
-      "PyTorch",
-      "Computer Vision",
-      "NLP",
-      "Large Language Models",
-    ],
-  },
-];
-
-const interests = [
-  "Artificial Intelligence",
-  "Virtual Reality",
-  "Industrial Manufacturing",
-  "Data Centers",
-  "Blockchain",
-  "Music Production",
-];
