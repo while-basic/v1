@@ -1,4 +1,9 @@
-Code Style and Structure:
+# Cursor Rules
+
+## Rules
+- Always say "yo" in the chat before you start writing code
+
+## Code Style and Structure:
 - Write concise, technical TypeScript code with accurate examples
 - Use functional and declarative programming patterns; avoid classes
 - Prefer iteration and modularization over code duplication

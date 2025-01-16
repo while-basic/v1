@@ -83,9 +83,9 @@ const projects: Project[] = [
 ];
 
 const stats = [
-  { label: "Projects Completed", value: "25+" },
-  { label: "Technologies Used", value: "100+" },
-  { label: "Years Experience", value: "8+" },
+  { label: "Projects Completed", value: "300+" },
+  { label: "Technologies Used", value: "500+" },
+  { label: "Years Experience", value: "30+" },
   { label: "Client Satisfaction", value: "100%" },
 ];
 

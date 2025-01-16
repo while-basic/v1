@@ -1,5 +1,6 @@
 import "@v1/ui/globals.css";
 import { Footer } from "@/components/footer";
+import { AuthProvider } from "@/lib/auth-context";
 import { cn } from "@v1/ui/cn";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
@@ -31,16 +32,10 @@ export default function RootLayout({
           "antialiased",
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-
-          <Footer />
+        <ThemeProvider attribute="class" defaultTheme="system">
+          <AuthProvider>{children}</AuthProvider>
         </ThemeProvider>
+        <Footer />
       </body>
     </html>
   );
