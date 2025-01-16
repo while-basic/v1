@@ -1,10 +1,38 @@
 import { Card } from "@/components/ui/card";
+import { getAnalytics } from "@/lib/analytics";
 
 export const metadata = {
   title: "Analytics",
 };
 
-export default function AnalyticsPage() {
+export default async function AnalyticsPage() {
+  const {
+    pageViews,
+    visitors,
+    sessions,
+    topPages,
+    engagement,
+    bounceRate,
+    returnUsers,
+  } = await getAnalytics();
+
+  // Calculate percentage changes with null checks
+  const pageViewsChange = pageViews?.length >= 2 
+    ? ((pageViews[0].value - pageViews[1].value) / pageViews[1].value) * 100 
+    : 0;
+
+  const visitorsChange = visitors?.length >= 2 
+    ? ((visitors[0].value - visitors[1].value) / visitors[1].value) * 100 
+    : 0;
+
+  const avgSessionDuration = sessions?.length > 0
+    ? sessions.reduce((acc, session) => acc + (session.duration ?? 0), 0) / sessions.length
+    : 0;
+
+  const sessionDurationChange = sessions?.length >= 2
+    ? ((sessions[0].duration ?? 0) - (sessions[1].duration ?? 0)) / (sessions[1].duration ?? 1) * 100
+    : 0;
+
   return (
     <div className="container mx-auto p-6">
       <h1 className="text-3xl font-bold mb-8">Analytics</h1>
@@ -16,20 +44,26 @@ export default function AnalyticsPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
                 <p className="text-sm text-muted-foreground">Page Views</p>
-                <p className="text-2xl font-bold">12,543</p>
-                <p className="text-sm text-green-500">+12.3% from last month</p>
+                <p className="text-2xl font-bold">{pageViews?.[0]?.value ?? 0}</p>
+                <p className={`text-sm ${pageViewsChange >= 0 ? "text-green-500" : "text-red-500"}`}>
+                  {pageViewsChange >= 0 ? "+" : ""}{pageViewsChange.toFixed(1)}% from last month
+                </p>
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Unique Visitors</p>
-                <p className="text-2xl font-bold">5,271</p>
-                <p className="text-sm text-green-500">+8.1% from last month</p>
+                <p className="text-2xl font-bold">{visitors?.[0]?.value ?? 0}</p>
+                <p className={`text-sm ${visitorsChange >= 0 ? "text-green-500" : "text-red-500"}`}>
+                  {visitorsChange >= 0 ? "+" : ""}{visitorsChange.toFixed(1)}% from last month
+                </p>
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">
                   Avg. Session Duration
                 </p>
-                <p className="text-2xl font-bold">4m 23s</p>
-                <p className="text-sm text-red-500">-2.5% from last month</p>
+                <p className="text-2xl font-bold">{Math.floor(avgSessionDuration / 60)}m {Math.floor(avgSessionDuration % 60)}s</p>
+                <p className={`text-sm ${sessionDurationChange >= 0 ? "text-green-500" : "text-red-500"}`}>
+                  {sessionDurationChange >= 0 ? "+" : ""}{sessionDurationChange.toFixed(1)}% from last month
+                </p>
               </div>
             </div>
           </div>
@@ -39,19 +73,14 @@ export default function AnalyticsPage() {
           <Card className="p-6">
             <h2 className="text-xl font-semibold mb-4">Top Pages</h2>
             <div className="space-y-4">
-              {[
-                { page: "/home", views: "3,456" },
-                { page: "/audio/popular", views: "2,123" },
-                { page: "/users/profile", views: "1,654" },
-                { page: "/settings", views: "892" },
-              ].map((item) => (
+              {(topPages ?? []).map((item) => (
                 <div
                   key={item.page}
                   className="flex justify-between items-center"
                 >
                   <span className="text-sm font-medium">{item.page}</span>
                   <span className="text-sm text-muted-foreground">
-                    {item.views} views
+                    {item.value} views
                   </span>
                 </div>
               ))}
@@ -63,15 +92,15 @@ export default function AnalyticsPage() {
             <div className="space-y-4">
               <div>
                 <p className="text-sm text-muted-foreground">Engagement Rate</p>
-                <p className="text-2xl font-bold">67.8%</p>
+                <p className="text-2xl font-bold">{((engagement?.[0]?.value ?? 0) * 100).toFixed(1)}%</p>
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Bounce Rate</p>
-                <p className="text-2xl font-bold">32.2%</p>
+                <p className="text-2xl font-bold">{((bounceRate?.[0]?.value ?? 0) * 100).toFixed(1)}%</p>
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Return Users</p>
-                <p className="text-2xl font-bold">45.9%</p>
+                <p className="text-2xl font-bold">{((returnUsers?.[0]?.value ?? 0) * 100).toFixed(1)}%</p>
               </div>
             </div>
           </Card>
