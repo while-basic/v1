@@ -59,6 +59,18 @@ export default function IndustrialTechnology() {
               </div>
             </div>
             <div className="flex-1">
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                {metrics.map((metric) => (
+                  <div
+                    key={metric.label}
+                    className="p-6 rounded-lg border bg-card hover:bg-primary/5 transition-all"
+                  >
+                    <metric.icon className="w-8 h-8 text-primary mb-4" />
+                    <div className="text-2xl font-bold mb-2">{metric.value}</div>
+                    <div className="text-muted-foreground">{metric.label}</div>
+                  </div>
+                ))}
+              </div>
               <div className="grid grid-cols-3 gap-4">
                 {stats.map((stat) => (
                   <div
@@ -204,6 +216,13 @@ export default function IndustrialTechnology() {
     </div>
   );
 }
+
+const metrics = [
+  { icon: Factory, label: "Facilities Automated", value: "100+" },
+  { icon: Cpu, label: "Control Systems", value: "500+" },
+  { icon: Bot, label: "Years Experience", value: "15+" },
+  { icon: Workflow, label: "Industries Served", value: "12+" },
+];
 
 const stats = [
   { label: "Projects Completed", value: "75+" },
