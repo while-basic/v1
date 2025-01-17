@@ -7,6 +7,7 @@ import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Toaster } from "sonner";
 
 const DepartureMono = localFont({
   src: "../fonts/DepartureMono-Regular.woff2",
@@ -86,7 +87,7 @@ export default function RootLayout({
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
-
+        <Toaster />
         <AnalyticsProvider />
       </body>
     </html>

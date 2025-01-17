@@ -1,5 +1,6 @@
 import { AnimatedText } from "@/components/animated-text";
 import { Button } from "@v1/ui/button";
+import Link from "next/link";
 import {
   ArrowRight,
   Download,
@@ -7,6 +8,7 @@ import {
   Linkedin,
   Mail,
   Twitter,
+  View,
 } from "lucide-react";
 
 export default function Page() {
@@ -46,6 +48,11 @@ export default function Page() {
                 Download Resume <Download size={16} />
               </a>
             </Button>
+            <Button size="lg" variant="secondary" className="gap-2" asChild>
+              <Link href="/webxr">
+                View More in 3D <View size={16} />
+              </Link>
+            </Button>
           </div>
 
           <div className="flex items-center justify-center gap-6">
@@ -57,14 +64,14 @@ export default function Page() {
             >
               <Github size={24} />
             </a>
-            <a
+            {/* <a
               href="https://twitter.com/"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2 hover:opacity-80 transition-opacity"
             >
               <Twitter size={24} />
-            </a>
+            </a> */}
             <a
               href="https://linkedin.com/in/christophercelaya"
               target="_blank"
