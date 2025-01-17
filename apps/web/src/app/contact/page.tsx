@@ -65,26 +65,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      {/* Call to Action */}
-      <section className="py-24 bg-gradient-to-b from-background to-primary/5">
-        <div className="container px-4 mx-auto">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">Let's Work Together</h2>
-            <p className="text-xl text-muted-foreground mb-8">
-              Looking forward to discussing how we can collaborate on your next project.
-            </p>
-            <Button 
-              size="lg" 
-              className="gap-2"
-              onClick={handleEmailClick}
-            >
-              <Mail className="w-4 h-4" />
-              Contact Me
-            </Button>
-          </div>
-        </div>
-      </section>
     </div>
   );
 } 
