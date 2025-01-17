@@ -9,17 +9,25 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="container mx-auto px-4 py-8">
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-primary/5 via-secondary/5 to-background">
-        <div className="container px-4 mx-auto">
+      <section className="relative h-[50vh] flex items-center justify-center rounded-3xl overflow-hidden mb-12">
+        {/* Background layers */}
+        <div 
+          className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1596524430615-b46475ddff6e?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center"
+          style={{ backgroundPosition: "center 30%" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/50 to-background/95" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-secondary/20" />
+        
+        {/* Content */}
+        <div className="container px-4 mx-auto relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary drop-shadow-sm">
               Get in Touch
             </h1>
-            <p className="text-xl text-muted-foreground mb-12">
-              I'm always open to discussing new opportunities and interesting
-              projects.
+            <p className="text-xl text-muted-foreground mb-8 drop-shadow-lg max-w-2xl mx-auto">
+              Let's collaborate on your next project. I'm always open to discussing new opportunities and ideas.
             </p>
           </div>
         </div>

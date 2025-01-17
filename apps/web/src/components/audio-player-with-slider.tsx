@@ -28,36 +28,73 @@ export function AudioPlayerWithSlider({
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (!audioRef.current) {
-      audioRef.current = new Audio(currentTrack);
-      audioRef.current.onended = onEnded;
-      audioRef.current.onloadedmetadata = () => {
-        setDuration(audioRef.current?.duration || 0);
-      };
-      audioRef.current.ontimeupdate = () => {
-        setCurrentTime(audioRef.current?.currentTime || 0);
-      };
+      audioRef.current = document.createElement('audio');
+      audioRef.current.preload = 'metadata';
     }
+
+    const audio = audioRef.current;
+
+    const handleLoadStart = () => setIsLoading(true);
+    const handleCanPlay = () => setIsLoading(false);
+    const handleLoadedMetadata = () => setDuration(audio.duration);
+    const handleTimeUpdate = () => setCurrentTime(audio.currentTime);
+    const handleEnded = () => {
+      setCurrentTime(0);
+      onEnded();
+    };
+
+    audio.addEventListener('loadstart', handleLoadStart);
+    audio.addEventListener('canplay', handleCanPlay);
+    audio.addEventListener('loadedmetadata', handleLoadedMetadata);
+    audio.addEventListener('timeupdate', handleTimeUpdate);
+    audio.addEventListener('ended', handleEnded);
 
     return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
+      audio.removeEventListener('loadstart', handleLoadStart);
+      audio.removeEventListener('canplay', handleCanPlay);
+      audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
+      audio.removeEventListener('timeupdate', handleTimeUpdate);
+      audio.removeEventListener('ended', handleEnded);
     };
-  }, [currentTrack, onEnded]);
+  }, [onEnded]);
 
+  // Handle track changes
   useEffect(() => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        void audioRef.current.play();
-      } else {
-        audioRef.current.pause();
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    audio.src = currentTrack;
+    
+    if (isPlaying) {
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((error) => {
+          console.error("Playback failed:", error);
+        });
       }
     }
-  }, [isPlaying]);
+  }, [currentTrack, isPlaying]);
+
+  // Handle play/pause
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    
+    if (isPlaying && !isLoading) {
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((error) => {
+          console.error("Playback failed:", error);
+        });
+      }
+    } else {
+      audio.pause();
+    }
+  }, [isPlaying, isLoading]);
 
   const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
     const time = parseFloat(e.target.value);
@@ -85,6 +122,7 @@ export function AudioPlayerWithSlider({
               value={currentTime}
               onChange={handleSeek}
               className="w-full h-1 bg-secondary rounded-lg appearance-none cursor-pointer accent-primary"
+              disabled={isLoading}
             />
             <div className="flex justify-between text-xs text-muted-foreground mt-1">
               <span>{formatTime(currentTime)}</span>
@@ -95,7 +133,12 @@ export function AudioPlayerWithSlider({
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
                 {onPrevious && (
-                  <Button variant="ghost" size="icon" onClick={onPrevious}>
+                  <Button 
+                    variant="ghost" 
+                    size="icon" 
+                    onClick={onPrevious}
+                    disabled={isLoading}
+                  >
                     <SkipBack className="w-5 h-5" />
                   </Button>
                 )}
@@ -104,6 +147,7 @@ export function AudioPlayerWithSlider({
                   size="icon"
                   className="w-10 h-10 rounded-full"
                   onClick={onPlayPause}
+                  disabled={isLoading}
                 >
                   {isPlaying ? (
                     <Pause className="w-5 h-5" />
@@ -112,7 +156,12 @@ export function AudioPlayerWithSlider({
                   )}
                 </Button>
                 {onNext && (
-                  <Button variant="ghost" size="icon" onClick={onNext}>
+                  <Button 
+                    variant="ghost" 
+                    size="icon" 
+                    onClick={onNext}
+                    disabled={isLoading}
+                  >
                     <SkipForward className="w-5 h-5" />
                   </Button>
                 )}
