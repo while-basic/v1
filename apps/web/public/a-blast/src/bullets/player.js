@@ -9,7 +9,7 @@ ABLAST.registerBullet(
         name: 'default',
         maxSpeed: 1,
         initialSpeed: 0.1,
-        acceleration: 0.4,
+        acceleration: 1.0,
         color: '#24CAFF'
       },
       'collision-helper': {

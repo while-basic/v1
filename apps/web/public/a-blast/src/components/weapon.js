@@ -7,7 +7,7 @@ var WEAPONS = {
       rotationOffset: [0, 0, 0]
     },
     shootSound: 'url(assets/sounds/gun.ogg)',
-    shootingDelay: 100, // In ms
+    shootingDelay: 25, // In ms
     bullet: 'default'
   }
 };
