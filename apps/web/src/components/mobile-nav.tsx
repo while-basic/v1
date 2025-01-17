@@ -23,6 +23,7 @@ const navItems: NavItem[] = [
   { title: "Projects", href: "/projects" },
   { title: "Experience", href: "/experience" },
   { title: "Audio", href: "/audio" },
+  { title: "Contact", href: "/contact" },
 ];
 
 export function MobileNav() {

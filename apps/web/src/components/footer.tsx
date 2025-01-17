@@ -29,6 +29,12 @@ export function Footer() {
           >
             Experience
           </a>
+          <a
+            href="/contact"
+            className="text-sm text-gray-400 hover:text-gray-200 transition"
+          >
+            Contact
+          </a>
         </nav>
 
         <div className="flex justify-center space-x-6 mb-8">

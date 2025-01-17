@@ -48,6 +48,12 @@ export function Header() {
             >
               Audio
             </Link>
+            <Link
+              href="/contact"
+              className="text-sm hover:text-primary transition-colors"
+            >
+              Contact
+            </Link>
           </nav>
 
           <div className="flex items-center gap-4">
