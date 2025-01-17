@@ -154,7 +154,7 @@ const audioContent: AudioContent[] = [
     title: "AI Podcast | Resume",
     duration: "6:43",
     url: "/resume.wav",
-    image: "https://images.unsplash.com/photo-1684163761859-461e23727b24?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1589254065878-42c9da997008?q=80&w=800&auto=format&fit=crop",
   },
 ];
 
