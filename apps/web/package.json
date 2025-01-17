@@ -15,7 +15,9 @@
     "@calcom/embed-react": "^1.5.0",
     "@radix-ui/react-dialog": "^1.1.4",
     "@radix-ui/react-slot": "^1.1.1",
+    "@react-email/components": "^0.0.32",
     "@v1/analytics": "workspace:*",
+    "@v1/email": "workspace:*",
     "@v1/ui": "workspace:*",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -25,6 +27,8 @@
     "react": "^18.3.1",
     "react-confetti": "^6.2.2",
     "react-dom": "^18.3.1",
+    "react-email": "^3.0.6",
+    "resend": "^4.1.1",
     "sonner": "^1.7.2",
     "tailwind-merge": "^2.6.0",
     "usehooks-ts": "^3.1.0"

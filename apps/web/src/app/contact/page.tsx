@@ -1,12 +1,44 @@
 "use client";
 
 import { Button } from "@v1/ui/button";
-import { Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
+import { Input } from "@v1/ui/input";
+import { Textarea } from "@v1/ui/textarea";
+import { Mail } from "lucide-react";
+import { useFormState } from "react-dom";
+import { contactAction } from "@/actions/contact-action";
+import { toast } from "sonner";
+import { useEffect } from "react";
+
+type FormState = {
+  success: boolean;
+  errors?: {
+    _form?: string;
+    name?: string;
+    email?: string;
+    message?: string;
+  };
+};
+
+const initialState: FormState = {
+  success: false,
+  errors: {},
+};
 
 export default function ContactPage() {
-  const handleEmailClick = () => {
-    window.location.href = "mailto:chris@chriscelaya.com";
-  };
+  const [state, action] = useFormState<FormState, FormData>(
+    async (_, formData) => await contactAction(formData),
+    initialState
+  );
+
+  useEffect(() => {
+    if (state.success) {
+      toast.success("Message sent successfully!");
+      const form = document.querySelector("form");
+      if (form) form.reset();
+    } else if (state.errors?._form) {
+      toast.error(state.errors._form);
+    }
+  }, [state]);
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -33,46 +65,78 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Information */}
-      <section className="py-24">
+      {/* Contact Form */}
+      <section className="py-12">
         <div className="container px-4 mx-auto">
-          <div className="max-w-3xl mx-auto">
-            <div className="grid gap-8">
-              {/* Contact Card */}
-              <div className="p-8 rounded-lg border bg-card hover:border-primary transition-colors">
-                <div className="flex flex-col items-center text-center">
-                  <h2 className="text-2xl font-bold mb-4">
-                    Christopher Celaya
-                  </h2>
-                  <div className="flex items-center gap-2 mb-4">
-                    <Mail className="w-5 h-5 text-primary" />
-                    <a
-                      href="mailto:chris@chriscelaya.com"
-                      className="text-lg hover:text-primary transition-colors"
-                    >
-                      chris@chriscelaya.com
-                    </a>
-                  </div>
-                  <Button
-                    size="lg"
-                    className="gap-2 mt-6"
-                    onClick={handleEmailClick}
-                  >
-                    <Mail className="w-4 h-4" />
-                    Send Email
-                  </Button>
-                </div>
+          <div className="max-w-2xl mx-auto">
+            <form action={action} className="space-y-6">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium mb-2">
+                  Name
+                </label>
+                <Input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  aria-describedby="name-error"
+                />
+                {state.errors?.name && (
+                  <p className="mt-1 text-sm text-red-500" id="name-error">
+                    {state.errors.name}
+                  </p>
+                )}
               </div>
 
-              {/* Additional Information */}
-              <div className="mt-12 prose prose-gray dark:prose-invert max-w-none">
-                <p className="text-lg text-muted-foreground text-center">
-                  Whether you're interested in discussing a project, exploring
-                  collaboration opportunities, or just want to connect, I'd love
-                  to hear from you. Feel free to reach out through email and
-                  I'll get back to you as soon as possible.
-                </p>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                  Email
+                </label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  aria-describedby="email-error"
+                />
+                {state.errors?.email && (
+                  <p className="mt-1 text-sm text-red-500" id="email-error">
+                    {state.errors.email}
+                  </p>
+                )}
               </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium mb-2">
+                  Message
+                </label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  rows={6}
+                  required
+                  aria-describedby="message-error"
+                />
+                {state.errors?.message && (
+                  <p className="mt-1 text-sm text-red-500" id="message-error">
+                    {state.errors.message}
+                  </p>
+                )}
+              </div>
+
+              <Button type="submit" size="lg" className="w-full">
+                <Mail className="w-4 h-4 mr-2" />
+                Send Message
+              </Button>
+            </form>
+
+            {/* Additional Information */}
+            <div className="mt-12 prose prose-gray dark:prose-invert max-w-none">
+              <p className="text-lg text-muted-foreground text-center">
+                Whether you're interested in discussing a project, exploring
+                collaboration opportunities, or just want to connect, I'd love
+                to hear from you. I'll get back to you as soon as possible.
+              </p>
             </div>
           </div>
         </div>
