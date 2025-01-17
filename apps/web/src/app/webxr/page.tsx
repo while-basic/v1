@@ -58,7 +58,7 @@ export default function WebXRPage() {
       </a-entity>
 
       <!-- Back Button -->
-      <a-entity position="0 1 2" class="clickable" data-link="/" data-raycastable>
+      <a-entity position="0 1 2" class="clickable" data-link="/webxr" data-raycastable>
         <a-ring color="#FFFFFF" radius-inner="0.5" radius-outer="0.7">
           <a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
         </a-ring>
@@ -113,7 +113,7 @@ export default function WebXRPage() {
       <!-- Project Displays -->
       <a-entity position="0 2 -4">
         <!-- Project 1 -->
-        <a-entity position="-4 0 0" class="project">
+        <a-entity position="-4 0 0" class="clickable project" data-link="/webxr/projects/full-stack" data-raycastable>
           <a-box width="2.5" height="2" depth="0.1" color="#4CC3D9">
             <a-animation attribute="rotation" dur="15000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-box>
@@ -122,7 +122,7 @@ export default function WebXRPage() {
         </a-entity>
 
         <!-- Project 2 -->
-        <a-entity position="0 0 0" class="project">
+        <a-entity position="0 0 0" class="clickable project" data-link="/webxr/projects/ai-ml" data-raycastable>
           <a-box width="2.5" height="2" depth="0.1" color="#4CC3D9">
             <a-animation attribute="rotation" dur="15000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-box>
@@ -131,7 +131,7 @@ export default function WebXRPage() {
         </a-entity>
 
         <!-- Project 3 -->
-        <a-entity position="4 0 0" class="project">
+        <a-entity position="4 0 0" class="clickable project" data-link="/webxr/projects/webxr" data-raycastable>
           <a-box width="2.5" height="2" depth="0.1" color="#4CC3D9">
             <a-animation attribute="rotation" dur="15000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-box>
@@ -143,21 +143,21 @@ export default function WebXRPage() {
       <!-- Interactive Elements -->
       <a-entity position="0 0 -4">
         <!-- Project Details -->
-        <a-entity position="-4 -1 0" class="clickable" data-link="/projects/full-stack" data-raycastable>
+        <a-entity position="-4 -1 0" class="clickable" data-link="/webxr/projects/full-stack" data-raycastable>
           <a-cylinder height="0.2" radius="1" color="#4CC3D9">
             <a-animation attribute="rotation" dur="8000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-cylinder>
           <a-text value="View Details" align="center" color="#FFFFFF" position="0 0.5 0"></a-text>
         </a-entity>
 
-        <a-entity position="0 -1 0" class="clickable" data-link="/projects/ai-ml" data-raycastable>
+        <a-entity position="0 -1 0" class="clickable" data-link="/webxr/projects/ai-ml" data-raycastable>
           <a-cylinder height="0.2" radius="1" color="#4CC3D9">
             <a-animation attribute="rotation" dur="8000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-cylinder>
           <a-text value="View Details" align="center" color="#FFFFFF" position="0 0.5 0"></a-text>
         </a-entity>
 
-        <a-entity position="4 -1 0" class="clickable" data-link="/projects/webxr" data-raycastable>
+        <a-entity position="4 -1 0" class="clickable" data-link="/webxr/projects/webxr" data-raycastable>
           <a-cylinder height="0.2" radius="1" color="#4CC3D9">
             <a-animation attribute="rotation" dur="8000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-cylinder>
@@ -166,7 +166,7 @@ export default function WebXRPage() {
       </a-entity>
 
       <!-- Back Button -->
-      <a-entity position="0 1 2" class="clickable" data-link="/" data-raycastable>
+      <a-entity position="0 1 2" class="clickable" data-link="/webxr" data-raycastable>
         <a-ring color="#FFFFFF" radius-inner="0.5" radius-outer="0.7">
           <a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
         </a-ring>
@@ -282,7 +282,7 @@ export default function WebXRPage() {
       </a-entity>
 
       <!-- Back Button -->
-      <a-entity position="0 1 2" class="clickable" data-link="/" data-raycastable>
+      <a-entity position="0 1 2" class="clickable" data-link="/webxr" data-raycastable>
         <a-ring color="#FFFFFF" radius-inner="0.5" radius-outer="0.7">
           <a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
         </a-ring>
@@ -337,7 +337,7 @@ export default function WebXRPage() {
       <!-- Audio Categories -->
       <a-entity position="0 2 -4">
         <!-- Music Production -->
-        <a-entity position="-4 0 0" class="clickable" data-link="/audio/music" data-raycastable>
+        <a-entity position="-4 0 0" class="clickable" data-link="/webxr/audio/music" data-raycastable>
           <a-torus radius="1" radius-tubular="0.1" color="#FF6B6B">
             <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-torus>
@@ -346,7 +346,7 @@ export default function WebXRPage() {
         </a-entity>
 
         <!-- Sound Design -->
-        <a-entity position="0 0 0" class="clickable" data-link="/audio/sound-design" data-raycastable>
+        <a-entity position="0 0 0" class="clickable" data-link="/webxr/audio/sound-design" data-raycastable>
           <a-torus radius="1" radius-tubular="0.1" color="#FF6B6B">
             <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-torus>
@@ -355,7 +355,7 @@ export default function WebXRPage() {
         </a-entity>
 
         <!-- Live Performance -->
-        <a-entity position="4 0 0" class="clickable" data-link="/audio/live" data-raycastable>
+        <a-entity position="4 0 0" class="clickable" data-link="/webxr/audio/live" data-raycastable>
           <a-torus radius="1" radius-tubular="0.1" color="#FF6B6B">
             <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-torus>
@@ -394,7 +394,7 @@ export default function WebXRPage() {
       </a-entity>
 
       <!-- Back Button -->
-      <a-entity position="0 1 2" class="clickable" data-link="/" data-raycastable>
+      <a-entity position="0 1 2" class="clickable" data-link="/webxr" data-raycastable>
         <a-ring color="#FFFFFF" radius-inner="0.5" radius-outer="0.7">
           <a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
         </a-ring>
@@ -437,16 +437,16 @@ export default function WebXRPage() {
 
       // Create the appropriate scene based on the current path
       switch (path) {
-        case '/about':
+        case '/webxr/about':
           scene = createAboutScene();
           break;
-        case '/projects':
+        case '/webxr/projects':
           scene = createProjectsScene();
           break;
-        case '/experience':
+        case '/webxr/experience':
           scene = createExperienceScene();
           break;
-        case '/audio':
+        case '/webxr/audio':
           scene = createAudioScene();
           break;
         default:
@@ -469,45 +469,44 @@ export default function WebXRPage() {
                       material="src: #grid; repeat: 50 50; transparent: true; metalness:0.6; roughness: 0.4">
               </a-plane>
 
-              <!-- Central Hub -->
-              <a-entity position="0 0.5 -4">
-                <!-- Welcome Text -->
-                <a-entity position="0 3.5 0" rotation="0 0 0">
-                  <a-text value="Christopher Celaya" align="center" color="#FFFFFF" scale="2 2 2"></a-text>
-                  <a-text value="Full Stack Developer | Musician | Artist" position="0 -0.5 0" align="center" color="#00ff00" scale="1 1 1"></a-text>
-                </a-entity>
-
-                <!-- About Section -->
-                <a-entity position="-4 0 0" class="clickable" data-link="/about" data-raycastable>
-                  <a-sphere radius="1" color="#7B68EE">
-                    <a-animation attribute="rotation" dur="15000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
-                  </a-sphere>
-                  <a-text value="About" align="center" color="#7B68EE" position="0 -1.5 0"></a-text>
-                </a-entity>
-
-                <!-- Projects Section -->
-                <a-entity position="-2 0 2" class="clickable" data-link="/projects" data-raycastable>
-                  <a-box width="1.5" height="1.5" depth="0.2" color="#4CC3D9">
-                    <a-animation attribute="rotation" dur="15000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+              <!-- Navigation Menu -->
+              <a-entity position="0 1.6 -2">
+                <a-text value="Navigation Menu" align="center" color="#FFFFFF" scale="1.5 1.5 1.5" position="0 1.2 0"></a-text>
+                
+                <!-- Menu Items -->
+                <a-entity position="-2 0 0" class="clickable" data-link="/webxr/about" data-raycastable>
+                  <a-box width="1" height="0.5" depth="0.1" color="#7B68EE"
+                         animation="property: rotation; to: 0 360 0; loop: true; dur: 15000">
+                    <a-text value="About" align="center" color="#FFFFFF" position="0 0 0.06" scale="0.8 0.8 0.8"></a-text>
                   </a-box>
-                  <a-text value="Projects" align="center" color="#4CC3D9" position="0 -1.2 0"></a-text>
                 </a-entity>
 
-                <!-- Experience Section -->
-                <a-entity position="2 0 2" class="clickable" data-link="/experience" data-raycastable>
-                  <a-tetrahedron radius="1" color="#50C878">
-                    <a-animation attribute="rotation" dur="12000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
-                  </a-tetrahedron>
-                  <a-text value="Experience" align="center" color="#50C878" position="0 -1.5 0"></a-text>
+                <a-entity position="-0.67 0 0" class="clickable" data-link="/webxr/projects" data-raycastable>
+                  <a-box width="1" height="0.5" depth="0.1" color="#4CC3D9"
+                         animation="property: rotation; to: 0 360 0; loop: true; dur: 15000">
+                    <a-text value="Projects" align="center" color="#FFFFFF" position="0 0 0.06" scale="0.8 0.8 0.8"></a-text>
+                  </a-box>
                 </a-entity>
 
-                <!-- Audio Section -->
-                <a-entity position="4 0 0" class="clickable" data-link="/audio" data-raycastable>
-                  <a-torus radius="1" radius-tubular="0.1" color="#FF6B6B">
-                    <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
-                  </a-torus>
-                  <a-text value="Audio" align="center" color="#FF6B6B" position="0 -1.5 0"></a-text>
+                <a-entity position="0.67 0 0" class="clickable" data-link="/webxr/experience" data-raycastable>
+                  <a-box width="1" height="0.5" depth="0.1" color="#50C878"
+                         animation="property: rotation; to: 0 360 0; loop: true; dur: 15000">
+                    <a-text value="Experience" align="center" color="#FFFFFF" position="0 0 0.06" scale="0.8 0.8 0.8"></a-text>
+                  </a-box>
                 </a-entity>
+
+                <a-entity position="2 0 0" class="clickable" data-link="/webxr/audio" data-raycastable>
+                  <a-box width="1" height="0.5" depth="0.1" color="#FF6B6B"
+                         animation="property: rotation; to: 0 360 0; loop: true; dur: 15000">
+                    <a-text value="Audio" align="center" color="#FFFFFF" position="0 0 0.06" scale="0.8 0.8 0.8"></a-text>
+                  </a-box>
+                </a-entity>
+              </a-entity>
+
+              <!-- Welcome Text -->
+              <a-entity position="0 3.5 -4">
+                <a-text value="Christopher Celaya" align="center" color="#FFFFFF" scale="2 2 2"></a-text>
+                <a-text value="Full Stack Developer | Musician | Artist" position="0 -0.5 0" align="center" color="#00ff00" scale="1 1 1"></a-text>
               </a-entity>
 
               <!-- Floating Skills -->
@@ -540,7 +539,7 @@ export default function WebXRPage() {
             </a-entity>
 
             <!-- Camera -->
-            <a-entity position="0 1.6 4">
+            <a-entity position="0 1.6 2">
               <a-camera look-controls wasd-controls>
                 <a-cursor
                   raycaster="objects: [data-raycastable]"
@@ -571,6 +570,16 @@ export default function WebXRPage() {
             if (link) {
               router.push(link);
             }
+          });
+
+          // Add hover effect
+          element.addEventListener('mouseenter', () => {
+            const scale = element.getAttribute('scale') || '1 1 1';
+            element.setAttribute('scale', '1.1 1.1 1.1');
+          });
+
+          element.addEventListener('mouseleave', () => {
+            element.setAttribute('scale', '1 1 1');
           });
         });
       });
