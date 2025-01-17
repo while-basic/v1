@@ -50,7 +50,7 @@ export default function Page() {
             </Button>
             <Button size="lg" variant="secondary" className="gap-2" asChild>
               <Link href="/webxr">
-                View More in 3D <View size={16} />
+                View More in VR <View size={16} />
               </Link>
             </Button>
           </div>
