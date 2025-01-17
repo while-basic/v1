@@ -20,6 +20,7 @@ import {
   Pause,
 } from "lucide-react";
 import { useState } from "react";
+import { AudioPlayerWithSlider } from "@/components/audio-player-with-slider";
 
 interface WorkExperience {
   title: string;
@@ -242,6 +243,7 @@ export default function ExperiencePage() {
   const [currentAudio, setCurrentAudio] = useState<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentUrl, setCurrentUrl] = useState<string | null>(null);
+  const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
   const handleDownloadResume = () => {
     window.open("/chris-celaya-resume.pdf", "_blank");
@@ -251,35 +253,48 @@ export default function ExperiencePage() {
     window.location.href = "mailto:chris@chriscelaya.com";
   };
 
-  const handlePlayAudio = (url: string) => {
-    // If clicking the same audio that's currently playing, pause it
-    if (currentUrl === url && isPlaying && currentAudio) {
-      currentAudio.pause();
+  const handlePlayAudio = (url: string, index: number) => {
+    // If clicking the same audio that's currently playing, toggle play/pause
+    if (currentUrl === url && isPlaying) {
       setIsPlaying(false);
-      return;
+    } else {
+      // Play new audio
+      setCurrentUrl(url);
+      setCurrentIndex(index);
+      setIsPlaying(true);
     }
+  };
 
-    // If there's a different audio playing, stop it
-    if (currentAudio) {
-      currentAudio.pause();
-      currentAudio.currentTime = 0;
-    }
-
-    // Play the new audio
-    const audio = new Audio(url);
-    audio.addEventListener('ended', () => {
-      setIsPlaying(false);
-      setCurrentUrl(null);
-    });
-    
-    audio.play();
-    setCurrentAudio(audio);
-    setCurrentUrl(url);
+  const handlePrevTrack = () => {
+    if (currentIndex === null) return;
+    const newIndex = currentIndex > 0 ? currentIndex - 1 : audioContent.length - 1;
+    const track = audioContent[newIndex];
+    if (!track) return;
+    setCurrentIndex(newIndex);
+    setCurrentUrl(track.url);
     setIsPlaying(true);
   };
 
+  const handleNextTrack = () => {
+    if (currentIndex === null) return;
+    const newIndex = currentIndex < audioContent.length - 1 ? currentIndex + 1 : 0;
+    const track = audioContent[newIndex];
+    if (!track) return;
+    setCurrentIndex(newIndex);
+    setCurrentUrl(track.url);
+    setIsPlaying(true);
+  };
+
+  const handleTrackEnded = () => {
+    handleNextTrack();
+  };
+
+  const handlePlayPause = () => {
+    setIsPlaying(!isPlaying);
+  };
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pb-32">
       {/* Hero Section */}
       <section className="relative py-24 bg-gradient-to-br from-primary/5 via-secondary/5 to-background">
         <div className="container px-4 mx-auto">
@@ -310,14 +325,14 @@ export default function ExperiencePage() {
               </Button>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              {audioContent.map((audio) => (
+              {audioContent.map((audio, index) => (
                 <div
                   key={audio.title}
                   className="group relative rounded-lg border bg-card overflow-hidden hover:border-primary transition-colors cursor-pointer"
-                  onClick={() => handlePlayAudio(audio.url)}
+                  onClick={() => handlePlayAudio(audio.url, index)}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
-                      handlePlayAudio(audio.url);
+                      handlePlayAudio(audio.url, index);
                     }
                   }}
                   tabIndex={0}
@@ -507,6 +522,18 @@ export default function ExperiencePage() {
           </div>
         </div>
       </section>
+
+      {currentUrl && currentIndex !== null && audioContent[currentIndex] && (
+        <AudioPlayerWithSlider
+          isPlaying={isPlaying}
+          currentTrack={currentUrl}
+          title={audioContent[currentIndex].title}
+          onEnded={handleTrackEnded}
+          onPrevious={handlePrevTrack}
+          onNext={handleNextTrack}
+          onPlayPause={handlePlayPause}
+        />
+      )}
     </div>
   );
 }

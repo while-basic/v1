@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   title:
     "Christopher Celaya | Software Developer & Mechatronic Technician in El Paso, TX",
   description:
-    "El Paso's leading software developer and mechatronic technician. Expert in full-stack development, industrial automation, and system integration serving El Paso, Texas and surrounding areas.",
+    "Christopher Celaya - Leading AI, Machine Learning, and Industrial Automation expert in El Paso, Texas. Specializing in PLC/HMI programming, industrial maintenance, and data center operations. Serving El Paso, TX and Santa Teresa, NM.",
   keywords:
-    "Christopher Celaya, Software Developer El Paso, Mechatronic Technician El Paso, Full-Stack Developer El Paso, Industrial Automation Texas, React Developer El Paso, Node.js Developer El Paso, El Paso Tech, El Paso Software Engineer, El Paso Web Developer",
+    "Christopher Celaya, Chris Celaya, El Paso AI, artificial intelligence El Paso, machine learning Texas, ChatGPT integration, GPT-4 development, OpenAI solutions, PLC programming, HMI integration, industrial maintenance El Paso, industrial mechanic Texas, industrial technician, automation expert, electrical systems, mechanical systems, preventative maintenance, data center technician, Santa Teresa New Mexico, industrial IoT",
   authors: [{ name: "Christopher Celaya" }],
   creator: "Christopher Celaya",
   publisher: "Christopher Celaya",
@@ -30,6 +30,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   openGraph: {
@@ -39,22 +42,31 @@ export const metadata: Metadata = {
     title:
       "Christopher Celaya | Software Developer & Mechatronic Technician in El Paso, TX",
     description:
-      "El Paso's leading software developer and mechatronic technician. Expert in full-stack development, industrial automation, and system integration serving El Paso, Texas and surrounding areas.",
+      "Leading AI, Machine Learning, and Industrial Automation technician in El Paso, Texas. Specializing in PLC/HMI programming, industrial maintenance, and data center operations.",
     siteName: "Christopher Celaya",
+    images: [
+      {
+        url: "https://chriscelaya.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Christopher Celaya - AI & Industrial Automation Expert",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title:
       "Christopher Celaya | Software Developer & Mechatronic Technician in El Paso, TX",
     description:
-      "El Paso's leading software developer and mechatronic technician. Expert in full-stack development, industrial automation, and system integration.",
+      "El Paso software developer and mechatronic technician. Expert in full-stack development, industrial automation, and system integration.",
     creator: "@christophercelaya",
+    images: ["https://chriscelaya.com/og-image.jpg"],
   },
   alternates: {
     canonical: "https://chriscelaya.com",
   },
   verification: {
-    google: "YOUR_GOOGLE_VERIFICATION_ID", // You'll need to add your Google Search Console verification ID here
+    google: "YOUR_GOOGLE_VERIFICATION_ID",
   },
 };
 
