@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "buildCommand": "cd ../.. && bun install && cd apps/web && bun run build",
-  "installCommand": "cd ../.. && bun install",
+  "buildCommand": "cd ../.. && SENTRY_SKIP_BINARY_DOWNLOAD=true bun install && cd apps/web && bun run build",
+  "installCommand": "cd ../.. && SENTRY_SKIP_BINARY_DOWNLOAD=true bun install",
   "framework": "nextjs",
   "outputDirectory": ".next",
   "rewrites": [
     { "source": "/(.*)", "destination": "/$1" }
-  ]
+  ],
+  "env": {
+    "SENTRY_SKIP_BINARY_DOWNLOAD": "true"
+  }
 } 
