@@ -1,4 +1,4 @@
-import { Skeleton } from "@v1/ui/skeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function AudioLoading() {
   return (
