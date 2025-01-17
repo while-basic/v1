@@ -4,8 +4,6 @@
   "installCommand": "cd ../.. && bun install",
   "framework": "nextjs",
   "outputDirectory": ".next",
-  "monorepo": true,
-  "workspaceRoot": "../..",
   "rewrites": [
     { "source": "/(.*)", "destination": "/$1" }
   ]
