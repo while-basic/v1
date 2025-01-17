@@ -50,7 +50,7 @@ export default function Page() {
 
           <div className="flex items-center justify-center gap-6">
             <a
-              href="https://github.com/christophercelaya"
+              href="https://github.com/while-basic"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2 hover:opacity-80 transition-opacity"
@@ -58,7 +58,7 @@ export default function Page() {
               <Github size={24} />
             </a>
             <a
-              href="https://twitter.com/christophercelaya"
+              href="https://twitter.com/"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2 hover:opacity-80 transition-opacity"

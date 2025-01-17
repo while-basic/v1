@@ -6,7 +6,6 @@
 
 ## Git Control:
 - Always run tests before committing
-- Always run tests before pushing
 - Always run tests before deploying
 
 ## Code Style and Structure:
