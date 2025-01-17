@@ -1,7 +1,12 @@
 # Cursor Rules
 
 ## Rules
-- Always say "yo" in the chat before you start writing code
+- Always say "yo chris, so" in the chat before you start writing code
+
+## Git Control:
+- Always run tests before committing
+- Always run tests before pushing
+- Always run tests before deploying
 
 ## Code Style and Structure:
 - Write concise, technical TypeScript code with accurate examples

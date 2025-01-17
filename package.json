@@ -31,9 +31,5 @@
     "typescript": "^5.5.4"
   },
   "packageManager": "bun@1.1.26",
-  "trustedDependencies": [
-    "@biomejs/biome",
-    "@sentry/cli",
-    "protobufjs"
-  ]
+  "trustedDependencies": ["@biomejs/biome", "@sentry/cli", "protobufjs"]
 }

@@ -288,10 +288,10 @@ export default function AudioPage() {
               </div>
               <div>
                 <div className="font-medium">
-                  {tracks[currentTrack]?.title || 'No track selected'}
+                  {tracks[currentTrack]?.title || "No track selected"}
                 </div>
                 <div className="text-sm text-muted-foreground">
-                  {tracks[currentTrack]?.artist || 'Unknown artist'}
+                  {tracks[currentTrack]?.artist || "Unknown artist"}
                 </div>
               </div>
             </div>

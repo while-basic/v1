@@ -30,11 +30,12 @@ export default function AudioEngineering() {
             <div className="font-medium">Under Construction</div>
           </div>
           <div className="mt-2 text-sm text-muted-foreground">
-            This section is currently being enhanced. Music samples and portfolio pieces will be available soon. Check back for updates!
+            This section is currently being enhanced. Music samples and
+            portfolio pieces will be available soon. Check back for updates!
           </div>
         </div>
       </div>
-      
+
       {/* Hero Section with Animated Grid */}
       <div className="relative min-h-[80vh] pt-24 flex items-center">
         {/* Animated background with industrial pattern */}
@@ -84,7 +85,9 @@ export default function AudioEngineering() {
                     className="p-6 rounded-lg border bg-card hover:bg-primary/5 transition-all"
                   >
                     <metric.icon className="w-8 h-8 text-primary mb-4" />
-                    <div className="text-2xl font-bold mb-2">{metric.value}</div>
+                    <div className="text-2xl font-bold mb-2">
+                      {metric.value}
+                    </div>
                     <div className="text-muted-foreground">{metric.label}</div>
                   </div>
                 ))}
@@ -103,7 +106,9 @@ export default function AudioEngineering() {
                     {studioFeatures.map((feature) => (
                       <div key={feature.label} className="text-center">
                         <feature.icon className="w-6 h-6 text-primary mx-auto mb-2" />
-                        <div className="text-sm font-medium">{feature.label}</div>
+                        <div className="text-sm font-medium">
+                          {feature.label}
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -238,7 +243,6 @@ export default function AudioEngineering() {
     </main>
   );
 }
-
 
 const studioFeatures = [
   { icon: Headphones, label: "Pro Monitoring" },

@@ -66,7 +66,9 @@ export default function IndustrialTechnology() {
                     className="p-6 rounded-lg border bg-card hover:bg-primary/5 transition-all"
                   >
                     <metric.icon className="w-8 h-8 text-primary mb-4" />
-                    <div className="text-2xl font-bold mb-2">{metric.value}</div>
+                    <div className="text-2xl font-bold mb-2">
+                      {metric.value}
+                    </div>
                     <div className="text-muted-foreground">{metric.label}</div>
                   </div>
                 ))}

@@ -2,26 +2,60 @@ import { Button } from "@v1/ui/button";
 import { ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "About Christopher Celaya | Software Developer & Mechatronic Technician in El Paso",
-  description: "Learn about Christopher Celaya, a software developer and mechatronic technician in El Paso, Texas. Specializing in industrial automation, web development, and system integration.",
+  title:
+    "About Christopher Celaya | Software Developer & Mechatronic Technician in El Paso",
+  description:
+    "Learn about Christopher Celaya, a software developer and mechatronic technician in El Paso, Texas. Specializing in industrial automation, web development, and system integration.",
 };
 
 const technologies = [
   {
     title: "Software Development",
-    items: ["Python", "JavaScript/TypeScript", "React", "Node.js", "Next.js", "MongoDB", "Docker", "Git"],
+    items: [
+      "Python",
+      "JavaScript/TypeScript",
+      "React",
+      "Node.js",
+      "Next.js",
+      "MongoDB",
+      "Docker",
+      "Git",
+    ],
   },
   {
     title: "Industrial Automation",
-    items: ["PLCs", "SCADA", "HMIs", "Industrial IoT", "Robotic Processes", "Vision Inspection", "AGVs"],
+    items: [
+      "PLCs",
+      "SCADA",
+      "HMIs",
+      "Industrial IoT",
+      "Robotic Processes",
+      "Vision Inspection",
+      "AGVs",
+    ],
   },
   {
     title: "Mechanical Systems",
-    items: ["Chillers", "Hydraulics", "Compressors", "Air Handling", "Pneumatics", "Conveyors", "Cooling Towers"],
+    items: [
+      "Chillers",
+      "Hydraulics",
+      "Compressors",
+      "Air Handling",
+      "Pneumatics",
+      "Conveyors",
+      "Cooling Towers",
+    ],
   },
   {
     title: "Electrical Systems",
-    items: ["Power Distribution", "Transformers", "Circuit Breakers", "Electric Motors", "VFDs", "Control Panels"],
+    items: [
+      "Power Distribution",
+      "Transformers",
+      "Circuit Breakers",
+      "Electric Motors",
+      "VFDs",
+      "Control Panels",
+    ],
   },
 ];
 
@@ -44,13 +78,26 @@ export default function AboutPage() {
           <div className="space-y-6">
             <div className="prose dark:prose-invert">
               <p className="text-lg text-muted-foreground">
-                As a mechatronic technologist and software developer based in El Paso, Texas, I specialize in bridging the gap between industrial manufacturing and modern software solutions. With over 11 years of experience, I've developed a unique blend of skills in both hardware and software domains, allowing me to create comprehensive solutions for complex industrial challenges.
+                As a mechatronic technologist and software developer based in El
+                Paso, Texas, I specialize in bridging the gap between industrial
+                manufacturing and modern software solutions. With over 11 years
+                of experience, I've developed a unique blend of skills in both
+                hardware and software domains, allowing me to create
+                comprehensive solutions for complex industrial challenges.
               </p>
               <p className="text-lg text-muted-foreground">
-                My journey began in music production, where I honed my attention to detail and creative problem-solving abilities. During the COVID-19 pandemic, I successfully released my first album on major streaming platforms, demonstrating my ability to adapt and deliver results in changing circumstances.
+                My journey began in music production, where I honed my attention
+                to detail and creative problem-solving abilities. During the
+                COVID-19 pandemic, I successfully released my first album on
+                major streaming platforms, demonstrating my ability to adapt and
+                deliver results in changing circumstances.
               </p>
               <p className="text-lg text-muted-foreground">
-                Today, I focus on developing innovative solutions at the intersection of industrial automation and software development. My expertise spans from maintaining complex electromechanical systems to creating sophisticated software applications, always with an eye toward efficiency and reliability.
+                Today, I focus on developing innovative solutions at the
+                intersection of industrial automation and software development.
+                My expertise spans from maintaining complex electromechanical
+                systems to creating sophisticated software applications, always
+                with an eye toward efficiency and reliability.
               </p>
             </div>
 

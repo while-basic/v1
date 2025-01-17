@@ -15,9 +15,12 @@ const DepartureMono = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://chriscelaya.com"),
-  title: "Christopher Celaya | Software Developer & Mechatronic Technician in El Paso, TX",
-  description: "El Paso's leading software developer and mechatronic technician. Expert in full-stack development, industrial automation, and system integration serving El Paso, Texas and surrounding areas.",
-  keywords: "Christopher Celaya, Software Developer El Paso, Mechatronic Technician El Paso, Full-Stack Developer El Paso, Industrial Automation Texas, React Developer El Paso, Node.js Developer El Paso, El Paso Tech, El Paso Software Engineer, El Paso Web Developer",
+  title:
+    "Christopher Celaya | Software Developer & Mechatronic Technician in El Paso, TX",
+  description:
+    "El Paso's leading software developer and mechatronic technician. Expert in full-stack development, industrial automation, and system integration serving El Paso, Texas and surrounding areas.",
+  keywords:
+    "Christopher Celaya, Software Developer El Paso, Mechatronic Technician El Paso, Full-Stack Developer El Paso, Industrial Automation Texas, React Developer El Paso, Node.js Developer El Paso, El Paso Tech, El Paso Software Engineer, El Paso Web Developer",
   authors: [{ name: "Christopher Celaya" }],
   creator: "Christopher Celaya",
   publisher: "Christopher Celaya",
@@ -33,14 +36,18 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://chriscelaya.com",
-    title: "Christopher Celaya | Software Developer & Mechatronic Technician in El Paso, TX",
-    description: "El Paso's leading software developer and mechatronic technician. Expert in full-stack development, industrial automation, and system integration serving El Paso, Texas and surrounding areas.",
+    title:
+      "Christopher Celaya | Software Developer & Mechatronic Technician in El Paso, TX",
+    description:
+      "El Paso's leading software developer and mechatronic technician. Expert in full-stack development, industrial automation, and system integration serving El Paso, Texas and surrounding areas.",
     siteName: "Christopher Celaya",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Christopher Celaya | Software Developer & Mechatronic Technician in El Paso, TX",
-    description: "El Paso's leading software developer and mechatronic technician. Expert in full-stack development, industrial automation, and system integration.",
+    title:
+      "Christopher Celaya | Software Developer & Mechatronic Technician in El Paso, TX",
+    description:
+      "El Paso's leading software developer and mechatronic technician. Expert in full-stack development, industrial automation, and system integration.",
     creator: "@christophercelaya",
   },
   alternates: {

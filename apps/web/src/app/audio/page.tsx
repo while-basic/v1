@@ -146,7 +146,8 @@ export default function AudioPage() {
           <DialogHeader>
             <DialogTitle>Under Construction</DialogTitle>
             <DialogDescription>
-              The audio section is currently being enhanced. Music samples and portfolio pieces will be available soon. Check back for updates!
+              The audio section is currently being enhanced. Music samples and
+              portfolio pieces will be available soon. Check back for updates!
             </DialogDescription>
           </DialogHeader>
         </DialogContent>
@@ -184,7 +185,9 @@ export default function AudioPage() {
         <section className="py-24">
           <div className="container px-4 mx-auto">
             <div className="flex flex-col md:flex-row md:items-center justify-between mb-12">
-              <h2 className="text-3xl font-bold mb-6 md:mb-0">Featured Tracks</h2>
+              <h2 className="text-3xl font-bold mb-6 md:mb-0">
+                Featured Tracks
+              </h2>
               <div className="flex gap-4 flex-wrap">
                 <Button
                   variant={selectedCategory === null ? "default" : "outline"}
@@ -279,10 +282,10 @@ export default function AudioPage() {
                 </div>
                 <div>
                   <div className="font-medium">
-                    {currentTrackData?.title || 'No track selected'}
+                    {currentTrackData?.title || "No track selected"}
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    {currentTrackData?.artist || 'Unknown artist'}
+                    {currentTrackData?.artist || "Unknown artist"}
                   </div>
                 </div>
               </div>
@@ -295,7 +298,7 @@ export default function AudioPage() {
 
         <AudioPlayer
           isPlaying={isPlaying}
-          currentTrack={currentTrackData?.audioUrl || ''}
+          currentTrack={currentTrackData?.audioUrl || ""}
           onEnded={handleTrackEnded}
         />
       </div>

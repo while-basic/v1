@@ -233,11 +233,11 @@ const certifications = [
 
 export default function ExperiencePage() {
   const handleDownloadResume = () => {
-    window.open('/chris-celaya-resume.pdf', '_blank');
+    window.open("/chris-celaya-resume.pdf", "_blank");
   };
 
   const handleContact = () => {
-    window.location.href = 'mailto:chris@chriscelaya.com';
+    window.location.href = "mailto:chris@chriscelaya.com";
   };
 
   return (
@@ -262,7 +262,12 @@ export default function ExperiencePage() {
               <Button size="lg" className="gap-2" onClick={handleContact}>
                 <Mail className="w-4 h-4" /> Contact Me
               </Button>
-              <Button size="lg" variant="outline" className="gap-2" onClick={handleDownloadResume}>
+              <Button
+                size="lg"
+                variant="outline"
+                className="gap-2"
+                onClick={handleDownloadResume}
+              >
                 <Download className="w-4 h-4" /> Download Resume
               </Button>
             </div>
@@ -424,7 +429,12 @@ export default function ExperiencePage() {
               <Button size="lg" className="gap-2" onClick={handleContact}>
                 <Mail className="w-4 h-4" /> Contact Me
               </Button>
-              <Button size="lg" variant="outline" className="gap-2" onClick={handleDownloadResume}>
+              <Button
+                size="lg"
+                variant="outline"
+                className="gap-2"
+                onClick={handleDownloadResume}
+              >
                 <Download className="w-4 h-4" /> Download Resume
               </Button>
             </div>

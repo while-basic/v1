@@ -43,8 +43,9 @@ export default function SystemIntegration() {
                 </span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-xl">
-                Christopher Celaya specializes in industrial automation and control systems integration 
-                for factories, warehouses, cannabis facilities, data centers, and critical infrastructure.
+                Christopher Celaya specializes in industrial automation and
+                control systems integration for factories, warehouses, cannabis
+                facilities, data centers, and critical infrastructure.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button size="lg" className="gap-2">
@@ -80,7 +81,8 @@ export default function SystemIntegration() {
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-4">Core Competencies</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Christopher's comprehensive expertise in enterprise system integration and modern architecture
+            Christopher's comprehensive expertise in enterprise system
+            integration and modern architecture
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -176,12 +178,11 @@ export default function SystemIntegration() {
       <div className="bg-gradient-to-t from-background to-primary/5 py-24">
         <div className="container px-4 mx-auto">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">
-              Transform Your Facility
-            </h2>
+            <h2 className="text-3xl font-bold mb-6">Transform Your Facility</h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Connect with Christopher to discuss how industrial automation and system integration
-              can optimize your facility's operations and ensure regulatory compliance.
+              Connect with Christopher to discuss how industrial automation and
+              system integration can optimize your facility's operations and
+              ensure regulatory compliance.
             </p>
             <div className="flex gap-4 justify-center">
               <Button size="lg" className="gap-2">

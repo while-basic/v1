@@ -5,7 +5,7 @@ import { Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
 
 export default function ContactPage() {
   const handleEmailClick = () => {
-    window.location.href = 'mailto:chris@chriscelaya.com';
+    window.location.href = "mailto:chris@chriscelaya.com";
   };
 
   return (
@@ -18,7 +18,8 @@ export default function ContactPage() {
               Get in Touch
             </h1>
             <p className="text-xl text-muted-foreground mb-12">
-              I'm always open to discussing new opportunities and interesting projects.
+              I'm always open to discussing new opportunities and interesting
+              projects.
             </p>
           </div>
         </div>
@@ -32,18 +33,20 @@ export default function ContactPage() {
               {/* Contact Card */}
               <div className="p-8 rounded-lg border bg-card hover:border-primary transition-colors">
                 <div className="flex flex-col items-center text-center">
-                  <h2 className="text-2xl font-bold mb-4">Christopher Celaya</h2>
+                  <h2 className="text-2xl font-bold mb-4">
+                    Christopher Celaya
+                  </h2>
                   <div className="flex items-center gap-2 mb-4">
                     <Mail className="w-5 h-5 text-primary" />
-                    <a 
+                    <a
                       href="mailto:chris@chriscelaya.com"
                       className="text-lg hover:text-primary transition-colors"
                     >
                       chris@chriscelaya.com
                     </a>
                   </div>
-                  <Button 
-                    size="lg" 
+                  <Button
+                    size="lg"
                     className="gap-2 mt-6"
                     onClick={handleEmailClick}
                   >
@@ -56,9 +59,10 @@ export default function ContactPage() {
               {/* Additional Information */}
               <div className="mt-12 prose prose-gray dark:prose-invert max-w-none">
                 <p className="text-lg text-muted-foreground text-center">
-                  Whether you're interested in discussing a project, exploring collaboration opportunities,
-                  or just want to connect, I'd love to hear from you. Feel free to reach out through email
-                  and I'll get back to you as soon as possible.
+                  Whether you're interested in discussing a project, exploring
+                  collaboration opportunities, or just want to connect, I'd love
+                  to hear from you. Feel free to reach out through email and
+                  I'll get back to you as soon as possible.
                 </p>
               </div>
             </div>
@@ -67,4 +71,4 @@ export default function ContactPage() {
       </section>
     </div>
   );
-} 
+}

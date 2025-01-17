@@ -1,12 +1,8 @@
+import { cp } from "node:fs/promises";
 import { defineConfig } from "tsup";
-import { cp } from "fs/promises";
 
 export default defineConfig({
-  entry: [
-    "src/index.ts",
-    "src/components/*.tsx",
-    "src/utils/*.ts"
-  ],
+  entry: ["src/index.ts", "src/components/*.tsx", "src/utils/*.ts"],
   format: ["esm", "cjs"],
   dts: true,
   clean: true,
@@ -19,9 +15,9 @@ export default defineConfig({
     "class-variance-authority",
     "lucide-react",
     "tailwind-merge",
-    "tailwindcss-animate"
+    "tailwindcss-animate",
   ],
   onSuccess: async () => {
     await cp("src/globals.css", "dist/globals.css");
-  }
-}); 
+  },
+});
