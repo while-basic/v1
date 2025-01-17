@@ -24,42 +24,99 @@ export default function WebXRPage() {
       </a-plane>
 
       <!-- About Content -->
-      <a-entity position="0 2 -4">
+      <a-entity position="0 3 -4">
         <a-text value="About Me" align="center" color="#FFFFFF" scale="2 2 2"></a-text>
-        
-        <!-- Bio Text -->
-        <a-entity position="0 -1 0">
-          <a-text value="Full Stack Developer" align="center" color="#7B68EE" scale="1 1 1"></a-text>
-          <a-text value="with a passion for creating" align="center" color="#FFFFFF" position="0 -0.3 0" scale="1 1 1"></a-text>
-          <a-text value="innovative digital experiences" align="center" color="#7B68EE" position="0 -0.6 0" scale="1 1 1"></a-text>
-        </a-entity>
+      </a-entity>
 
-        <!-- Skills Showcase -->
-        <a-entity position="-3 -2 0">
-          <a-box width="2" height="2" depth="0.1" color="#7B68EE">
-            <a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+      <!-- Professional Background -->
+      <a-entity position="0 2 -4">
+        <a-text value="Professional Background" align="center" color="#7B68EE" scale="1.2 1.2 1.2"></a-text>
+        <a-text value="Mechatronic Technologist & Software Developer" align="center" color="#FFFFFF" position="0 -0.3 0"></a-text>
+        <a-text value="11+ years of experience in hardware and software" align="center" color="#FFFFFF" position="0 -0.6 0" scale="0.8 0.8 0.8"></a-text>
+      </a-entity>
+
+      <!-- Core Technologies -->
+      <a-entity position="0 0 -4">
+        <!-- Software Development -->
+        <a-entity position="-3 0 0" class="clickable" data-raycastable>
+          <a-box width="2" height="2" depth="0.1" color="#7B68EE"
+                 event-set__mouseenter="scale: 1.2 1.2 1.2"
+                 event-set__mouseleave="scale: 1 1 1">
+            <a-animation attribute="rotation" dur="15000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-box>
-          <a-text value="Technical Skills" align="center" color="#FFFFFF" position="0 -1.5 0"></a-text>
+          <a-text value="Software Development" align="center" color="#FFFFFF" position="0 -1.2 0"></a-text>
+          <a-text value="Python • TypeScript • React" align="center" color="#7B68EE" scale="0.6 0.6 0.6" position="0 -1.5 0"></a-text>
+          <a-text value="Node.js • Next.js • MongoDB" align="center" color="#7B68EE" scale="0.6 0.6 0.6" position="0 -1.7 0"></a-text>
+          <a-text value="Docker • Git" align="center" color="#7B68EE" scale="0.6 0.6 0.6" position="0 -1.9 0"></a-text>
         </a-entity>
 
-        <a-entity position="0 -2 0">
-          <a-sphere radius="1" color="#50C878">
-            <a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+        <!-- Industrial Automation -->
+        <a-entity position="0 0 0" class="clickable" data-raycastable>
+          <a-sphere radius="1" color="#50C878"
+                   event-set__mouseenter="scale: 1.2 1.2 1.2"
+                   event-set__mouseleave="scale: 1 1 1">
+            <a-animation attribute="rotation" dur="15000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-sphere>
-          <a-text value="Creative Work" align="center" color="#FFFFFF" position="0 -1.5 0"></a-text>
+          <a-text value="Industrial Automation" align="center" color="#FFFFFF" position="0 -1.2 0"></a-text>
+          <a-text value="PLCs • SCADA • HMIs" align="center" color="#50C878" scale="0.6 0.6 0.6" position="0 -1.5 0"></a-text>
+          <a-text value="Industrial IoT • Robotics" align="center" color="#50C878" scale="0.6 0.6 0.6" position="0 -1.7 0"></a-text>
+          <a-text value="Vision Inspection • AGVs" align="center" color="#50C878" scale="0.6 0.6 0.6" position="0 -1.9 0"></a-text>
         </a-entity>
 
-        <a-entity position="3 -2 0">
-          <a-cylinder height="2" radius="1" color="#FF6B6B">
-            <a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+        <!-- Mechanical & Electrical -->
+        <a-entity position="3 0 0" class="clickable" data-raycastable>
+          <a-cylinder height="2" radius="1" color="#FF6B6B"
+                     event-set__mouseenter="scale: 1.2 1.2 1.2"
+                     event-set__mouseleave="scale: 1 1 1">
+            <a-animation attribute="rotation" dur="15000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-cylinder>
-          <a-text value="Experience" align="center" color="#FFFFFF" position="0 -1.5 0"></a-text>
+          <a-text value="Systems" align="center" color="#FFFFFF" position="0 -1.2 0"></a-text>
+          <a-text value="Chillers • Hydraulics" align="center" color="#FF6B6B" scale="0.6 0.6 0.6" position="0 -1.5 0"></a-text>
+          <a-text value="Power Distribution • VFDs" align="center" color="#FF6B6B" scale="0.6 0.6 0.6" position="0 -1.7 0"></a-text>
+          <a-text value="Control Panels • Motors" align="center" color="#FF6B6B" scale="0.6 0.6 0.6" position="0 -1.9 0"></a-text>
+        </a-entity>
+      </a-entity>
+
+      <!-- Areas of Interest -->
+      <a-entity position="0 -2 -4">
+        <a-text value="Areas of Interest" align="center" color="#FFFFFF" scale="1.2 1.2 1.2"></a-text>
+        <a-entity position="-4 -0.5 0">
+          <a-box width="1.5" height="0.5" depth="0.1" color="#7B68EE">
+            <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+          </a-box>
+          <a-text value="Machine Learning" align="center" color="#FFFFFF" scale="0.6 0.6 0.6"></a-text>
+        </a-entity>
+        <a-entity position="-2 -0.5 0">
+          <a-box width="1.5" height="0.5" depth="0.1" color="#50C878">
+            <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+          </a-box>
+          <a-text value="AI" align="center" color="#FFFFFF" scale="0.6 0.6 0.6"></a-text>
+        </a-entity>
+        <a-entity position="0 -0.5 0">
+          <a-box width="1.5" height="0.5" depth="0.1" color="#FF6B6B">
+            <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+          </a-box>
+          <a-text value="Virtual Reality" align="center" color="#FFFFFF" scale="0.6 0.6 0.6"></a-text>
+        </a-entity>
+        <a-entity position="2 -0.5 0">
+          <a-box width="1.5" height="0.5" depth="0.1" color="#7B68EE">
+            <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+          </a-box>
+          <a-text value="Blockchain" align="center" color="#FFFFFF" scale="0.6 0.6 0.6"></a-text>
+        </a-entity>
+        <a-entity position="4 -0.5 0">
+          <a-box width="1.5" height="0.5" depth="0.1" color="#50C878">
+            <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+          </a-box>
+          <a-text value="Manufacturing" align="center" color="#FFFFFF" scale="0.6 0.6 0.6"></a-text>
         </a-entity>
       </a-entity>
 
       <!-- Back Button -->
       <a-entity position="0 1 2" class="clickable" data-link="/webxr" data-raycastable>
-        <a-ring color="#FFFFFF" radius-inner="0.5" radius-outer="0.7">
+        <a-ring color="#FFFFFF" radius-inner="0.5" radius-outer="0.7"
+               event-set__mouseenter="scale: 1.2 1.2 1.2"
+               event-set__mouseleave="scale: 1 1 1">
           <a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
         </a-ring>
         <a-text value="Back" align="center" color="#FFFFFF" position="0 -0.5 0"></a-text>
@@ -110,58 +167,63 @@ export default function WebXRPage() {
         <a-text value="Projects" align="center" color="#4CC3D9" scale="3 3 3"></a-text>
       </a-entity>
 
-      <!-- Project Displays -->
+      <!-- Project Categories -->
       <a-entity position="0 2 -4">
-        <!-- Project 1 -->
-        <a-entity position="-4 0 0" class="clickable project" data-link="/webxr/projects/full-stack" data-raycastable>
+        <!-- System Integration -->
+        <a-entity position="-4 0 0" class="clickable project" data-link="/projects/system-integration" data-raycastable>
           <a-box width="2.5" height="2" depth="0.1" color="#4CC3D9">
             <a-animation attribute="rotation" dur="15000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-box>
-          <a-text value="Full Stack Applications" align="center" color="#FFFFFF" position="0 -1.2 0"></a-text>
-          <a-text value="Next.js • React • Node.js" align="center" color="#4CC3D9" scale="0.5 0.5 0.5" position="0 -1.5 0"></a-text>
+          <a-text value="System Integration" align="center" color="#FFFFFF" position="0 -1.2 0"></a-text>
+          <a-text value="PLCs • SCADA • IoT" align="center" color="#4CC3D9" scale="0.5 0.5 0.5" position="0 -1.5 0"></a-text>
         </a-entity>
 
-        <!-- Project 2 -->
-        <a-entity position="0 0 0" class="clickable project" data-link="/webxr/projects/ai-ml" data-raycastable>
+        <!-- Software Development -->
+        <a-entity position="0 0 0" class="clickable project" data-link="/projects/software-development" data-raycastable>
           <a-box width="2.5" height="2" depth="0.1" color="#4CC3D9">
             <a-animation attribute="rotation" dur="15000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-box>
-          <a-text value="AI/ML Projects" align="center" color="#FFFFFF" position="0 -1.2 0"></a-text>
-          <a-text value="Python • TensorFlow • PyTorch" align="center" color="#4CC3D9" scale="0.5 0.5 0.5" position="0 -1.5 0"></a-text>
+          <a-text value="Software Development" align="center" color="#FFFFFF" position="0 -1.2 0"></a-text>
+          <a-text value="Web • Mobile • Desktop" align="center" color="#4CC3D9" scale="0.5 0.5 0.5" position="0 -1.5 0"></a-text>
         </a-entity>
 
-        <!-- Project 3 -->
-        <a-entity position="4 0 0" class="clickable project" data-link="/webxr/projects/webxr" data-raycastable>
+        <!-- Audio Engineering -->
+        <a-entity position="4 0 0" class="clickable project" data-link="/projects/audio-engineering" data-raycastable>
           <a-box width="2.5" height="2" depth="0.1" color="#4CC3D9">
             <a-animation attribute="rotation" dur="15000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-box>
-          <a-text value="WebXR Experiences" align="center" color="#FFFFFF" position="0 -1.2 0"></a-text>
-          <a-text value="A-Frame • Three.js • WebGL" align="center" color="#4CC3D9" scale="0.5 0.5 0.5" position="0 -1.5 0"></a-text>
+          <a-text value="Audio Engineering" align="center" color="#FFFFFF" position="0 -1.2 0"></a-text>
+          <a-text value="Music • Sound Design" align="center" color="#4CC3D9" scale="0.5 0.5 0.5" position="0 -1.5 0"></a-text>
         </a-entity>
       </a-entity>
 
-      <!-- Interactive Elements -->
-      <a-entity position="0 0 -4">
-        <!-- Project Details -->
-        <a-entity position="-4 -1 0" class="clickable" data-link="/webxr/projects/full-stack" data-raycastable>
+      <!-- Project Details -->
+      <a-entity position="0 -1 -4">
+        <!-- System Integration Details -->
+        <a-entity position="-4 0 0" class="clickable" data-raycastable>
           <a-cylinder height="0.2" radius="1" color="#4CC3D9">
             <a-animation attribute="rotation" dur="8000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-cylinder>
-          <a-text value="View Details" align="center" color="#FFFFFF" position="0 0.5 0"></a-text>
+          <a-text value="Industrial Automation" align="center" color="#FFFFFF" position="0 0.5 0"></a-text>
+          <a-text value="Manufacturing Solutions" align="center" color="#4CC3D9" scale="0.5 0.5 0.5" position="0 0.2 0"></a-text>
         </a-entity>
 
-        <a-entity position="0 -1 0" class="clickable" data-link="/webxr/projects/ai-ml" data-raycastable>
+        <!-- Software Development Details -->
+        <a-entity position="0 0 0" class="clickable" data-raycastable>
           <a-cylinder height="0.2" radius="1" color="#4CC3D9">
             <a-animation attribute="rotation" dur="8000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-cylinder>
-          <a-text value="View Details" align="center" color="#FFFFFF" position="0 0.5 0"></a-text>
+          <a-text value="Modern Web Apps" align="center" color="#FFFFFF" position="0 0.5 0"></a-text>
+          <a-text value="Full Stack Solutions" align="center" color="#4CC3D9" scale="0.5 0.5 0.5" position="0 0.2 0"></a-text>
         </a-entity>
 
-        <a-entity position="4 -1 0" class="clickable" data-link="/webxr/projects/webxr" data-raycastable>
+        <!-- Audio Engineering Details -->
+        <a-entity position="4 0 0" class="clickable" data-raycastable>
           <a-cylinder height="0.2" radius="1" color="#4CC3D9">
             <a-animation attribute="rotation" dur="8000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-cylinder>
-          <a-text value="View Details" align="center" color="#FFFFFF" position="0 0.5 0"></a-text>
+          <a-text value="Music Production" align="center" color="#FFFFFF" position="0 0.5 0"></a-text>
+          <a-text value="Audio Post-Production" align="center" color="#4CC3D9" scale="0.5 0.5 0.5" position="0 0.2 0"></a-text>
         </a-entity>
       </a-entity>
 
@@ -220,64 +282,64 @@ export default function WebXRPage() {
 
       <!-- Timeline -->
       <a-entity position="0 2.5 -4">
-        <!-- Experience 1 -->
+        <!-- Current Role -->
         <a-entity position="-4 0 0">
           <a-tetrahedron radius="0.5" color="#50C878">
             <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-tetrahedron>
-          <a-text value="Senior Developer" align="center" color="#FFFFFF" position="0 -0.8 0"></a-text>
+          <a-text value="Full Stack Developer" align="center" color="#FFFFFF" position="0 -0.8 0"></a-text>
           <a-text value="2020 - Present" align="center" color="#50C878" scale="0.5 0.5 0.5" position="0 -1.1 0"></a-text>
-          <a-text value="Tech Leadership" align="center" color="#FFFFFF" scale="0.5 0.5 0.5" position="0 -1.4 0"></a-text>
+          <a-text value="Web & Software Development" align="center" color="#FFFFFF" scale="0.5 0.5 0.5" position="0 -1.4 0"></a-text>
         </a-entity>
 
-        <!-- Experience 2 -->
+        <!-- Previous Role -->
         <a-entity position="0 0 0">
           <a-tetrahedron radius="0.5" color="#50C878">
             <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-tetrahedron>
-          <a-text value="Full Stack Developer" align="center" color="#FFFFFF" position="0 -0.8 0"></a-text>
-          <a-text value="2018 - 2020" align="center" color="#50C878" scale="0.5 0.5 0.5" position="0 -1.1 0"></a-text>
-          <a-text value="Web Applications" align="center" color="#FFFFFF" scale="0.5 0.5 0.5" position="0 -1.4 0"></a-text>
+          <a-text value="Mechatronic Technician" align="center" color="#FFFFFF" position="0 -0.8 0"></a-text>
+          <a-text value="2012 - 2020" align="center" color="#50C878" scale="0.5 0.5 0.5" position="0 -1.1 0"></a-text>
+          <a-text value="Industrial Automation" align="center" color="#FFFFFF" scale="0.5 0.5 0.5" position="0 -1.4 0"></a-text>
         </a-entity>
 
-        <!-- Experience 3 -->
+        <!-- Early Role -->
         <a-entity position="4 0 0">
           <a-tetrahedron radius="0.5" color="#50C878">
             <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-tetrahedron>
-          <a-text value="Software Engineer" align="center" color="#FFFFFF" position="0 -0.8 0"></a-text>
-          <a-text value="2016 - 2018" align="center" color="#50C878" scale="0.5 0.5 0.5" position="0 -1.1 0"></a-text>
-          <a-text value="System Architecture" align="center" color="#FFFFFF" scale="0.5 0.5 0.5" position="0 -1.4 0"></a-text>
+          <a-text value="Audio Engineer" align="center" color="#FFFFFF" position="0 -0.8 0"></a-text>
+          <a-text value="2010 - 2012" align="center" color="#50C878" scale="0.5 0.5 0.5" position="0 -1.1 0"></a-text>
+          <a-text value="Music Production" align="center" color="#FFFFFF" scale="0.5 0.5 0.5" position="0 -1.4 0"></a-text>
         </a-entity>
       </a-entity>
 
       <!-- Skills Section -->
       <a-entity position="0 0 -4">
-        <!-- Technical Skills -->
+        <!-- Development Skills -->
         <a-entity position="-3 0 0">
           <a-box width="2" height="0.1" depth="2" color="#50C878">
             <a-animation attribute="rotation" dur="8000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-box>
-          <a-text value="Technical Skills" align="center" color="#FFFFFF" position="0 0.5 0"></a-text>
-          <a-text value="Architecture • DevOps • Cloud" align="center" color="#50C878" scale="0.5 0.5 0.5" position="0 0.2 0"></a-text>
+          <a-text value="Development" align="center" color="#FFFFFF" position="0 0.5 0"></a-text>
+          <a-text value="Full Stack • Mobile • Desktop" align="center" color="#50C878" scale="0.5 0.5 0.5" position="0 0.2 0"></a-text>
         </a-entity>
 
-        <!-- Leadership -->
+        <!-- Industrial Skills -->
         <a-entity position="0 0 0">
           <a-box width="2" height="0.1" depth="2" color="#50C878">
             <a-animation attribute="rotation" dur="8000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-box>
-          <a-text value="Leadership" align="center" color="#FFFFFF" position="0 0.5 0"></a-text>
-          <a-text value="Team Lead • Mentoring • Agile" align="center" color="#50C878" scale="0.5 0.5 0.5" position="0 0.2 0"></a-text>
+          <a-text value="Industrial" align="center" color="#FFFFFF" position="0 0.5 0"></a-text>
+          <a-text value="Automation • Integration • IoT" align="center" color="#50C878" scale="0.5 0.5 0.5" position="0 0.2 0"></a-text>
         </a-entity>
 
-        <!-- Innovation -->
+        <!-- Creative Skills -->
         <a-entity position="3 0 0">
           <a-box width="2" height="0.1" depth="2" color="#50C878">
             <a-animation attribute="rotation" dur="8000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-box>
-          <a-text value="Innovation" align="center" color="#FFFFFF" position="0 0.5 0"></a-text>
-          <a-text value="R&D • AI/ML • WebXR" align="center" color="#50C878" scale="0.5 0.5 0.5" position="0 0.2 0"></a-text>
+          <a-text value="Creative" align="center" color="#FFFFFF" position="0 0.5 0"></a-text>
+          <a-text value="Audio • Design • Production" align="center" color="#50C878" scale="0.5 0.5 0.5" position="0 0.2 0"></a-text>
         </a-entity>
       </a-entity>
 
@@ -321,6 +383,12 @@ export default function WebXRPage() {
     scene.innerHTML = `
       <a-assets>
         <img id="grid" src="https://cdn.aframe.io/a-painter/images/floor.jpg" crossorigin="anonymous">
+        <audio id="hidden-efforts" src="/music/hidden-efforts.mp3" preload="auto"></audio>
+        <audio id="boom-bap" src="/music/boom-bap-classics.wav" preload="auto"></audio>
+        <audio id="johnny-quest" src="/music/johnny-quest-3023.mp3" preload="auto"></audio>
+        <audio id="blossom" src="/music/blossom.mp3" preload="auto"></audio>
+        <audio id="clouds" src="/music/clouds.mp3" preload="auto"></audio>
+        <audio id="syncope" src="/music/syncope.mp3" preload="auto"></audio>
       </a-assets>
 
       <!-- Environment -->
@@ -331,40 +399,70 @@ export default function WebXRPage() {
 
       <!-- Audio Title -->
       <a-entity position="0 4 -4">
-        <a-text value="Audio Production" align="center" color="#FF6B6B" scale="2 2 2"></a-text>
+        <a-text value="Music Production" align="center" color="#FF6B6B" scale="2 2 2"></a-text>
       </a-entity>
 
-      <!-- Audio Categories -->
+      <!-- Featured Tracks -->
       <a-entity position="0 2 -4">
-        <!-- Music Production -->
-        <a-entity position="-4 0 0" class="clickable" data-link="/webxr/audio/music" data-raycastable>
+        <!-- Track 1 -->
+        <a-entity position="-4 0 0" class="clickable" data-sound="src: #hidden-efforts" data-raycastable>
           <a-torus radius="1" radius-tubular="0.1" color="#FF6B6B">
             <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-torus>
-          <a-text value="Music Production" align="center" color="#FFFFFF" position="0 -1.5 0"></a-text>
-          <a-text value="Original Compositions" align="center" color="#FF6B6B" scale="0.5 0.5 0.5" position="0 -1.8 0"></a-text>
+          <a-text value="Hidden Efforts" align="center" color="#FFFFFF" position="0 -1.5 0"></a-text>
+          <a-text value="Electronic" align="center" color="#FF6B6B" scale="0.5 0.5 0.5" position="0 -1.8 0"></a-text>
         </a-entity>
 
-        <!-- Sound Design -->
-        <a-entity position="0 0 0" class="clickable" data-link="/webxr/audio/sound-design" data-raycastable>
+        <!-- Track 2 -->
+        <a-entity position="0 0 0" class="clickable" data-sound="src: #boom-bap" data-raycastable>
           <a-torus radius="1" radius-tubular="0.1" color="#FF6B6B">
             <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-torus>
-          <a-text value="Sound Design" align="center" color="#FFFFFF" position="0 -1.5 0"></a-text>
-          <a-text value="Audio Engineering" align="center" color="#FF6B6B" scale="0.5 0.5 0.5" position="0 -1.8 0"></a-text>
+          <a-text value="Boom Bap Classics" align="center" color="#FFFFFF" position="0 -1.5 0"></a-text>
+          <a-text value="Hip Hop" align="center" color="#FF6B6B" scale="0.5 0.5 0.5" position="0 -1.8 0"></a-text>
         </a-entity>
 
-        <!-- Live Performance -->
-        <a-entity position="4 0 0" class="clickable" data-link="/webxr/audio/live" data-raycastable>
+        <!-- Track 3 -->
+        <a-entity position="4 0 0" class="clickable" data-sound="src: #johnny-quest" data-raycastable>
           <a-torus radius="1" radius-tubular="0.1" color="#FF6B6B">
             <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
           </a-torus>
-          <a-text value="Live Performance" align="center" color="#FFFFFF" position="0 -1.5 0"></a-text>
-          <a-text value="Stage & Studio" align="center" color="#FF6B6B" scale="0.5 0.5 0.5" position="0 -1.8 0"></a-text>
+          <a-text value="Johnny Quest 3023" align="center" color="#FFFFFF" position="0 -1.5 0"></a-text>
+          <a-text value="Electronic" align="center" color="#FF6B6B" scale="0.5 0.5 0.5" position="0 -1.8 0"></a-text>
         </a-entity>
       </a-entity>
 
-      <!-- Audio Visualizer Elements -->
+      <!-- More Tracks -->
+      <a-entity position="0 -1 -4">
+        <!-- Track 4 -->
+        <a-entity position="-4 0 0" class="clickable" data-sound="src: #blossom" data-raycastable>
+          <a-torus radius="0.8" radius-tubular="0.1" color="#FF6B6B">
+            <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+          </a-torus>
+          <a-text value="Blossom" align="center" color="#FFFFFF" position="0 -1.2 0"></a-text>
+          <a-text value="Ambient" align="center" color="#FF6B6B" scale="0.5 0.5 0.5" position="0 -1.5 0"></a-text>
+        </a-entity>
+
+        <!-- Track 5 -->
+        <a-entity position="0 0 0" class="clickable" data-sound="src: #clouds" data-raycastable>
+          <a-torus radius="0.8" radius-tubular="0.1" color="#FF6B6B">
+            <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+          </a-torus>
+          <a-text value="Clouds" align="center" color="#FFFFFF" position="0 -1.2 0"></a-text>
+          <a-text value="Ambient" align="center" color="#FF6B6B" scale="0.5 0.5 0.5" position="0 -1.5 0"></a-text>
+        </a-entity>
+
+        <!-- Track 6 -->
+        <a-entity position="4 0 0" class="clickable" data-sound="src: #syncope" data-raycastable>
+          <a-torus radius="0.8" radius-tubular="0.1" color="#FF6B6B">
+            <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+          </a-torus>
+          <a-text value="Syncope" align="center" color="#FFFFFF" position="0 -1.2 0"></a-text>
+          <a-text value="Electronic" align="center" color="#FF6B6B" scale="0.5 0.5 0.5" position="0 -1.5 0"></a-text>
+        </a-entity>
+      </a-entity>
+
+      <!-- Audio Visualizer -->
       <a-entity position="0 0 -8">
         <!-- Center Visualizer -->
         <a-entity position="0 2 0">
@@ -474,33 +572,57 @@ export default function WebXRPage() {
                 <a-text value="Navigation Menu" align="center" color="#FFFFFF" scale="1.5 1.5 1.5" position="0 1.2 0"></a-text>
                 
                 <!-- Menu Items -->
-                <a-entity position="-2 0 0" class="clickable" data-link="/webxr/about" data-raycastable>
-                  <a-box width="1" height="0.5" depth="0.1" color="#7B68EE"
-                         animation="property: rotation; to: 0 360 0; loop: true; dur: 15000">
-                    <a-text value="About" align="center" color="#FFFFFF" position="0 0 0.06" scale="0.8 0.8 0.8"></a-text>
-                  </a-box>
-                </a-entity>
+                <!-- About -->
+                <a-box position="-2 0 0" 
+                       width="1" height="0.5" depth="0.1" 
+                       color="#7B68EE"
+                       class="clickable" 
+                       data-link="/webxr/about" 
+                       data-raycastable
+                       animation="property: rotation; to: 0 360 0; loop: true; dur: 15000"
+                       event-set__mouseenter="scale: 1.2 1.2 1.2"
+                       event-set__mouseleave="scale: 1 1 1">
+                  <a-text value="About" align="center" color="#FFFFFF" position="0 0 0.06" scale="0.8 0.8 0.8"></a-text>
+                </a-box>
 
-                <a-entity position="-0.67 0 0" class="clickable" data-link="/webxr/projects" data-raycastable>
-                  <a-box width="1" height="0.5" depth="0.1" color="#4CC3D9"
-                         animation="property: rotation; to: 0 360 0; loop: true; dur: 15000">
-                    <a-text value="Projects" align="center" color="#FFFFFF" position="0 0 0.06" scale="0.8 0.8 0.8"></a-text>
-                  </a-box>
-                </a-entity>
+                <!-- Projects -->
+                <a-box position="-0.67 0 0" 
+                       width="1" height="0.5" depth="0.1" 
+                       color="#4CC3D9"
+                       class="clickable" 
+                       data-link="/webxr/projects" 
+                       data-raycastable
+                       animation="property: rotation; to: 0 360 0; loop: true; dur: 15000"
+                       event-set__mouseenter="scale: 1.2 1.2 1.2"
+                       event-set__mouseleave="scale: 1 1 1">
+                  <a-text value="Projects" align="center" color="#FFFFFF" position="0 0 0.06" scale="0.8 0.8 0.8"></a-text>
+                </a-box>
 
-                <a-entity position="0.67 0 0" class="clickable" data-link="/webxr/experience" data-raycastable>
-                  <a-box width="1" height="0.5" depth="0.1" color="#50C878"
-                         animation="property: rotation; to: 0 360 0; loop: true; dur: 15000">
-                    <a-text value="Experience" align="center" color="#FFFFFF" position="0 0 0.06" scale="0.8 0.8 0.8"></a-text>
-                  </a-box>
-                </a-entity>
+                <!-- Experience -->
+                <a-box position="0.67 0 0" 
+                       width="1" height="0.5" depth="0.1" 
+                       color="#50C878"
+                       class="clickable" 
+                       data-link="/webxr/experience" 
+                       data-raycastable
+                       animation="property: rotation; to: 0 360 0; loop: true; dur: 15000"
+                       event-set__mouseenter="scale: 1.2 1.2 1.2"
+                       event-set__mouseleave="scale: 1 1 1">
+                  <a-text value="Experience" align="center" color="#FFFFFF" position="0 0 0.06" scale="0.8 0.8 0.8"></a-text>
+                </a-box>
 
-                <a-entity position="2 0 0" class="clickable" data-link="/webxr/audio" data-raycastable>
-                  <a-box width="1" height="0.5" depth="0.1" color="#FF6B6B"
-                         animation="property: rotation; to: 0 360 0; loop: true; dur: 15000">
-                    <a-text value="Audio" align="center" color="#FFFFFF" position="0 0 0.06" scale="0.8 0.8 0.8"></a-text>
-                  </a-box>
-                </a-entity>
+                <!-- Audio -->
+                <a-box position="2 0 0" 
+                       width="1" height="0.5" depth="0.1" 
+                       color="#FF6B6B"
+                       class="clickable" 
+                       data-link="/webxr/audio" 
+                       data-raycastable
+                       animation="property: rotation; to: 0 360 0; loop: true; dur: 15000"
+                       event-set__mouseenter="scale: 1.2 1.2 1.2"
+                       event-set__mouseleave="scale: 1 1 1">
+                  <a-text value="Audio" align="center" color="#FFFFFF" position="0 0 0.06" scale="0.8 0.8 0.8"></a-text>
+                </a-box>
               </a-entity>
 
               <!-- Welcome Text -->
@@ -563,25 +685,42 @@ export default function WebXRPage() {
 
       // Add click event listeners after the scene is loaded
       scene.addEventListener('loaded', () => {
-        const clickables = document.querySelectorAll('.clickable');
-        clickables.forEach((element) => {
-          element.addEventListener('click', (event) => {
-            const link = element.getAttribute('data-link');
-            if (link) {
-              router.push(link);
-            }
-          });
+        // Wait a bit for all components to initialize
+        setTimeout(() => {
+          const clickables = document.querySelectorAll('.clickable');
+          clickables.forEach((element) => {
+            // Add click event listener
+            element.addEventListener('click', (event) => {
+              event.stopPropagation();
+              const link = element.getAttribute('data-link');
+              if (link) {
+                console.log('Clicked element:', element);
+                console.log('Navigating to:', link);
+                window.location.href = link;
+              }
+            });
 
-          // Add hover effect
-          element.addEventListener('mouseenter', () => {
-            const scale = element.getAttribute('scale') || '1 1 1';
-            element.setAttribute('scale', '1.1 1.1 1.1');
-          });
+            // Add cursor-related event listeners
+            element.addEventListener('mouseenter', () => {
+              console.log('Mouse enter:', element);
+              element.setAttribute('scale', '1.2 1.2 1.2');
+            });
 
-          element.addEventListener('mouseleave', () => {
-            element.setAttribute('scale', '1 1 1');
+            element.addEventListener('mouseleave', () => {
+              console.log('Mouse leave:', element);
+              element.setAttribute('scale', '1 1 1');
+            });
+
+            // Add fusing event listeners for VR mode
+            element.addEventListener('fusing', () => {
+              console.log('Fusing:', element);
+            });
+
+            element.addEventListener('click', () => {
+              console.log('Clicked:', element);
+            });
           });
-        });
+        }, 1000);
       });
 
       const container = document.getElementById('aframe-container');
@@ -607,11 +746,15 @@ export default function WebXRPage() {
     <>
       <Script 
         src="https://aframe.io/releases/1.4.0/aframe.min.js"
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
       <Script 
         src="https://unpkg.com/aframe-gradient-sky@1.4.0/dist/aframe-gradient-sky.min.js"
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
+      />
+      <Script 
+        src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"
+        strategy="afterInteractive"
       />
       <div id="aframe-container" style={{ width: "100vw", height: "100vh" }} />
     </>
