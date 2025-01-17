@@ -20,10 +20,10 @@
       }
     ],
     "paths": {
-    "@/*": ["./*"],
-  "@v1/*": ["src/v1/*"]
+      "@/*": ["./*"],
+      "@v1/supabase/*": ["packages/supabase/src/*"],
+      "@v1/ui/*": ["packages/ui/src/*"]
 }
-
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
