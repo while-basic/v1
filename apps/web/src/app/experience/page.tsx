@@ -16,7 +16,10 @@ import {
   Settings,
   Wrench,
   WrenchIcon,
+  Play,
+  Pause,
 } from "lucide-react";
+import { useState } from "react";
 
 interface WorkExperience {
   title: string;
@@ -33,6 +36,7 @@ interface AudioContent {
   title: string;
   duration: string;
   url: string;
+  image: string;
 }
 
 const workExperience: WorkExperience[] = [
@@ -142,12 +146,14 @@ const audioContent: AudioContent[] = [
   {
     title: "AI Podcast | Cover Letter",
     duration: "3:56",
-    url: "#",
+    url: "/cover-letter.wav",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop",
   },
   {
     title: "AI Podcast | Resume",
     duration: "6:43",
-    url: "#",
+    url: "/resume.wav",
+    image: "https://images.unsplash.com/photo-1684163761859-461e23727b24?q=80&w=800&auto=format&fit=crop",
   },
 ];
 
@@ -157,6 +163,7 @@ const skills = {
     "JavaScript",
     "Java",
     "C",
+    "C++",
     "C#",
     "HTML",
     "CSS",
@@ -232,12 +239,43 @@ const certifications = [
 ];
 
 export default function ExperiencePage() {
+  const [currentAudio, setCurrentAudio] = useState<HTMLAudioElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentUrl, setCurrentUrl] = useState<string | null>(null);
+
   const handleDownloadResume = () => {
     window.open("/chris-celaya-resume.pdf", "_blank");
   };
 
   const handleContact = () => {
     window.location.href = "mailto:chris@chriscelaya.com";
+  };
+
+  const handlePlayAudio = (url: string) => {
+    // If clicking the same audio that's currently playing, pause it
+    if (currentUrl === url && isPlaying && currentAudio) {
+      currentAudio.pause();
+      setIsPlaying(false);
+      return;
+    }
+
+    // If there's a different audio playing, stop it
+    if (currentAudio) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+    }
+
+    // Play the new audio
+    const audio = new Audio(url);
+    audio.addEventListener('ended', () => {
+      setIsPlaying(false);
+      setCurrentUrl(null);
+    });
+    
+    audio.play();
+    setCurrentAudio(audio);
+    setCurrentUrl(url);
+    setIsPlaying(true);
   };
 
   return (
@@ -271,18 +309,46 @@ export default function ExperiencePage() {
                 <Download className="w-4 h-4" /> Download Resume
               </Button>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {audioContent.map((audio) => (
                 <div
                   key={audio.title}
-                  className="p-4 rounded-lg border bg-card"
+                  className="group relative rounded-lg border bg-card overflow-hidden hover:border-primary transition-colors cursor-pointer"
+                  onClick={() => handlePlayAudio(audio.url)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      handlePlayAudio(audio.url);
+                    }
+                  }}
+                  tabIndex={0}
+                  role="button"
                 >
-                  <div className="flex items-center gap-3 mb-2">
-                    <PlayCircle className="w-6 h-6 text-primary" />
-                    <h3 className="font-medium">{audio.title}</h3>
+                  <div 
+                    className="aspect-[2/1] relative bg-cover bg-center"
+                    style={{ backgroundImage: `url(${audio.image})` }}
+                  >
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors">
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-100 group-hover:scale-110 transition">
+                          {isPlaying && currentUrl === audio.url ? (
+                            <Pause className="w-6 h-6" />
+                          ) : (
+                            <Play className="w-6 h-6 ml-0.5" />
+                          )}
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="text-sm text-muted-foreground">
-                    Duration: {audio.duration}
+                  <div className="p-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-lg font-semibold">{audio.title}</h3>
+                    </div>
+                    <div className="flex items-center justify-between text-sm text-muted-foreground">
+                      <div className="flex items-center gap-2">
+                        <Headphones className="w-4 h-4" />
+                        <span>Duration: {audio.duration}</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}
