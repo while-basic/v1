@@ -1,16 +1,16 @@
-{
-  "version": 2,
-  "buildCommand": "cd ../.. && rm -rf node_modules/@sentry && NODE_ENV=production bun install --no-optional && cd apps/web && bun run build",
-  "installCommand": "cd ../.. && rm -rf node_modules/@sentry && NODE_ENV=production bun install --no-optional",
-  "framework": "nextjs",
-  "outputDirectory": ".next",
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/$1" }
-  ],
-  "env": {
-    "NODE_ENV": "production",
-    "NEXT_PUBLIC_SENTRY_DSN": "",
-    "SENTRY_DISABLE_AUTO_INIT": "true",
-    "SENTRY_SKIP_BINARY_DOWNLOAD": "true"
-  }
-} 
+// {
+//   "version": 2,
+//   "buildCommand": "cd ../.. && rm -rf node_modules/@sentry && NODE_ENV=production bun install --no-optional && cd apps/web && bun run build",
+//   "installCommand": "cd ../.. && rm -rf node_modules/@sentry && NODE_ENV=production bun install --no-optional",
+//   "framework": "nextjs",
+//   "outputDirectory": ".next",
+//   "rewrites": [
+//     { "source": "/(.*)", "destination": "/$1" }
+//   ],
+//   "env": {
+//     "NODE_ENV": "production",
+//     "NEXT_PUBLIC_SENTRY_DSN": "",
+//     "SENTRY_DISABLE_AUTO_INIT": "true",
+//     "SENTRY_SKIP_BINARY_DOWNLOAD": "true"
+//   }
+// } 

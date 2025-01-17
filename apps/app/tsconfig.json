@@ -21,7 +21,9 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@v1/supabase/*": ["../../packages/supabase/src/*"],
+      "@v1/ui/*": ["../../packages/ui/src/*"]
     }
   },
   "include": [
