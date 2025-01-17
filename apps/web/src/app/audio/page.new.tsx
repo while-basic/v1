@@ -181,7 +181,7 @@ export default function AudioPage() {
                 </>
               ) : (
                 <>
-                  <Play className="w-5 h-5" /> Play Featured Track
+                  <Play className="w-5 h-5" /> Play Random Track
                 </>
               )}
             </Button>
@@ -193,7 +193,7 @@ export default function AudioPage() {
       <section className="py-24">
         <div className="container px-4 mx-auto">
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-12">
-            <h2 className="text-3xl font-bold mb-6 md:mb-0">Featured Tracks</h2>
+            <h2 className="text-3xl font-bold mb-6 md:mb-0">Music Catalog</h2>
             <div className="flex gap-4 flex-wrap">
               <Button
                 variant={selectedCategory === null ? "default" : "outline"}
