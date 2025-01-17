@@ -76,29 +76,40 @@ export default function AboutPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="space-y-6">
-            <div className="prose dark:prose-invert">
-              <p className="text-lg text-muted-foreground">
-                As a mechatronic technologist and software developer based in El
-                Paso, Texas, I specialize in bridging the gap between industrial
-                manufacturing and modern software solutions. With over 11 years
-                of experience, I've developed a unique blend of skills in both
-                hardware and software domains, allowing me to create
-                comprehensive solutions for complex industrial challenges.
-              </p>
-              <p className="text-lg text-muted-foreground">
-                My journey began in music production, where I honed my attention
-                to detail and creative problem-solving abilities. During the
-                COVID-19 pandemic, I successfully released my first album on
-                major streaming platforms, demonstrating my ability to adapt and
-                deliver results in changing circumstances.
-              </p>
-              <p className="text-lg text-muted-foreground">
-                Today, I focus on developing innovative solutions at the
-                intersection of industrial automation and software development.
-                My expertise spans from maintaining complex electromechanical
-                systems to creating sophisticated software applications, always
-                with an eye toward efficiency and reliability.
-              </p>
+            <div className="prose dark:prose-invert max-w-none space-y-6">
+              <section className="space-y-4">
+                <h2 className="text-2xl font-semibold text-primary">Professional Background</h2>
+                <p className="text-lg leading-relaxed text-muted-foreground">
+                  As a mechatronic technologist and software developer based in El
+                  Paso, Texas, I specialize in bridging the gap between industrial
+                  manufacturing and modern software solutions. With over 11 years
+                  of experience, I've developed a unique blend of skills in both
+                  hardware and software domains, allowing me to create
+                  comprehensive solutions for complex industrial challenges.
+                </p>
+              </section>
+
+              <section className="space-y-4">
+                <h2 className="text-2xl font-semibold text-primary">Musical Journey</h2>
+                <p className="text-lg leading-relaxed text-muted-foreground">
+                  My journey began in music production, where I honed my attention
+                  to detail and creative problem-solving abilities. During the
+                  COVID-19 pandemic, I successfully released my first album on
+                  major streaming platforms, demonstrating my ability to adapt and
+                  deliver results in changing circumstances.
+                </p>
+              </section>
+
+              <section className="space-y-4">
+                <h2 className="text-2xl font-semibold text-primary">Current Focus</h2>
+                <p className="text-lg leading-relaxed text-muted-foreground">
+                  Today, I focus on developing innovative solutions at the
+                  intersection of industrial automation and software development.
+                  My expertise spans from maintaining complex electromechanical
+                  systems to creating sophisticated software applications, always
+                  with an eye toward efficiency and reliability.
+                </p>
+              </section>
             </div>
 
             <div className="flex justify-start">
