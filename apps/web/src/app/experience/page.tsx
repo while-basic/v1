@@ -294,31 +294,171 @@ export default function ExperiencePage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      {/* Hero Section */}
-      <section className="relative h-[50vh] flex items-center justify-center rounded-3xl overflow-hidden mb-12">
-        {/* Background layers */}
-        <div 
-          className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center"
-          style={{ backgroundPosition: "center 40%" }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/50 to-background/95" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-secondary/20" />
-        
-        {/* Content */}
-        <div className="container px-4 mx-auto relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary drop-shadow-sm">
-              Experience
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 drop-shadow-lg max-w-2xl mx-auto">
-              A journey through my professional career, showcasing key projects and achievements in software development and audio production.
+    <div className="min-h-screen pt-16">
+      <div className="container px-4 mx-auto py-12">
+        <div className="flex flex-col md:flex-row justify-between items-start mb-8">
+          <div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Experience</h1>
+            <p className="text-lg text-muted-foreground max-w-2xl">
+              Over a decade of hands-on experience in industrial automation, software development,
+              and system integration. My career spans from maintaining complex manufacturing systems
+              to developing modern software solutions.
             </p>
           </div>
+          <Button onClick={handleDownloadResume} className="mt-4 md:mt-0 gap-2">
+            Download Resume <Download size={16} />
+          </Button>
         </div>
-      </section>
 
-      {/* Rest of the experience page content */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Work Experience Section */}
+          <div className="lg:col-span-2 space-y-8">
+            <div>
+              <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
+                <LineChart className="h-6 w-6" /> Work Experience
+              </h2>
+              <div className="space-y-8">
+                {workExperience.map((job, index) => (
+                  <div
+                    key={index}
+                    className="p-6 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="p-2 rounded-lg bg-primary/10">
+                        <job.icon className="h-6 w-6 text-primary" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-xl font-semibold">{job.title}</h3>
+                        <p className="text-muted-foreground">
+                          {job.company} • {job.period}
+                        </p>
+                        <p className="text-sm text-muted-foreground mb-4">
+                          {job.location}
+                        </p>
+                        <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground mb-4">
+                          {job.responsibilities.map((resp, idx) => (
+                            <li key={idx}>{resp}</li>
+                          ))}
+                        </ul>
+                        {job.technologies && (
+                          <div className="flex flex-wrap gap-2">
+                            {job.technologies.map((tech, idx) => (
+                              <span
+                                key={idx}
+                                className="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Right Sidebar */}
+          <div className="space-y-8">
+            {/* Audio Content */}
+            <div>
+              <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
+                <Headphones className="h-6 w-6" /> Audio Content
+              </h2>
+              <div className="space-y-4">
+                {audioContent.map((content, index) => (
+                  <AudioPlayerWithSlider
+                    key={index}
+                    isPlaying={currentIndex === index && isPlaying}
+                    currentTrack={content.url}
+                    title={content.title}
+                    onEnded={() => {
+                      setIsPlaying(false);
+                      setCurrentIndex(null);
+                      setCurrentUrl(null);
+                    }}
+                    onPlayPause={() => {
+                      if (currentIndex === index) {
+                        setIsPlaying(!isPlaying);
+                      } else {
+                        setCurrentIndex(index);
+                        setCurrentUrl(content.url);
+                        setIsPlaying(true);
+                      }
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Skills Section */}
+            <div>
+              <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
+                <Award className="h-6 w-6" /> Skills
+              </h2>
+              <div className="space-y-6">
+                {Object.entries(skills).map(([category, items]) => (
+                  <div key={category}>
+                    <h3 className="text-lg font-medium capitalize mb-3">
+                      {category.replace("_", " ")}
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {items.map((skill, idx) => (
+                        <span
+                          key={idx}
+                          className="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Education Section */}
+            <div>
+              <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
+                <GraduationCap className="h-6 w-6" /> Education
+              </h2>
+              <div className="space-y-4">
+                {education.map((edu, index) => (
+                  <div
+                    key={index}
+                    className="p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+                  >
+                    <h3 className="font-medium">{edu.degree}</h3>
+                    <p className="text-sm text-muted-foreground">
+                      {edu.institution}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Certifications Section */}
+            <div>
+              <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
+                <Medal className="h-6 w-6" /> Certifications
+              </h2>
+              <div className="space-y-4">
+                {certifications.map((cert, index) => (
+                  <div
+                    key={index}
+                    className="p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+                  >
+                    <h3 className="font-medium">{cert.name}</h3>
+                    <p className="text-sm text-muted-foreground">{cert.issuer}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
