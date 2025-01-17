@@ -17,7 +17,6 @@ import {
   Wrench,
   WrenchIcon,
 } from "lucide-react";
-import Image from "next/image";
 
 interface WorkExperience {
   title: string;
@@ -208,12 +207,16 @@ const skills = {
 
 const education = [
   {
-    degree: "Computer Programming & Computer Science",
+    degree: "Electrical Engineering & Computer Science",
     institution: "El Paso Community College",
   },
   {
     degree: "Electrical Engineering",
     institution: "University of Texas at El Paso",
+  },
+  {
+    degree: "Accounting & Finance",
+    institution: "University of Texas at Austin",
   },
 ];
 
@@ -229,6 +232,14 @@ const certifications = [
 ];
 
 export default function ExperiencePage() {
+  const handleDownloadResume = () => {
+    window.open('/chris-celaya-resume.pdf', '_blank');
+  };
+
+  const handleContact = () => {
+    window.location.href = 'mailto:chris@chriscelaya.com';
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -248,10 +259,10 @@ export default function ExperiencePage() {
               maintenance and industrial manufacturing.
             </p>
             <div className="flex gap-4 justify-center mb-12">
-              <Button size="lg" className="gap-2">
+              <Button size="lg" className="gap-2" onClick={handleContact}>
                 <Mail className="w-4 h-4" /> Contact Me
               </Button>
-              <Button size="lg" variant="outline" className="gap-2">
+              <Button size="lg" variant="outline" className="gap-2" onClick={handleDownloadResume}>
                 <Download className="w-4 h-4" /> Download Resume
               </Button>
             </div>
@@ -410,10 +421,10 @@ export default function ExperiencePage() {
               success.
             </p>
             <div className="flex gap-4 justify-center">
-              <Button size="lg" className="gap-2">
+              <Button size="lg" className="gap-2" onClick={handleContact}>
                 <Mail className="w-4 h-4" /> Contact Me
               </Button>
-              <Button size="lg" variant="outline" className="gap-2">
+              <Button size="lg" variant="outline" className="gap-2" onClick={handleDownloadResume}>
                 <Download className="w-4 h-4" /> Download Resume
               </Button>
             </div>

@@ -32,107 +32,339 @@ interface Project {
   details?: string[];
 }
 
-const projects: Project[] = [
-  {
-    title: "Industrial IoT Platform",
-    description: "Real-time monitoring and predictive maintenance system for manufacturing equipment using IoT sensors and machine learning.",
-    category: "Industrial Automation",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-    githubUrl: "https://github.com/christophercelaya/iiot-platform",
-    technologies: ["Python", "TensorFlow", "React", "Node.js", "AWS IoT", "MongoDB"],
-    featured: true,
-    details: [
-      "Real-time data collection from 100+ IoT sensors",
-      "Predictive maintenance algorithms with 95% accuracy",
-      "Custom dashboard for equipment monitoring",
-      "Automated alert system for maintenance teams"
-    ]
-  },
-  {
-    title: "VR Training Simulator",
-    description: "Immersive virtual reality training platform for industrial operators with realistic equipment simulations.",
-    category: "Virtual Reality",
-    image: "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac",
-    liveUrl: "https://vr-training-demo.com",
-    technologies: ["Unity", "C#", "WebXR", "Three.js", "WebGL", "TypeScript"],
-    featured: true,
-    details: [
-      "Interactive 3D equipment models",
-      "Step-by-step training procedures",
-      "Performance tracking and analytics",
-      "Multi-user training sessions"
-    ]
-  },
-  {
-    title: "Smart Factory Dashboard",
-    description: "Comprehensive manufacturing analytics dashboard for real-time production monitoring and optimization.",
-    category: "Industrial Automation",
-    image: "https://images.unsplash.com/photo-1581092335397-9583eb92d232",
-    liveUrl: "https://factory-dashboard.demo",
-    technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "Docker", "Grafana"],
-    featured: true,
-    details: [
-      "Real-time production metrics",
-      "Quality control monitoring",
-      "Resource utilization tracking",
-      "Automated reporting system"
-    ]
-  },
-  {
-    title: "Blockchain Supply Chain",
-    description: "Decentralized supply chain management system using blockchain technology for transparency and traceability.",
-    category: "Blockchain",
-    image: "https://images.unsplash.com/photo-1561414927-6d86591d0c4f",
-    githubUrl: "https://github.com/christophercelaya/blockchain-supply",
-    technologies: ["Solidity", "React", "Web3.js", "Node.js", "IPFS", "Ethereum"],
-    details: [
-      "Smart contract automation",
-      "Real-time tracking system",
-      "Supplier verification",
-      "Digital documentation"
-    ]
-  },
-  {
-    title: "AI Quality Inspector",
-    description: "Computer vision system for automated quality control in manufacturing processes.",
-    category: "Machine Learning",
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e",
-    technologies: ["Python", "OpenCV", "TensorFlow", "PyTorch", "Docker", "FastAPI"],
-    details: [
-      "Real-time defect detection",
-      "Automated quality reporting",
-      "Integration with PLC systems",
-      "Custom vision algorithms"
-    ]
-  },
-  {
-    title: "Energy Management System",
-    description: "Smart energy monitoring and optimization platform for industrial facilities.",
-    category: "Industrial Automation",
-    image: "https://images.unsplash.com/photo-1548337138-e87d889cc369",
-    technologies: ["Python", "InfluxDB", "React", "Node.js", "MQTT", "Grafana"],
-    details: [
-      "Real-time energy monitoring",
-      "Predictive load balancing",
-      "Cost optimization algorithms",
-      "Automated reporting"
-    ]
-  }
-];
-
 const categories = [
   "All",
-  "Industrial Automation",
-  "Virtual Reality",
-  "Machine Learning",
-  "Blockchain",
+  "AI & Machine Learning",
+  "Web Development",
+  "Game Development",
+  "3D & Animation",
+  "Healthcare"
 ];
 
-const stats = [
-  { value: "50+", label: "Projects Completed" },
-  { value: "15+", label: "Industrial Clients" },
-  { value: "99.9%", label: "System Uptime" },
-  { value: "24/7", label: "Support Coverage" },
+const projects: Project[] = [
+  {
+    title: "Med-Chat",
+    description: "An AI-powered healthcare assistant designed to help medical professionals with patient care, diagnosis suggestions, and medical literature recommendations.",
+    category: "Healthcare",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef",
+    githubUrl: "https://github.com/christophercelaya/med-chat",
+    liveUrl: "https://med-chat.celayasolutions.com",
+    technologies: ["Python", "OpenAI", "React", "Next.js", "Tailwind", "Supabase"],
+    featured: true,
+    details: [
+      "Real-time medical assistance",
+      "Integration with medical databases",
+      "Secure patient data handling",
+      "Custom medical knowledge base",
+      "HIPAA compliance"
+    ]
+  },
+  {
+    title: "Midi Saber",
+    description: "A VR rhythm game that combines lightsaber combat with music, turning MIDI files into dynamic gameplay elements.",
+    category: "Game Development",
+    image: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620",
+    technologies: ["Unity", "C#", "MIDI.js", "VR Toolkit", "Blender", "Steam VR"],
+    details: [
+      "Dynamic MIDI integration",
+      "Custom VR controls",
+      "Real-time beat mapping",
+      "Multiplayer support",
+      "Cross-platform VR compatibility"
+    ]
+  },
+  {
+    title: "Law-GPT",
+    description: "An AI-powered legal assistant that helps lawyers and legal professionals with case research, document analysis, and legal precedent search.",
+    category: "AI & Machine Learning",
+    image: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73",
+    githubUrl: "https://github.com/christophercelaya/law-gpt",
+    technologies: ["Python", "GPT-4", "TypeScript", "Next.js", "Prisma", "PostgreSQL"],
+    featured: true,
+    details: [
+      "Legal document analysis",
+      "Case law research",
+      "Automated document generation",
+      "Legal precedent matching",
+      "Secure data encryption"
+    ]
+  },
+  {
+    title: "AI Tamagotchi",
+    description: "A modern take on the classic virtual pet, powered by AI to create more dynamic and personalized pet interactions.",
+    category: "AI & Machine Learning",
+    image: "https://images.unsplash.com/photo-1614729939124-032f0b56c9ce",
+    githubUrl: "https://github.com/christophercelaya/ai-tamagotchi",
+    technologies: ["React Native", "TensorFlow.js", "Node.js", "WebGL", "Three.js"],
+    details: [
+      "Personality evolution",
+      "Emotional AI system",
+      "Interactive 3D graphics",
+      "Cross-platform support",
+      "Real-time pet behavior adaptation"
+    ]
+  },
+  {
+    title: "ChatterSync",
+    description: "Real-time natural language translation platform with support for multiple languages and dialects.",
+    category: "AI & Machine Learning",
+    image: "https://images.unsplash.com/photo-1545987796-200677ee1011",
+    technologies: ["Python", "WebRTC", "React", "FastAPI", "TensorFlow", "WebSocket"],
+    details: [
+      "Real-time translation",
+      "Voice recognition",
+      "Multi-language support",
+      "Low latency processing",
+      "Dialect recognition"
+    ]
+  },
+  {
+    title: "Celaya Solutions",
+    description: "Corporate website and service platform showcasing software development and consulting services.",
+    category: "Web Development",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+    liveUrl: "https://celayasolutions.com",
+    technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "Vercel"],
+    details: [
+      "Modern UI/UX design",
+      "Responsive layout",
+      "Service integration",
+      "Performance optimization",
+      "SEO optimization"
+    ]
+  },
+  {
+    title: "Stable Diffusion Artwork",
+    description: "A platform for creating, showcasing, and trading AI-generated artwork using Stable Diffusion.",
+    category: "AI & Machine Learning",
+    image: "https://images.unsplash.com/photo-1580927752452-89d86da3fa0a",
+    technologies: ["Stable Diffusion", "Python", "CUDA", "PyTorch", "React"],
+    details: [
+      "Generative artwork creation",
+      "NFT integration",
+      "Artist marketplace",
+      "Custom model training",
+      "Style transfer capabilities"
+    ]
+  },
+  {
+    title: "Amica Medical",
+    description: "Healthcare management platform for medical practices, focusing on patient care and practice administration.",
+    category: "Healthcare",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d",
+    technologies: ["React", "Node.js", "PostgreSQL", "Docker", "AWS", "HIPAA Compliance"],
+    details: [
+      "Patient management",
+      "Appointment scheduling",
+      "Medical records",
+      "Billing integration",
+      "Insurance verification"
+    ]
+  },
+  {
+    title: "Top Level Blockchain Domain Name Service",
+    description: "A decentralized top-level domain name service for blockchain domains.",
+    category: "Web Development",
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0",
+    githubUrl: "",
+    liveUrl: "",
+    technologies: ["Polygon", "Solidity", "Web3.js", "React", "Node.js"],
+    featured: false,
+    details: [
+      "Top-level domain name service",
+      "Blockchain domain registration",
+      "Decentralized DNS",
+      "Smart contract integration",
+      "Multi-chain support"
+    ]
+  },
+  {
+    title: "3D Animation Portfolio",
+    description: "A collection of 3D animations and visual effects created for various projects.",
+    category: "3D & Animation",
+    image: "https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2",
+    githubUrl: "",
+    liveUrl: "", 
+    technologies: ["Blender", "3D Animation", "Python", "After Effects"],
+    featured: false,
+    details: [
+      "Photorealistic materials and textures",
+      "Realistic lighting and camera angles",
+      "Particle effects",
+      "Character rigging and animation",
+      "Motion graphics"
+    ]
+  },
+  {
+    title: "Forest Environment",
+    description: "A fully immersive forest environment created using Unreal Engine 5 with dynamic weather and lighting.",
+    category: "Game Development",
+    image: "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d",
+    githubUrl: "",
+    liveUrl: "",
+    technologies: ["Unreal Engine 5", "C++", "Blueprints", "Quixel Megascans"],
+    featured: false,
+    details: [
+      "Fully immersive forest environment",
+      "Dynamic weather system",
+      "Realistic lighting and shadows",
+      "Advanced particle effects",
+      "Procedural vegetation"
+    ]
+  },
+  {
+    title: "Cross-Platform Game",
+    description: "A multi-platform adventure game developed using Unity with cross-platform save functionality.",
+    category: "Game Development",
+    image: "https://images.unsplash.com/photo-1556438064-2d7646166914",
+    githubUrl: "",
+    liveUrl: "",
+    technologies: ["Unity", "C#", "Blender", "Firebase"], 
+    featured: false,
+    details: [
+      "Cross-platform compatibility",
+      "Cloud save system",
+      "Advanced AI pathfinding",
+      "Custom shader effects",
+      "Integrated analytics"
+    ]
+  },
+  {
+    title: "Gemini Pro Vision",
+    description: "An interactive website leveraging Google's Gemini Pro Vision API for advanced image analysis and generation.",
+    category: "AI & Machine Learning",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
+    githubUrl: "",
+    liveUrl: "",
+    technologies: ["Gemini", "React", "Next.js", "Tailwind", "Vercel"], 
+    featured: false,
+    details: [
+      "AI-powered image analysis",
+      "Voice recognition integration",
+      "Real-time text to speech",
+      "Multimodal model support",
+      "Advanced image processing"
+    ]
+  },
+  {
+    title: "chriscelaya.com",
+    description: "Professional portfolio website showcasing projects, skills, and services.",
+    category: "Web Development",
+    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8",
+    githubUrl: "",
+    liveUrl: "https://chriscelaya.com",
+    technologies: ["Next.js", "TypeScript", "Tailwind", "Vercel"], 
+    featured: false,
+    details: [
+      "Professional portfolio",
+      "Project showcase",
+      "Interactive UI elements",
+      "Contact form integration",
+      "Advanced SEO optimization"
+    ]
+  },
+  {
+    title: "chriscelaya.xyz",
+    description: "Personal blog and experimental project showcase with interactive features.",
+    category: "Web Development",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
+    githubUrl: "",
+    liveUrl: "https://chriscelaya.xyz",
+    technologies: ["Next.js", "TypeScript", "Tailwind", "Vercel"], 
+    featured: false,
+    details: [
+      "Personal blog platform",
+      "Interactive project demos",
+      "Dynamic content loading",
+      "Performance optimization",
+      "Analytics integration"
+    ]
+  },
+  {
+    title: "Dead Rose Online Store",
+    description: "A full-featured e-commerce platform for the Dead Rose brand with advanced shopping features.",
+    category: "Web Development",
+    image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc",
+    githubUrl: "",
+    liveUrl: "",
+    technologies: ["Next.js", "TypeScript", "Tailwind", "Stripe", "Vercel"], 
+    featured: true,
+    details: [
+      "Full e-commerce functionality",
+      "Inventory management",
+      "Secure payment processing",
+      "User authentication",
+      "Order tracking system"
+    ]
+  },
+  {
+    title: "AI Chatbot Dashboard",
+    description: "A comprehensive chatbot management system with advanced analytics and user management.",
+    category: "Web Development",
+    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a",
+    githubUrl: "",
+    liveUrl: "",
+    technologies: ["Next.js", "TypeScript", "Tailwind", "OpenAI", "Vercel"], 
+    featured: false,
+    details: [
+      "Multi-user authentication",
+      "Real-time chat functionality",
+      "Analytics dashboard",
+      "Conversation history",
+      "Bot training interface"
+    ]
+  },
+  {
+    title: "El Paso Hearts",
+    description: "A modern dating platform specifically designed for the El Paso community.",
+    category: "Web Development",
+    image: "https://images.unsplash.com/photo-1517292987719-0369a794ec0f",
+    githubUrl: "",
+    liveUrl: "",
+    technologies: ["Next.js", "TypeScript", "Tailwind", "Firebase", "Vercel"], 
+    featured: false,
+    details: [
+      "Location-based matching",
+      "Real-time messaging",
+      "Profile verification",
+      "Event organization",
+      "Community features"
+    ]
+  },
+  {
+    title: "Mental Health Assistant",
+    description: "An AI-powered platform providing mental health support and resources to users.",
+    category: "AI & Machine Learning",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef",
+    githubUrl: "",
+    liveUrl: "",
+    technologies: ["Python", "OpenAI", "React", "Next.js", "Tailwind", "Supabase"], 
+    featured: false,
+    details: [
+      "Personalized AI assistance",
+      "Resource recommendations",
+      "Progress tracking",
+      "Crisis intervention protocols",
+      "Professional referral system"
+    ]
+  },
+  {
+    title: "Digital Illustrations Portfolio",
+    description: "A curated collection of digital artwork and illustrations showcasing various styles and techniques.",
+    category: "Digital Illustrations",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe",
+    githubUrl: "",
+    liveUrl: "",
+    technologies: ["Figma", "Vectornator", "Procreate", "Adobe Creative Suite"], 
+    featured: false,
+    details: [
+      "Vector illustrations",
+      "Digital paintings",
+      "Character designs",
+      "Brand illustrations",
+      "Motion graphics"
+    ]
+  },
 ];
 
 const skills = [
@@ -173,7 +405,7 @@ export default function ProjectsPage() {
               Featured Projects
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Innovative solutions in industrial automation, software development, and system integration.
+              Exploring the intersection of AI, healthcare, gaming, and web technologies through innovative full-stack solutions.
             </p>
           </div>
         </div>
@@ -332,22 +564,6 @@ export default function ProjectsPage() {
                     )}
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16 bg-gradient-to-b from-background to-primary/5">
-        <div className="container px-4 mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-4xl font-bold text-primary mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-muted-foreground">{stat.label}</div>
               </div>
             ))}
           </div>
