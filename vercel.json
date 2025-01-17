@@ -3,8 +3,10 @@
   "buildCommand": "cd ../.. && bun install && cd apps/web && bun run build",
   "installCommand": "cd ../.. && bun install",
   "framework": "nextjs",
-  "outputDirectory": "apps/web/.next",
+  "outputDirectory": ".next",
   "monorepo": true,
   "workspaceRoot": "../..",
-  "ignoreCommand": "git diff HEAD^ HEAD --quiet ./"
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/$1" }
+  ]
 } 
