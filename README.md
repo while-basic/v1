@@ -145,6 +145,7 @@ cp apps/app/.env.example apps/app/.env
 cp apps/web/.env.example apps/web/.env
 ```
 4. Start the development server from either bun or turbo:
+
 ## Contributing
 ```ts
 bun dev // starts everything in development mode (web, app, api, email)
@@ -152,9 +153,14 @@ bun dev:web // starts the web app in development mode
 bun dev:app // starts the app in development mode
 bun dev:api // starts the api in development mode
 bun dev:email // starts the email app in development mode
+```
+
 ## License
+
 // Database
+```ts
 bun migrate // run migrations
 bun seed // run seed
 ```
+
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
