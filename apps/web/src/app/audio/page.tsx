@@ -1,6 +1,6 @@
 "use client";
 
-import { AudioPlayer } from "@/components/audio-player";
+import { AudioPlayerWithSlider } from "@/components/audio-player-with-slider";
 import { Button } from "@v1/ui/button";
 import {
   Dialog,
@@ -15,96 +15,15 @@ import {
   SkipBack,
   SkipForward,
   Volume2,
-  Youtube,
 } from "lucide-react";
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-
-interface Track {
-  title: string;
-  artist: string;
-  duration: string;
-  cover: string;
-  description?: string;
-  category: string;
-  audioUrl: string;
-}
-
-interface VideoContent {
-  title: string;
-  description: string;
-  youtubeId: string;
-  thumbnailUrl?: string;
-}
-
-const tracks: Track[] = [
-  {
-    title: "Ambient Dreams",
-    artist: "Christopher Celaya",
-    duration: "3:45",
-    cover: "/music/ambient-dreams.jpg",
-    description:
-      "A journey through atmospheric soundscapes and ethereal textures.",
-    category: "Electronic",
-    audioUrl: "/music/ambient-dreams.mp3",
-  },
-  {
-    title: "Electronic Journey",
-    artist: "Christopher Celaya",
-    duration: "4:20",
-    cover: "/music/electronic-journey.jpg",
-    description:
-      "Modern electronic beats mixed with classic synthesizer sounds.",
-    category: "Electronic",
-    audioUrl: "/music/electronic-journey.mp3",
-  },
-  {
-    title: "Midnight Synthesis",
-    artist: "Christopher Celaya",
-    duration: "5:15",
-    cover: "/music/midnight-synthesis.jpg",
-    description: "Deep, evolving synthesizer textures with ambient undertones.",
-    category: "Ambient",
-    audioUrl: "/music/midnight-synthesis.mp3",
-  },
-  {
-    title: "Urban Echoes",
-    artist: "Christopher Celaya",
-    duration: "4:30",
-    cover: "/music/urban-echoes.jpg",
-    description:
-      "City-inspired rhythms blended with atmospheric field recordings.",
-    category: "Experimental",
-    audioUrl: "/music/urban-echoes.mp3",
-  },
-  {
-    title: "Digital Dreams",
-    artist: "Christopher Celaya",
-    duration: "6:10",
-    cover: "/music/digital-dreams.jpg",
-    description:
-      "An exploration of generative music and algorithmic composition.",
-    category: "Experimental",
-    audioUrl: "/music/digital-dreams.mp3",
-  },
-  {
-    title: "Neural Waves",
-    artist: "Christopher Celaya",
-    duration: "4:45",
-    cover: "/music/neural-waves.jpg",
-    description:
-      "AI-assisted composition merging human creativity with machine learning.",
-    category: "Electronic",
-    audioUrl: "/music/neural-waves.mp3",
-  },
-];
+import { tracks } from "./constants";
 
 export default function AudioPage() {
   const [isDialogOpen, setIsDialogOpen] = useState(true);
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const audioRef = useRef<HTMLAudioElement>(null);
 
   const handleTrackEnded = () => {
     handleNextTrack();
@@ -224,13 +143,19 @@ export default function AudioPage() {
                   role="button"
                 >
                   <div className="aspect-video relative bg-gradient-to-br from-primary/10 to-secondary/10">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-16 h-16 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                        {currentTrackIndex === index && isPlaying ? (
-                          <Pause className="w-8 h-8" />
-                        ) : (
-                          <Play className="w-8 h-8 ml-1" />
-                        )}
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center"
+                      style={{ backgroundImage: `url(${track.cover})` }}
+                    />
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors">
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-16 h-16 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                          {currentTrackIndex === index && isPlaying ? (
+                            <Pause className="w-8 h-8" />
+                          ) : (
+                            <Play className="w-8 h-8 ml-1" />
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -256,50 +181,15 @@ export default function AudioPage() {
         </section>
 
         {/* Persistent Player */}
-        <div className="fixed bottom-0 left-0 right-0 bg-background/80 backdrop-blur-xl border-t">
-          <div className="container px-4 mx-auto">
-            <div className="flex items-center justify-between h-20">
-              <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2">
-                  <Button variant="ghost" size="icon" onClick={handlePrevTrack}>
-                    <SkipBack className="w-5 h-5" />
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="w-10 h-10 rounded-full"
-                    onClick={togglePlay}
-                  >
-                    {isPlaying ? (
-                      <Pause className="w-5 h-5" />
-                    ) : (
-                      <Play className="w-5 h-5 ml-0.5" />
-                    )}
-                  </Button>
-                  <Button variant="ghost" size="icon" onClick={handleNextTrack}>
-                    <SkipForward className="w-5 h-5" />
-                  </Button>
-                </div>
-                <div>
-                  <div className="font-medium">
-                    {currentTrackData?.title || "No track selected"}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    {currentTrackData?.artist || "Unknown artist"}
-                  </div>
-                </div>
-              </div>
-              <Button variant="ghost" size="icon">
-                <Volume2 className="w-5 h-5" />
-              </Button>
-            </div>
-          </div>
-        </div>
-
-        <AudioPlayer
+        <AudioPlayerWithSlider
           isPlaying={isPlaying}
           currentTrack={currentTrackData?.audioUrl || ""}
+          title={currentTrackData?.title || "No track selected"}
+          artist={currentTrackData?.artist}
           onEnded={handleTrackEnded}
+          onPrevious={handlePrevTrack}
+          onNext={handleNextTrack}
+          onPlayPause={togglePlay}
         />
       </div>
     </>

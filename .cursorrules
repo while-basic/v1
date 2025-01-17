@@ -1,7 +1,8 @@
 # Cursor Rules
 
 ## Rules
-- Always say "yo chris, so" in the chat before you start writing code
+- Always say "yo chris, so" in the chat before you start working
+- Always run tests before committing
 
 ## Git Control:
 - Always run tests before committing
