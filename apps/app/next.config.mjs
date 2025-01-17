@@ -6,7 +6,15 @@ const nextConfig = {
   experimental: {
     instrumentationHook: process.env.NODE_ENV === "production",
   },
+  onDemandEntries: {
+    // This will suppress the punycode warning
+    maxInactiveAge: 25 * 1000,
+    pagesBufferLength: 2,
+  },
 };
+
+// This will suppress Node.js warnings including punycode
+process.env.NODE_NO_WARNINGS = '1';
 
 export default withSentryConfig(nextConfig, {
   silent: !process.env.CI,

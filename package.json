@@ -37,5 +37,9 @@
   },
   "packageManager": "bun@1.1.26",
   "trustedDependencies": ["@biomejs/biome", "@sentry/cli", "protobufjs"],
-  "convert-audio": "cd apps/web/scripts && npm run convert"
+  "convert-audio": "cd apps/web/scripts && npm run convert",
+  "dependencies": {
+    "@react-email/components": "^0.0.32",
+    "resend": "^4.1.1"
+  }
 }

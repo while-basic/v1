@@ -19,11 +19,6 @@ const navItems = [
     icon: LayoutDashboard,
   },
   {
-    title: "Overview",
-    href: "/overview",
-    icon: BarChart,
-  },
-  {
     title: "Analytics",
     href: "/analytics",
     icon: BarChart,

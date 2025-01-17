@@ -195,6 +195,17 @@ export default function WebXRPage() {
           <a-text value="Audio Engineering" align="center" color="#FFFFFF" position="0 -1.2 0"></a-text>
           <a-text value="Music • Sound Design" align="center" color="#4CC3D9" scale="0.5 0.5 0.5" position="0 -1.5 0"></a-text>
         </a-entity>
+
+        <!-- A-Blast Game -->
+        <a-entity position="0 -3 0" class="clickable project" data-link="/a-blast" data-raycastable
+                  event-set__mouseenter="scale: 1.2 1.2 1.2"
+                  event-set__mouseleave="scale: 1 1 1">
+          <a-box width="2.5" height="2" depth="0.1" color="#FF6B6B">
+            <a-animation attribute="rotation" dur="15000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+          </a-box>
+          <a-text value="A-Blast" align="center" color="#FFFFFF" position="0 -1.2 0"></a-text>
+          <a-text value="WebVR FPS Game" align="center" color="#FF6B6B" scale="0.5 0.5 0.5" position="0 -1.5 0"></a-text>
+        </a-entity>
       </a-entity>
 
       <!-- Project Details -->
@@ -547,6 +558,9 @@ export default function WebXRPage() {
         case '/webxr/audio':
           scene = createAudioScene();
           break;
+        case '/a-blast':
+          window.location.href = '/a-blast';
+          return;
         default:
           // Create main scene for the home page
           scene = document.createElement('a-scene');
@@ -573,7 +587,7 @@ export default function WebXRPage() {
                 
                 <!-- Menu Items -->
                 <!-- About -->
-                <a-box position="-2 0 0" 
+                <a-box position="-2.67 0 0" 
                        width="1" height="0.5" depth="0.1" 
                        color="#7B68EE"
                        class="clickable" 
@@ -586,7 +600,7 @@ export default function WebXRPage() {
                 </a-box>
 
                 <!-- Projects -->
-                <a-box position="-0.67 0 0" 
+                <a-box position="-1.34 0 0" 
                        width="1" height="0.5" depth="0.1" 
                        color="#4CC3D9"
                        class="clickable" 
@@ -599,7 +613,7 @@ export default function WebXRPage() {
                 </a-box>
 
                 <!-- Experience -->
-                <a-box position="0.67 0 0" 
+                <a-box position="0 0 0" 
                        width="1" height="0.5" depth="0.1" 
                        color="#50C878"
                        class="clickable" 
@@ -612,7 +626,7 @@ export default function WebXRPage() {
                 </a-box>
 
                 <!-- Audio -->
-                <a-box position="2 0 0" 
+                <a-box position="1.34 0 0" 
                        width="1" height="0.5" depth="0.1" 
                        color="#FF6B6B"
                        class="clickable" 
@@ -622,6 +636,19 @@ export default function WebXRPage() {
                        event-set__mouseenter="scale: 1.2 1.2 1.2"
                        event-set__mouseleave="scale: 1 1 1">
                   <a-text value="Audio" align="center" color="#FFFFFF" position="0 0 0.06" scale="0.8 0.8 0.8"></a-text>
+                </a-box>
+
+                <!-- A-Blast -->
+                <a-box position="2.67 0 0" 
+                       width="1" height="0.5" depth="0.1" 
+                       color="#FF4444"
+                       class="clickable" 
+                       data-link="/a-blast/index.html" 
+                       data-raycastable
+                       animation="property: rotation; to: 0 360 0; loop: true; dur: 15000"
+                       event-set__mouseenter="scale: 1.2 1.2 1.2"
+                       event-set__mouseleave="scale: 1 1 1">
+                  <a-text value="A-Blast" align="center" color="#FFFFFF" position="0 0 0.06" scale="0.8 0.8 0.8"></a-text>
                 </a-box>
               </a-entity>
 
