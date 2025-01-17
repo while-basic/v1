@@ -20,6 +20,7 @@
     }
   },
   "formatter": {
+    "ignore": [".next/**", ".turbo/**"],
     "indentStyle": "space"
   }
 }
