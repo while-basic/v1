@@ -185,8 +185,10 @@ export default function SoftwareDevelopment() {
               with modern technologies and best practices.
             </p>
             <div className="flex gap-4 justify-center">
-              <Button size="lg" className="gap-2">
-                Schedule Consultation <ArrowRight className="w-4 h-4" />
+              <Button size="lg" className="gap-2" asChild>
+                <a href="https://cal.com/chriscelaya/30min" target="_blank" rel="noreferrer">
+                  Schedule Consultation <ArrowRight className="w-4 h-4" />
+                </a>
               </Button>
               <Button size="lg" variant="outline">
                 View Case Studies
