@@ -45,7 +45,7 @@ export const tracks: Track[] = [
   },
   {
     title: "Blossom",
-    artist: "C-Cell",
+    artist: "C-Cell & PAZ",
     duration: "3:55",
     cover: "https://images.unsplash.com/photo-1571974599782-87624638275e?q=80&w=800&auto=format&fit=crop",
     description: "Melodic composition with organic elements and flowing progression.",
@@ -72,7 +72,7 @@ export const tracks: Track[] = [
   },
   {
     title: "Clouds",
-    artist: "C-Cell",
+    artist: "C-Cell & PAZ",
     duration: "4:25",
     cover: "https://images.unsplash.com/photo-1519138130-85a949fdcb4f?q=80&w=800&auto=format&fit=crop",
     description: "Boom bap track with a smooth vibe.",
@@ -81,7 +81,7 @@ export const tracks: Track[] = [
   },
   {
     title: "Johnny Quest 3023",
-    artist: "C-Cell",
+    artist: "C-Cell & PAZ",
     duration: "3:50",
     cover: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=800&auto=format&fit=crop",
     description: "Indian style beats with cartoon samples.",
@@ -90,7 +90,7 @@ export const tracks: Track[] = [
   },
   {
     title: "Creep",
-    artist: "C-Cell",
+    artist: "C-Cell & PAZ",
     duration: "3:30",
     cover: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=800&auto=format&fit=crop",
     description: "Dark and explicit rap track composition.",
@@ -99,7 +99,7 @@ export const tracks: Track[] = [
   },
   {
     title: "Don't You Wanna",
-    artist: "C-Cell",
+    artist: "C-Cell & Ghost",
     duration: "3:45",
     cover: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=800&auto=format&fit=crop",
     description: "Groovy pop soul track with catchy vocals.",
