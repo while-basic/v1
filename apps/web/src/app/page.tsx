@@ -42,7 +42,7 @@ export default function Page() {
               </a>
             </Button>
             <Button size="lg" variant="outline" className="gap-2" asChild>
-              <a href="/resume.pdf">
+              <a href="/chris-celaya-resume.pdf">
                 Download Resume <Download size={16} />
               </a>
             </Button>
@@ -74,7 +74,7 @@ export default function Page() {
               <Linkedin size={24} />
             </a>
             <a
-              href="mailto:hello@chriscelaya.com"
+              href="mailto:chris@chriscelaya.com"
               className="flex items-center gap-2 hover:opacity-80 transition-opacity"
             >
               <Mail size={24} />
