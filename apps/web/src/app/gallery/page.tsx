@@ -243,9 +243,9 @@ export default function GalleryPage() {
 
             {/* Mobile Swipe Indicator */}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1 md:hidden">
-              {galleryItems.map((_, index) => (
+              {galleryItems.map((item, index) => (
                 <div
-                  key={index}
+                  key={item.id}
                   className={`h-1.5 rounded-full transition-all duration-300 ${
                     index === currentIndex
                       ? "w-6 bg-white"
@@ -266,14 +266,17 @@ export default function GalleryPage() {
                     {galleryItems[currentIndex].description}
                   </p>
                   <div className="flex flex-wrap gap-2 justify-center">
-                    {galleryItems[currentIndex].tags.map((tag) => (
-                      <span
-                        key={`${galleryItems[currentIndex].id}-${tag}`}
-                        className="px-3 py-1 bg-accent rounded-full text-sm"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                    {galleryItems[currentIndex].tags.map((tag) => {
+                      const key = `${galleryItems[currentIndex]?.id ?? ""}-${tag}`;
+                      return (
+                        <span
+                          key={key}
+                          className="px-3 py-1 bg-accent rounded-full text-sm"
+                        >
+                          {tag}
+                        </span>
+                      );
+                    })}
                   </div>
                 </>
               )}
@@ -285,12 +288,19 @@ export default function GalleryPage() {
         <section className="py-12">
           <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
             {galleryItems.map((item, index) => (
-              <div
+              <button
+                type="button"
                 key={item.id}
-                className={`relative aspect-square rounded-lg overflow-hidden cursor-pointer ${
+                className={`relative aspect-square rounded-lg overflow-hidden ${
                   index === currentIndex ? "ring-2 ring-primary" : ""
                 }`}
                 onClick={() => setCurrentIndex(index)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    setCurrentIndex(index);
+                  }
+                }}
+                aria-label={`View ${item.title}`}
               >
                 <Image
                   src={item.imageUrl}
@@ -305,7 +315,7 @@ export default function GalleryPage() {
                     index === currentIndex ? "bg-black/10" : ""
                   }`}
                 />
-              </div>
+              </button>
             ))}
           </div>
         </section>
