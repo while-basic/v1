@@ -79,6 +79,12 @@ export function Header() {
               Audio
             </Link>
             <Link
+              href="/gallery"
+              className="text-sm hover:text-primary transition-colors"
+            >
+              Gallery
+            </Link>
+            <Link
               href="/contact"
               className="text-sm hover:text-primary transition-colors"
             >

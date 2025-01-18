@@ -24,6 +24,7 @@ const navItems: NavItem[] = [
   { title: "Software Development", href: "/software-development" },
   { title: "Industrial Technology", href: "/industrial-technology" },
   { title: "Audio Engineering", href: "/audio-engineering" },
+  { title: "Gallery", href: "/gallery" },
   { title: "Contact", href: "/contact" },
 ];
 
