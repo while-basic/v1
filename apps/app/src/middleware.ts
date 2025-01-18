@@ -11,7 +11,31 @@ const I18nMiddleware = createI18nMiddleware({
   urlMappingStrategy: "rewrite",
 });
 
-const PUBLIC_PATHS = ["/login", "/sign-up", "/forgot-password"];
+const PUBLIC_PATHS = [
+  "/login",
+  "/sign-up",
+  "/forgot-password",
+  "/analytics-test",
+];
+
+const getPublicEnvVars = () => {
+  const vars = {
+    NEXT_PUBLIC_OPENPANEL_CLIENT_ID:
+      process.env.NEXT_PUBLIC_OPENPANEL_CLIENT_ID?.trim(),
+    OPENPANEL_SECRET_KEY: process.env.OPENPANEL_SECRET_KEY?.trim(),
+  };
+
+  // Log missing environment variables in development
+  if (process.env.NODE_ENV === "development") {
+    for (const [key, value] of Object.entries(vars)) {
+      if (!value) {
+        console.warn(`Missing required environment variable: ${key}`);
+      }
+    }
+  }
+
+  return vars;
+};
 
 export async function middleware(request: NextRequest) {
   const { response, user } = await updateSession(
@@ -19,7 +43,7 @@ export async function middleware(request: NextRequest) {
     I18nMiddleware(request),
   );
 
-  // Get the pathname of the request (e.g. /, /about, /blog/first-post)
+  // Get the pathname of the request
   const { pathname } = request.nextUrl;
   const locale = pathname.split("/")[1] || DEFAULT_LOCALE;
 
@@ -47,9 +71,17 @@ export async function middleware(request: NextRequest) {
 
   // If the user is authenticated and trying to access auth pages,
   // redirect to dashboard
-  if (isPublicPath && user) {
+  if (
+    isPublicPath &&
+    user &&
+    !pathnameWithoutLocale.startsWith("/analytics-test")
+  ) {
     return NextResponse.redirect(new URL(`/${locale}/dashboard`, request.url));
   }
+
+  // Inject public environment variables
+  const publicEnvVars = getPublicEnvVars();
+  response.headers.set("x-next-env", JSON.stringify(publicEnvVars));
 
   return response;
 }
