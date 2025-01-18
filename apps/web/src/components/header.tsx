@@ -33,7 +33,7 @@ export function Header() {
     });
     setTimeout(() => {
       setShowConfetti(false);
-      window.location.href = "https://chriscelaya.com/";
+      window.location.href = "https://chriscelayacom.mintlify.app/docs/welcome/about";
     }, 2000);
   };
 
@@ -94,13 +94,13 @@ export function Header() {
 
           <div className="flex items-center gap-4">
             <a
-              href="https://chriscelaya.com"
+              href="https://chriscelayacom.mintlify.app/docs/welcome/about"
               className="text-sm px-4 py-2 bg-primary text-secondary rounded-full font-medium"
               target="_blank"
               rel="noreferrer"
               onClick={handleViewMoreClick}
             >
-              Sign In
+              View More
             </a>
 
             <Dialog>

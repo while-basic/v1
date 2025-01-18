@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Systems Integration | Christopher Celaya",
@@ -205,11 +206,10 @@ export default function IndustrialTechnology() {
               achieve unprecedented levels of efficiency and automation.
             </p>
             <div className="flex gap-4 justify-center">
-              <Button size="lg" className="gap-2">
-                Schedule Consultation <ArrowRight className="w-4 h-4" />
-              </Button>
-              <Button size="lg" variant="outline">
-                View Case Studies
+              <Button size="lg" className="gap-2" asChild>
+                <Link href="https://cal.com/chriscelaya/30min">
+                  Schedule Consultation <ArrowRight className="w-4 h-4" />
+                </Link>
               </Button>
             </div>
           </div>
@@ -220,16 +220,14 @@ export default function IndustrialTechnology() {
 }
 
 const metrics = [
-  { icon: Factory, label: "Facilities Automated", value: "100+" },
+  { icon: Factory, label: "Facilities Automated", value: "25+" },
   { icon: Cpu, label: "Control Systems", value: "500+" },
-  { icon: Bot, label: "Years Experience", value: "15+" },
-  { icon: Workflow, label: "Industries Served", value: "12+" },
+  { icon: Workflow, label: "Projets Completed", value: "500+" },
+  { icon: Workflow, label: "Years Experience", value: "11+" },
 ];
 
 const stats = [
-  { label: "Projects Completed", value: "75+" },
-  { label: "Years Experience", value: "10+" },
-  { label: "Industries Served", value: "12+" },
+  // { label: "Projects Completed", value: "500+" },
 ];
 
 const capabilities = [
@@ -289,8 +287,8 @@ const solutions = [
 ];
 
 const techStack = {
-  development: ["Python", "Node.js", "C#/.NET", "Go"],
-  integration: ["RESTful APIs", "GraphQL", "Message Queues", "ESB/iPaaS"],
+  development: ["Python", "Node.js", "C#/.NET"],
+  integration: ["RESTful APIs", "GraphQL"],
   cloud: ["AWS IoT", "Azure IoT Hub", "Google Cloud IoT", "Edge Computing"],
-  tools: ["Docker/K8s", "CI/CD Pipelines", "Terraform", "Monitoring Suites"],
+  tools: ["Docker", "CI/CD Pipelines", "Terraform", "Monitoring Suites"],
 };

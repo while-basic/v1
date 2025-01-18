@@ -114,8 +114,8 @@ export default function AboutPage() {
 
             <div className="flex justify-start">
               <Button className="gap-2" asChild>
-                <a href="/projects">
-                  View Projects <ArrowRight size={16} />
+                <a href="/experience">
+                  View Experience <ArrowRight size={16} />
                 </a>
               </Button>
             </div>

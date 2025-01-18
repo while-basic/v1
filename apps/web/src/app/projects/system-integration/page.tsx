@@ -49,11 +49,11 @@ export default function SystemIntegration() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button size="lg" className="gap-2">
-                  Explore Solutions <ArrowRight className="w-4 h-4" />
+                  View More <ArrowRight className="w-4 h-4" />
                 </Button>
-                <Button size="lg" variant="outline" className="gap-2">
+                {/* <Button size="lg" variant="outline" className="gap-2">
                   View Case Studies
-                </Button>
+                </Button> */}
               </div>
             </div>
             <div className="flex-1">
@@ -200,10 +200,10 @@ export default function SystemIntegration() {
 }
 
 const metrics = [
-  { icon: Globe, label: "Facilities Automated", value: "50+" },
+  { icon: Globe, label: "Facilities Automated", value: "20+" },
   { icon: GitBranch, label: "Control Systems", value: "100+" },
-  { icon: Server, label: "Years Experience", value: "10+" },
-  { icon: Terminal, label: "Industries Served", value: "12+" },
+  { icon: Server, label: "Years Experience", value: "11+" },
+  { icon: Terminal, label: "Industries Served", value: "10+" },
 ];
 
 const competencies = [
@@ -247,7 +247,7 @@ const competencies = [
 
 const projects = [
   {
-    title: "Cannabis Facility Automation",
+    title: "test 1",
     description:
       "Implemented comprehensive environmental control and monitoring systems across multiple cultivation facilities, ensuring optimal growing conditions and compliance",
     image:
@@ -255,7 +255,7 @@ const projects = [
     technologies: ["Allen Bradley", "Ignition SCADA", "EtherNet/IP", "SQL"],
   },
   {
-    title: "Warehouse Management System",
+    title: "test 2",
     description:
       "Designed and deployed an automated material handling and inventory management system, increasing throughput by 200% and reducing errors by 98%",
     image:
@@ -265,8 +265,7 @@ const projects = [
 ];
 
 const techStack = {
-  automation: ["Allen Bradley", "Siemens", "Omron", "Beckhoff"],
-  networking: ["EtherNet/IP", "Profinet", "Modbus TCP", "OPC-UA"],
-  scada: ["Ignition", "WinCC", "FactoryTalk", "Wonderware"],
-  safety: ["Safety PLCs", "Light Curtains", "Safety IO", "E-Stops"],
+  automation: ["Allen Bradley", "Siemens", "Omron"],
+  networking: ["EtherNet/IP", "Profinet", "Modbus TCP"],
+  safety: ["Safety PLCs", "Light Curtains", "E-Stops"],
 };

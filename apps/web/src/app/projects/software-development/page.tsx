@@ -248,7 +248,6 @@ const competencies = [
     skills: [
       "SQL/NoSQL",
       "Data Modeling",
-      "ETL Pipelines",
       "Real-time Processing",
     ],
   },
@@ -256,12 +255,12 @@ const competencies = [
 
 const projects = [
   {
-    title: "Enterprise SaaS Platform",
+    title: "Med-Chat",
     description:
-      "Scalable multi-tenant application serving 10,000+ daily users",
+      "Medical chatbot for patients to ask questions about their health",
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
-    technologies: ["React", "Node.js", "PostgreSQL", "AWS"],
+    technologies: ["Ollama", "Medllama2", "Next.js", "Docker"],
   },
   {
     title: "Real-time Analytics Dashboard",
@@ -275,7 +274,7 @@ const projects = [
 
 const techStack = {
   frontend: ["React/Next.js", "TypeScript", "Tailwind CSS", "WebGL/Three.js"],
-  backend: ["Node.js", "Python", "Go", "GraphQL"],
-  cloud: ["AWS Suite", "Azure Services", "Kubernetes", "Terraform"],
-  databases: ["PostgreSQL", "MongoDB", "Redis", "Elasticsearch"],
+  backend: ["Node.js", "Python"],
+  cloud: ["AWS Suite", "Azure Services", "Azure", "Railway"],
+  databases: ["PostgreSQL", "MongoDB", "Redis", "Docker"],
 };
