@@ -48,15 +48,12 @@ const projects: Project[] = [
       "An AI-powered healthcare assistant designed to help medical professionals with patient care, diagnosis suggestions, and medical literature recommendations.",
     category: "Healthcare",
     image: "/images/projects/medchat.png",
-    githubUrl: "https://github.com/christophercelaya/med-chat",
-    liveUrl: "https://med-chat.celayasolutions.com",
+    githubUrl: "",
+    liveUrl: "",
     technologies: [
       "Python",
-      "OpenAI",
-      "React",
-      "Next.js",
-      "Tailwind",
-      "Supabase",
+      "Ollama",
+      "Llama 2",
     ],
     featured: true,
     details: [
@@ -77,9 +74,6 @@ const projects: Project[] = [
     technologies: [
       "Unity",
       "C#",
-      "MIDI.js",
-      "VR Toolkit",
-      "Blender",
       "Steam VR",
     ],
     details: [
@@ -98,19 +92,12 @@ const projects: Project[] = [
     image: "/images/projects/law-gpt.png",
     liveUrl: "https://www.youtube.com/watch?v=19iWJPfot6k",
     technologies: [
-      "Python",
+      "Swift",
       "GPT-4",
-      "TypeScript",
-      "Next.js",
-      "Prisma",
-      "PostgreSQL",
     ],
     featured: true,
     details: [
-      "Legal document analysis",
       "Case law research",
-      "Automated document generation",
-      "Legal precedent matching",
       "Secure data encryption",
     ],
   },
@@ -119,8 +106,8 @@ const projects: Project[] = [
     description:
       "A modern take on the classic virtual pet, powered by AI to create more dynamic and personalized pet interactions.",
     category: "AI & Machine Learning",
-    image: "https://images.unsplash.com/photo-1614729939124-032f0b56c9ce",
-    githubUrl: "https://github.com/christophercelaya/ai-tamagotchi",
+    image: "",
+    githubUrl: "",
     technologies: [
       "React Native",
       "TensorFlow.js",
