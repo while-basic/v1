@@ -40,6 +40,7 @@
   "convert-audio": "cd apps/web/scripts && npm run convert",
   "dependencies": {
     "@react-email/components": "^0.0.32",
+    "react-swipeable": "^7.0.2",
     "resend": "^4.1.1"
   }
 }
