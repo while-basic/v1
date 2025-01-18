@@ -18,96 +18,107 @@ interface GalleryItem {
 }
 
 const galleryItems: GalleryItem[] = [
+  // Electrical Distribution & Wiring
   {
     id: "1",
     title: "Electrical Distribution Panels",
-    description:
-      "Wired the electrical distribution panels for the new manufacturing facility, ensuring compliance with all safety standards and regulations.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1565439371467-61c8dd0ddd2f?auto=format&fit=crop&w=2000&q=80",
+    description: "Installation and wiring of industrial electrical distribution panels, ensuring compliance with NEC standards and safety regulations.",
+    imageUrl: "/images/electrical/panel1.jpg",
     category: "Electrical",
-    tags: ["Electrical", "Manufacturing"],
+    tags: ["Electrical", "Distribution", "Industrial"],
   },
   {
     id: "2",
-    title: "Automated Assembly Line Integration",
-    description:
-      "Implementation of a fully automated assembly line system with robotic arms and conveyor integration, improving production efficiency by 40%.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1565439371467-61c8dd0ddd2f?auto=format&fit=crop&w=2000&q=80",
-    category: "Automation",
-    tags: ["Robotics", "PLC", "Industry 4.0", "Assembly"],
+    title: "Secondary Distribution Panel",
+    description: "Secondary electrical distribution panel installation with proper wire management and labeling.",
+    imageUrl: "/images/electrical/panel2.jpg",
+    category: "Electrical",
+    tags: ["Electrical", "Distribution", "Panel"],
   },
   {
     id: "3",
-    title: "Hydraulic System Overhaul",
-    description:
-      "Complete hydraulic system rebuild on industrial press brake, including pump replacement, valve maintenance, and pressure optimization.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=2000&q=80",
-    category: "Maintenance",
-    tags: ["Hydraulics", "Preventative Maintenance", "Industrial"],
+    title: "Power Distribution System",
+    description: "Main power distribution system installation with circuit protection and monitoring capabilities.",
+    imageUrl: "/images/electrical/dist1.jpg",
+    category: "Electrical",
+    tags: ["Power Distribution", "Industrial", "Electrical"],
   },
   {
     id: "4",
-    title: "PLC Control System Upgrade",
-    description:
-      "Modernization of legacy control systems with Allen-Bradley ControlLogix PLC implementation, including HMI design and network integration.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=2000&q=80",
-    category: "Automation",
-    tags: ["PLC", "Control Systems", "HMI", "Allen-Bradley"],
+    title: "Industrial Wiring Implementation",
+    description: "Complex industrial wiring implementation following best practices and safety standards.",
+    imageUrl: "/images/electrical/wiring-1.jpg",
+    category: "Electrical",
+    tags: ["Industrial", "Wiring", "Installation"],
   },
   {
     id: "5",
-    title: "Quality Control Implementation",
-    description:
-      "Development and implementation of automated quality control systems using machine vision and laser measurement technology.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=2000&q=80",
-    category: "Quality Assurance",
-    tags: ["QC", "Machine Vision", "Metrology", "Automation"],
+    title: "Control Panel Wiring",
+    description: "Detailed control panel wiring with organized cable management and clear labeling.",
+    imageUrl: "/images/electrical/wiring-2.jpg",
+    category: "Electrical",
+    tags: ["Control Panel", "Wiring", "Industrial"],
   },
+  
+  // Mechanical Systems
   {
     id: "6",
-    title: "Robotic Welding Cell",
-    description:
-      "Installation and programming of FANUC robotic welding cell, including safety system integration and process optimization.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1565439371467-61c8dd0ddd2f?auto=format&fit=crop&w=2000&q=80",
-    category: "Manufacturing",
-    tags: ["Robotics", "Welding", "FANUC", "Automation"],
+    title: "Engine Build",
+    description: "Comprehensive engine system analysis and maintenance procedures.",
+    imageUrl: "/images/mechanical/engine1.jpg",
+    category: "Mechanical",
+    tags: ["Engine", "Maintenance", "Mechanical"],
   },
   {
     id: "7",
-    title: "Predictive Maintenance System",
-    description:
-      "Implementation of IoT-based predictive maintenance system using vibration analysis and temperature monitoring for critical equipment.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=2000&q=80",
-    category: "Maintenance",
-    tags: ["IoT", "Predictive Maintenance", "Industry 4.0", "Sensors"],
+    title: "Engine VQ35HR Build",
+    description: "Precision installation of critical engine components and systems.",
+    imageUrl: "/images/mechanical/engine.jpg",
+    category: "Mechanical",
+    tags: ["Engine", "Installation", "Components"],
   },
   {
     id: "8",
-    title: "SCADA System Integration",
-    description:
-      "Design and implementation of plant-wide SCADA system for real-time monitoring and control of manufacturing processes.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1565439371467-61c8dd0ddd2f?auto=format&fit=crop&w=2000&q=80",
-    category: "Automation",
-    tags: ["SCADA", "Industrial Networks", "Process Control", "HMI"],
+    title: "Mechanical System Integration",
+    description: "Integration of complex mechanical systems with precise alignment and calibration.",
+    imageUrl: "/images/mechanical/engine3.jpg",
+    category: "Mechanical",
+    tags: ["Integration", "Mechanical", "Systems"],
   },
   {
     id: "9",
-    title: "Energy Efficiency Upgrade",
-    description:
-      "Facility-wide energy efficiency improvement project, including VFD installations, compressed air system optimization, and lighting upgrades.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=2000&q=80",
-    category: "Sustainability",
-    tags: ["Energy Efficiency", "VFD", "Sustainability", "Industrial"],
+    title: "Engine Performance Optimization",
+    description: "Performance tuning and optimization of engine systems for maximum efficiency.",
+    imageUrl: "/images/mechanical/engine4.jpg",
+    category: "Mechanical",
+    tags: ["Performance", "Optimization", "Engine"],
   },
+  
+  // Additional Electrical Projects
+  {
+    id: "10",
+    title: "Distribution System Layout",
+    description: "Strategic layout and implementation of power distribution systems.",
+    imageUrl: "/images/electrical/dist4.jpg",
+    category: "Electrical",
+    tags: ["Distribution", "Layout", "Power Systems"],
+  },
+  {
+    id: "11",
+    title: "Advanced Control Wiring",
+    description: "Sophisticated control system wiring with integrated safety features.",
+    imageUrl: "/images/electrical/wiring-5.jpg",
+    category: "Electrical",
+    tags: ["Control Systems", "Wiring", "Safety"],
+  },
+  {
+    id: "12",
+    title: "Industrial Power Systems",
+    description: "High-capacity industrial power system installation and configuration.",
+    imageUrl: "/images/electrical/dist6.jpg",
+    category: "Electrical",
+    tags: ["Industrial", "Power Systems", "Installation"],
+  }
 ];
 
 export default function GalleryPage() {
