@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { AudioPlayerWithSlider } from "@/components/audio-player-with-slider";
+import Image from "next/image";
 
 interface WorkExperience {
   title: string;
@@ -325,7 +326,25 @@ export default function ExperiencePage() {
                   >
                     <div className="flex items-start gap-4">
                       <div className="p-2 rounded-lg bg-primary/10">
-                        <job.icon className="h-6 w-6 text-primary" />
+                        {job.company === "T5 Data Centers" ? (
+                          <Image
+                            src="/images/companies/t5.jpeg"
+                            alt="T5 Data Centers Logo"
+                            width={24}
+                            height={24}
+                            className="rounded"
+                          />
+                        ) : job.company === "CN Wire" ? (
+                          <Image
+                            src="/images/companies/cnwire.jpeg"
+                            alt="CN Wire Logo"
+                            width={24}
+                            height={24}
+                            className="rounded"
+                          />
+                        ) : (
+                          <job.icon className="h-6 w-6 text-primary" />
+                        )}
                       </div>
                       <div className="flex-1">
                         <h3 className="text-xl font-semibold">{job.title}</h3>

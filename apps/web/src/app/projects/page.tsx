@@ -47,7 +47,7 @@ const projects: Project[] = [
     description:
       "An AI-powered healthcare assistant designed to help medical professionals with patient care, diagnosis suggestions, and medical literature recommendations.",
     category: "Healthcare",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef",
+    image: "/images/projects/medchat.png",
     githubUrl: "https://github.com/christophercelaya/med-chat",
     liveUrl: "https://med-chat.celayasolutions.com",
     technologies: [
@@ -72,7 +72,8 @@ const projects: Project[] = [
     description:
       "A VR rhythm game that combines lightsaber combat with music, turning MIDI files into dynamic gameplay elements.",
     category: "Game Development",
-    image: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620",
+    image: "/images/projects/midi-saber.png",
+    liveUrl: "https://www.youtube.com/watch?v=fW6c3pb60kE",
     technologies: [
       "Unity",
       "C#",
@@ -94,8 +95,8 @@ const projects: Project[] = [
     description:
       "An AI-powered legal assistant that helps lawyers and legal professionals with case research, document analysis, and legal precedent search.",
     category: "AI & Machine Learning",
-    image: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73",
-    githubUrl: "https://github.com/christophercelaya/law-gpt",
+    image: "/images/projects/law-gpt.png",
+    liveUrl: "https://www.youtube.com/watch?v=19iWJPfot6k",
     technologies: [
       "Python",
       "GPT-4",
@@ -140,7 +141,7 @@ const projects: Project[] = [
     description:
       "Real-time natural language translation platform with support for multiple languages and dialects.",
     category: "AI & Machine Learning",
-    image: "https://images.unsplash.com/photo-1545987796-200677ee1011",
+    image: "/images/projects/chatter-sync.png",
     technologies: [
       "Python",
       "WebRTC",
@@ -162,8 +163,8 @@ const projects: Project[] = [
     description:
       "Corporate website and service platform showcasing software development and consulting services.",
     category: "Web Development",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
-    liveUrl: "https://celayasolutions.com",
+    image: "/images/projects/celaya-solutions.png",
+    liveUrl: "https://celaya-solutions.vercel.app/",
     technologies: [
       "Next.js",
       "TypeScript",
@@ -184,7 +185,7 @@ const projects: Project[] = [
     description:
       "A platform for creating, showcasing, and trading AI-generated artwork using Stable Diffusion.",
     category: "AI & Machine Learning",
-    image: "https://images.unsplash.com/photo-1580927752452-89d86da3fa0a",
+    image: "/images/projects/old-man.webp",
     technologies: ["Stable Diffusion", "Python", "CUDA", "PyTorch", "React"],
     details: [
       "Generative artwork creation",
@@ -199,7 +200,7 @@ const projects: Project[] = [
     description:
       "Healthcare management platform for medical practices, focusing on patient care and practice administration.",
     category: "Healthcare",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d",
+    image: "/images/projects/amica.png",
     technologies: [
       "React",
       "Node.js",
@@ -221,7 +222,7 @@ const projects: Project[] = [
     description:
       "A decentralized top-level domain name service for blockchain domains.",
     category: "Web Development",
-    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0",
+    image: "/images/projects/tld.png",
     githubUrl: "",
     liveUrl: "",
     technologies: ["Polygon", "Solidity", "Web3.js", "React", "Node.js"],
@@ -239,7 +240,7 @@ const projects: Project[] = [
     description:
       "A collection of 3D animations and visual effects created for various projects.",
     category: "3D & Animation",
-    image: "https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2",
+    image: "/images/projects/blender.png",
     githubUrl: "",
     liveUrl: "",
     technologies: ["Blender", "3D Animation", "Python", "After Effects"],
@@ -257,7 +258,7 @@ const projects: Project[] = [
     description:
       "A fully immersive forest environment created using Unreal Engine 5 with dynamic weather and lighting.",
     category: "Game Development",
-    image: "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d",
+    image: "/images/projects/forest.png",
     githubUrl: "",
     liveUrl: "",
     technologies: ["Unreal Engine 5", "C++", "Blueprints", "Quixel Megascans"],
@@ -275,7 +276,7 @@ const projects: Project[] = [
     description:
       "A multi-platform adventure game developed using Unity with cross-platform save functionality.",
     category: "Game Development",
-    image: "https://images.unsplash.com/photo-1556438064-2d7646166914",
+    image: "/images/projects/unity.png",
     githubUrl: "",
     liveUrl: "",
     technologies: ["Unity", "C#", "Blender", "Firebase"],
@@ -293,7 +294,7 @@ const projects: Project[] = [
     description:
       "An interactive website leveraging Google's Gemini Pro Vision API for advanced image analysis and generation.",
     category: "AI & Machine Learning",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
+    image: "/images/projects/gemini.png",
     githubUrl: "",
     liveUrl: "",
     technologies: ["Gemini", "React", "Next.js", "Tailwind", "Vercel"],
@@ -311,7 +312,7 @@ const projects: Project[] = [
     description:
       "Professional portfolio website showcasing projects, skills, and services.",
     category: "Web Development",
-    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8",
+    image: "/images/projects/chris-celaya.png",
     githubUrl: "",
     liveUrl: "https://chriscelaya.com",
     technologies: ["Next.js", "TypeScript", "Tailwind", "Vercel"],
@@ -329,7 +330,7 @@ const projects: Project[] = [
     description:
       "Personal blog and experimental project showcase with interactive features.",
     category: "Web Development",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
+    image: "/images/projects/chris-celaya-xyz.png",
     githubUrl: "",
     liveUrl: "https://chriscelaya.xyz",
     technologies: ["Next.js", "TypeScript", "Tailwind", "Vercel"],
@@ -343,13 +344,13 @@ const projects: Project[] = [
     ],
   },
   {
-    title: "Dead Rose Online Store",
+    title: "E-Commerce Online Store",
     description:
       "A full-featured e-commerce platform for the Dead Rose brand with advanced shopping features.",
     category: "Web Development",
-    image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc",
+    image: "/images/projects/e-commerce.png",
     githubUrl: "",
-    liveUrl: "",
+    liveUrl: "https://storefront-production-5192.up.railway.app/us",
     technologies: ["Next.js", "TypeScript", "Tailwind", "Stripe", "Vercel"],
     featured: true,
     details: [
@@ -361,15 +362,15 @@ const projects: Project[] = [
     ],
   },
   {
-    title: "AI Chatbot Dashboard",
+    title: "Chatbot Dashboard",
     description:
       "A comprehensive chatbot management system with advanced analytics and user management.",
     category: "Web Development",
-    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a",
-    githubUrl: "",
-    liveUrl: "",
+    image: "/images/projects/chat-bot-dashboard.png",
+    githubUrl: "https://github.com/while-basic/celaya-chatbot",
+    liveUrl: "https://celaya-chatbot.vercel.app",
     technologies: ["Next.js", "TypeScript", "Tailwind", "OpenAI", "Vercel"],
-    featured: false,
+    featured: true,
     details: [
       "Multi-user authentication",
       "Real-time chat functionality",
@@ -394,31 +395,6 @@ const projects: Project[] = [
       "Profile verification",
       "Event organization",
       "Community features",
-    ],
-  },
-  {
-    title: "Mental Health Assistant",
-    description:
-      "An AI-powered platform providing mental health support and resources to users.",
-    category: "AI & Machine Learning",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef",
-    githubUrl: "",
-    liveUrl: "",
-    technologies: [
-      "Python",
-      "OpenAI",
-      "React",
-      "Next.js",
-      "Tailwind",
-      "Supabase",
-    ],
-    featured: false,
-    details: [
-      "Personalized AI assistance",
-      "Resource recommendations",
-      "Progress tracking",
-      "Crisis intervention protocols",
-      "Professional referral system",
     ],
   },
   {
