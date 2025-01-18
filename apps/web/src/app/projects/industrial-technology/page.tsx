@@ -14,6 +14,55 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+interface Stat {
+  label: string;
+  value: string;
+}
+
+interface Metric {
+  label: string;
+  value: string;
+  icon: any; // TODO: Replace with proper icon type
+}
+
+const metrics: Metric[] = [
+  {
+    label: "Automation Projects",
+    value: "100+",
+    icon: Factory,
+  },
+  {
+    label: "Systems Integrated",
+    value: "50+",
+    icon: Workflow,
+  },
+  {
+    label: "Efficiency Increase",
+    value: "35%",
+    icon: Gauge,
+  },
+  {
+    label: "Smart Solutions",
+    value: "25+",
+    icon: Bot,
+  },
+];
+
+const stats: Stat[] = [
+  {
+    label: "Uptime",
+    value: "99.9%",
+  },
+  {
+    label: "ROI",
+    value: "3x",
+  },
+  {
+    label: "Cost Savings",
+    value: "40%",
+  },
+];
+
 export const metadata: Metadata = {
   title: "Systems Integration | Christopher Celaya",
   description:
@@ -218,17 +267,6 @@ export default function IndustrialTechnology() {
     </div>
   );
 }
-
-const metrics = [
-  { icon: Factory, label: "Facilities Automated", value: "25+" },
-  { icon: Cpu, label: "Control Systems", value: "500+" },
-  { icon: Workflow, label: "Projets Completed", value: "500+" },
-  { icon: Workflow, label: "Years Experience", value: "11+" },
-];
-
-const stats = [
-  // { label: "Projects Completed", value: "500+" },
-];
 
 const capabilities = [
   {
