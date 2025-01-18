@@ -342,6 +342,30 @@ export default function ExperiencePage() {
                             height={24}
                             className="rounded"
                           />
+                        ) : job.company === "Schneider Electric" ? (
+                          <Image
+                            src="/images/companies/schneider-electric.jpeg"
+                            alt="Schneider Electric Logo"
+                            width={24}
+                            height={24}
+                            className="rounded"
+                          />
+                        ) : job.company === "Delfingen" ? (
+                          <Image
+                            src="/images/companies/delfingen.jpg"
+                            alt="Delfingen Logo"
+                            width={24}
+                            height={24}
+                            className="rounded"
+                          />
+                        ) : job.company === "Dal-Tile" ? (
+                          <Image
+                            src="/images/companies/dal-tile.jpg"
+                            alt="Dal-Tile Logo"
+                            width={24}
+                            height={24}
+                            className="rounded"
+                          />
                         ) : (
                           <job.icon className="h-6 w-6 text-primary" />
                         )}
