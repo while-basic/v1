@@ -29,14 +29,6 @@ interface GalleryItem {
 const galleryItems: GalleryItem[] = [
   // Electrical Distribution & Wiring
   {
-    id: "1",
-    title: "Electrical Distribution Panels",
-    description: "Installation and wiring of industrial electrical distribution panels, ensuring compliance with NEC standards and safety regulations.",
-    imageUrl: "/images/electrical/panel1.jpg",
-    category: "Electrical",
-    tags: ["Electrical", "Distribution", "Industrial"],
-  },
-  {
     id: "2",
     title: "Secondary Distribution Panel",
     description: "Secondary electrical distribution panel installation with proper wire management and labeling.",
@@ -195,7 +187,7 @@ export default function GalleryPage() {
               </p>
               <Button size="lg" className="gap-2" asChild>
                 <a 
-                  href="https://celaya-photo-blog-h96u2vgni-celaya.vercel.app/"
+                  href="https://celaya-photo-blog.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -333,7 +325,7 @@ export default function GalleryPage() {
           </p>
           <Button size="lg" variant="outline" className="gap-2" asChild>
             <a 
-              href="https://celaya-photo-blog-h96u2vgni-celaya.vercel.app/"
+              href="https://celaya-photo-blog.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
             >
