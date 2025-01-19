@@ -59,3 +59,8 @@ tailwind.css
 
 # Trigger
 .trigger
+
+# Environment variables
+.env
+.env.local
+.env.*.local

@@ -1,7 +1,8 @@
 {
   "name": "@v1/analytics",
-  "version": "1.0.0",
-  "main": "src/index.ts",
+  "version": "0.0.0",
+  "main": "./client.ts",
+  "types": "./client.ts",
   "private": true,
   "sideEffects": false,
   "scripts": {
