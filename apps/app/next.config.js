@@ -1,16 +1,26 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   transpilePackages: ["@v1/supabase", "@v1/env", "@v1/analytics", "@v1/ui"],
+  experimental: {
+    externalDir: true,
+    // This enables proper transpilation of TypeScript in workspace packages
+    transpilePackages: ["@v1/supabase", "@v1/env", "@v1/analytics", "@v1/ui"]
+  },
   webpack: (config, { isServer }) => {
-    // Add TypeScript loader for workspace packages
+    // Handle workspace packages
     config.module.rules.push({
       test: /\.tsx?$/,
-      include: /packages\//,
+      include: [/packages\//],
       use: [
         {
-          loader: 'ts-loader',
+          loader: 'swc-loader',
           options: {
-            transpileOnly: true,
+            jsc: {
+              parser: {
+                syntax: 'typescript',
+                tsx: true,
+              },
+            },
           },
         },
       ],
