@@ -1,12 +1,17 @@
+"use client";
+
 import "@v1/ui/globals.css";
+import { CustomCursor } from "@/components/custom-cursor";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { Analytics } from "@vercel/analytics/react";
+import { JsonLd } from "@/components/json-ld";
 import { cn } from "@v1/ui/cn";
+import { Analytics } from "@vercel/analytics/react";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
-import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { Toaster } from "sonner";
 
 const DepartureMono = localFont({
@@ -14,76 +19,37 @@ const DepartureMono = localFont({
   variable: "--font-departure-mono",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://chriscelaya.com"),
-  title:
-    "Christopher Celaya | Software Developer & Mechatronic Technician in El Paso, TX",
-  description:
-    "Christopher Celaya - Leading AI, Machine Learning, and Industrial Automation expert in El Paso, Texas. Specializing in PLC/HMI programming, industrial maintenance, and data center operations. Serving El Paso, TX and Santa Teresa, NM.",
-  keywords:
-    "Christopher Celaya, Chris Celaya, El Paso AI, artificial intelligence El Paso, machine learning Texas, ChatGPT integration, GPT-4 development, OpenAI solutions, PLC programming, HMI integration, industrial maintenance El Paso, industrial mechanic Texas, industrial technician, automation expert, electrical systems, mechanical systems, preventative maintenance, data center technician, Santa Teresa New Mexico, industrial IoT",
-  authors: [{ name: "Christopher Celaya" }],
-  creator: "Christopher Celaya",
-  publisher: "Christopher Celaya",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://chriscelaya.com",
-    title:
-      "Christopher Celaya | Software Developer & Mechatronic Technician in El Paso, TX",
-    description:
-      "Leading AI, Machine Learning, and Industrial Automation technician in El Paso, Texas. Specializing in PLC/HMI programming, industrial maintenance, and data center operations.",
-    siteName: "Christopher Celaya",
-    images: [
-      {
-        url: "https://chriscelaya.com/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Christopher Celaya - AI & Industrial Automation Expert",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title:
-      "Christopher Celaya | Software Developer & Mechatronic Technician in El Paso, TX",
-    description:
-      "El Paso software developer and mechatronic technician. Expert in full-stack development, industrial automation, and system integration.",
-    creator: "@christophercelaya",
-    images: ["https://chriscelaya.com/og-image.jpg"],
-  },
-  alternates: {
-    canonical: "https://chriscelaya.com",
-  },
-  verification: {
-    google: "YOUR_GOOGLE_VERIFICATION_ID",
-  },
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalScroll =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const currentProgress = (window.scrollY / totalScroll) * 100;
+      setScrollProgress(currentProgress);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="scroll-smooth">
+      <head>
+        <JsonLd />
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased dark",
           GeistSans.variable,
           GeistMono.variable,
-          DepartureMono.variable
+          DepartureMono.variable,
         )}
       >
         <Header />
@@ -91,6 +57,15 @@ export default function RootLayout({
         <Footer />
         <Toaster />
         <Analytics />
+        {/* Scroll Progress Indicator */}
+        <div className="fixed top-0 left-0 right-0 h-1 bg-primary/20 z-50">
+          <div
+            className="h-full bg-primary transition-all duration-150"
+            style={{ width: `${scrollProgress}%` }}
+          />
+        </div>
+        {/* Custom Cursor */}
+        <CustomCursor />
       </body>
     </html>
   );

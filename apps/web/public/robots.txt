@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Sitemap: https://chriscelaya.com/sitemap.xml
+
+# Allow all bots to crawl important sections
+Allow: /services/
+Allow: /about/
+Allow: /contact/
+Allow: /gallery/
+Allow: /projects/
+
+# Optimize crawl rate
+Crawl-delay: 1 

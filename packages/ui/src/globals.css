@@ -64,6 +64,60 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground cursor-none;
+  }
+  
+  /* Custom Cursor */
+  .cursor-dot,
+  .cursor-dot-outline {
+    @apply pointer-events-none fixed z-50 transition-transform duration-150 ease-out;
+    @apply opacity-0;
+  }
+
+  .cursor-dot {
+    @apply w-2 h-2 bg-primary rounded-full;
+    transform: translate(-50%, -50%);
+  }
+
+  .cursor-dot-outline {
+    @apply w-8 h-8 border border-primary rounded-full;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Show custom cursor only on larger screens */
+  @media (min-width: 768px) {
+    .cursor-dot,
+    .cursor-dot-outline {
+      @apply opacity-100;
+    }
+  }
+
+  /* Hover effect for interactive elements */
+  a:hover ~ .cursor-dot,
+  button:hover ~ .cursor-dot {
+    @apply scale-150 bg-primary/50;
+  }
+
+  a:hover ~ .cursor-dot-outline,
+  button:hover ~ .cursor-dot-outline {
+    @apply scale-75;
+  }
+}
+
+@layer components {
+  .button-glow {
+    @apply relative overflow-hidden;
+  }
+
+  .button-glow::after {
+    @apply content-[''] absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/30 to-primary/0;
+    transform: translateX(-100%);
+    animation: button-glow 3s infinite;
+  }
+
+  @keyframes button-glow {
+    100% {
+      transform: translateX(100%);
+    }
   }
 }

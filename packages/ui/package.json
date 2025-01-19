@@ -28,6 +28,7 @@
     "./tooltip": "./src/components/tooltip.tsx",
     "./dialog": "./src/components/dialog.tsx",
     "./icons": "./src/components/icons.tsx",
+    "./card": "./src/components/card.tsx",
     "./textarea": "./src/textarea.tsx",
     "./tailwind.config": "./tailwind.config.ts",
     "./postcss": "./postcss.config.js"

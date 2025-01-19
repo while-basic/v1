@@ -2,15 +2,15 @@
 
 import { Button } from "@v1/ui/button";
 import { Dialog, DialogContent } from "@v1/ui/dialog";
-import { 
-  AlertCircle, 
-  ChevronLeft, 
-  ChevronRight, 
-  Camera, 
+import {
+  AlertCircle,
+  Camera,
+  ChevronLeft,
+  ChevronRight,
   ExternalLink,
   Filter,
   Grid,
-  Maximize2
+  Maximize2,
 } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -31,7 +31,8 @@ const galleryItems: GalleryItem[] = [
   {
     id: "2",
     title: "Secondary Distribution Panel",
-    description: "Secondary electrical distribution panel installation with proper wire management and labeling.",
+    description:
+      "Secondary electrical distribution panel installation with proper wire management and labeling.",
     imageUrl: "/images/electrical/panel2.jpg",
     category: "Electrical",
     tags: ["Electrical", "Distribution", "Panel"],
@@ -39,7 +40,8 @@ const galleryItems: GalleryItem[] = [
   {
     id: "3",
     title: "Power Distribution System",
-    description: "Main power distribution system installation with circuit protection and monitoring capabilities.",
+    description:
+      "Main power distribution system installation with circuit protection and monitoring capabilities.",
     imageUrl: "/images/electrical/dist1.jpg",
     category: "Electrical",
     tags: ["Power Distribution", "Industrial", "Electrical"],
@@ -47,7 +49,8 @@ const galleryItems: GalleryItem[] = [
   {
     id: "4",
     title: "Industrial Wiring Implementation",
-    description: "Complex industrial wiring implementation following best practices and safety standards.",
+    description:
+      "Complex industrial wiring implementation following best practices and safety standards.",
     imageUrl: "/images/electrical/wiring-1.jpg",
     category: "Electrical",
     tags: ["Industrial", "Wiring", "Installation"],
@@ -55,17 +58,19 @@ const galleryItems: GalleryItem[] = [
   {
     id: "5",
     title: "Control Panel Wiring",
-    description: "Detailed control panel wiring with organized cable management and clear labeling.",
+    description:
+      "Detailed control panel wiring with organized cable management and clear labeling.",
     imageUrl: "/images/electrical/wiring-2.jpg",
     category: "Electrical",
     tags: ["Control Panel", "Wiring", "Industrial"],
   },
-  
+
   // Mechanical Systems
   {
     id: "6",
     title: "Engine Build",
-    description: "Comprehensive engine system analysis and maintenance procedures.",
+    description:
+      "Comprehensive engine system analysis and maintenance procedures.",
     imageUrl: "/images/mechanical/engine1.jpg",
     category: "Mechanical",
     tags: ["Engine", "Maintenance", "Mechanical"],
@@ -73,7 +78,8 @@ const galleryItems: GalleryItem[] = [
   {
     id: "7",
     title: "Engine VQ35HR Build",
-    description: "Precision installation of critical engine components and systems.",
+    description:
+      "Precision installation of critical engine components and systems.",
     imageUrl: "/images/mechanical/engine.jpg",
     category: "Mechanical",
     tags: ["Engine", "Installation", "Components"],
@@ -81,7 +87,8 @@ const galleryItems: GalleryItem[] = [
   {
     id: "8",
     title: "Mechanical System Integration",
-    description: "Integration of complex mechanical systems with precise alignment and calibration.",
+    description:
+      "Integration of complex mechanical systems with precise alignment and calibration.",
     imageUrl: "/images/mechanical/engine3.jpg",
     category: "Mechanical",
     tags: ["Integration", "Mechanical", "Systems"],
@@ -89,17 +96,19 @@ const galleryItems: GalleryItem[] = [
   {
     id: "9",
     title: "Engine Performance Optimization",
-    description: "Performance tuning and optimization of engine systems for maximum efficiency.",
+    description:
+      "Performance tuning and optimization of engine systems for maximum efficiency.",
     imageUrl: "/images/mechanical/engine4.jpg",
     category: "Mechanical",
     tags: ["Performance", "Optimization", "Engine"],
   },
-  
+
   // Additional Electrical Projects
   {
     id: "10",
     title: "Distribution System Layout",
-    description: "Strategic layout and implementation of power distribution systems.",
+    description:
+      "Strategic layout and implementation of power distribution systems.",
     imageUrl: "/images/electrical/dist4.jpg",
     category: "Electrical",
     tags: ["Distribution", "Layout", "Power Systems"],
@@ -107,7 +116,8 @@ const galleryItems: GalleryItem[] = [
   {
     id: "11",
     title: "Advanced Control Wiring",
-    description: "Sophisticated control system wiring with integrated safety features.",
+    description:
+      "Sophisticated control system wiring with integrated safety features.",
     imageUrl: "/images/electrical/wiring-5.jpg",
     category: "Electrical",
     tags: ["Control Systems", "Wiring", "Safety"],
@@ -115,33 +125,82 @@ const galleryItems: GalleryItem[] = [
   {
     id: "12",
     title: "Industrial Power Systems",
-    description: "High-capacity industrial power system installation and configuration.",
+    description:
+      "High-capacity industrial power system installation and configuration.",
     imageUrl: "/images/electrical/dist6.jpg",
     category: "Electrical",
     tags: ["Industrial", "Power Systems", "Installation"],
-  }
+  },
 ];
+
+const galleryJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Christopher Celaya's Technical Project Gallery",
+  description:
+    "Professional work showcase in manufacturing and preventative maintenance",
+  author: {
+    "@type": "Person",
+    name: "Christopher Celaya",
+    url: "https://chriscelaya.com",
+  },
+  about: {
+    "@type": "Thing",
+    name: "Industrial and Technical Projects",
+    description:
+      "Collection of industrial automation, mechanical systems, and electrical engineering projects",
+  },
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Christopher Celaya",
+    url: "https://chriscelaya.com",
+  },
+};
+
+// Create a component for structured data
+function GalleryStructuredData() {
+  return (
+    <script type="application/ld+json" suppressHydrationWarning>
+      {JSON.stringify(galleryJsonLd)}
+    </script>
+  );
+}
 
 export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [viewMode, setViewMode] = useState<'grid' | 'slider'>('grid');
+  const [viewMode, setViewMode] = useState<"grid" | "slider">("grid");
 
   // Get unique categories
-  const categories = Array.from(new Set(galleryItems.map(item => item.category)));
+  const categories = Array.from(
+    new Set(galleryItems.map((item) => item.category)),
+  );
 
   // Filter items based on selected category
   const filteredItems = selectedCategory
-    ? galleryItems.filter(item => item.category === selectedCategory)
+    ? galleryItems.filter((item) => item.category === selectedCategory)
     : galleryItems;
 
   const handleImageClick = (item: GalleryItem) => {
     setSelectedImage(item);
   };
 
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === "ArrowLeft") {
+      setCurrentIndex((prev) =>
+        prev > 0 ? prev - 1 : filteredItems.length - 1,
+      );
+    } else if (e.key === "ArrowRight") {
+      setCurrentIndex((prev) =>
+        prev < filteredItems.length - 1 ? prev + 1 : 0,
+      );
+    }
+  };
+
   return (
     <>
+      <GalleryStructuredData />
       <Dialog
         open={!!selectedImage}
         onOpenChange={() => setSelectedImage(null)}
@@ -159,7 +218,9 @@ export default function GalleryPage() {
                 quality={85}
               />
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                <h3 className="text-white text-xl font-semibold mb-2">{selectedImage.title}</h3>
+                <h3 className="text-white text-xl font-semibold mb-2">
+                  {selectedImage.title}
+                </h3>
                 <p className="text-white/80">{selectedImage.description}</p>
               </div>
             </div>
@@ -183,10 +244,11 @@ export default function GalleryPage() {
                 Project Gallery
               </h1>
               <p className="text-xl text-muted-foreground mb-8 drop-shadow-lg max-w-2xl mx-auto">
-                A visual journey through industrial automation, mechanical systems, and technical innovations
+                A visual journey through industrial automation, mechanical
+                systems, and technical innovations
               </p>
               <Button size="lg" className="gap-2" asChild>
-                <a 
+                <a
                   href="https://celaya-photo-blog.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -213,7 +275,9 @@ export default function GalleryPage() {
               {categories.map((category) => (
                 <Button
                   key={category}
-                  variant={selectedCategory === category ? "default" : "outline"}
+                  variant={
+                    selectedCategory === category ? "default" : "outline"
+                  }
                   onClick={() => setSelectedCategory(category)}
                   size="sm"
                 >
@@ -224,16 +288,16 @@ export default function GalleryPage() {
           </div>
           <div className="flex items-center gap-2">
             <Button
-              variant={viewMode === 'grid' ? "default" : "outline"}
+              variant={viewMode === "grid" ? "default" : "outline"}
               size="icon"
-              onClick={() => setViewMode('grid')}
+              onClick={() => setViewMode("grid")}
             >
               <Grid className="w-4 h-4" />
             </Button>
             <Button
-              variant={viewMode === 'slider' ? "default" : "outline"}
+              variant={viewMode === "slider" ? "default" : "outline"}
               size="icon"
-              onClick={() => setViewMode('slider')}
+              onClick={() => setViewMode("slider")}
             >
               <Maximize2 className="w-4 h-4" />
             </Button>
@@ -241,7 +305,7 @@ export default function GalleryPage() {
         </div>
 
         {/* Grid View */}
-        {viewMode === 'grid' && (
+        {viewMode === "grid" && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredItems.map((item) => (
               <div
@@ -258,8 +322,12 @@ export default function GalleryPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="text-white font-semibold mb-1">{item.title}</h3>
-                    <p className="text-white/80 text-sm line-clamp-2">{item.description}</p>
+                    <h3 className="text-white font-semibold mb-1">
+                      {item.title}
+                    </h3>
+                    <p className="text-white/80 text-sm line-clamp-2">
+                      {item.description}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -268,7 +336,7 @@ export default function GalleryPage() {
         )}
 
         {/* Slider View */}
-        {viewMode === 'slider' && (
+        {viewMode === "slider" && (
           <div className="relative max-w-6xl mx-auto">
             <div className="relative aspect-[16/9] w-full rounded-lg overflow-hidden">
               {filteredItems[currentIndex] && (
@@ -295,22 +363,28 @@ export default function GalleryPage() {
 
             {/* Navigation Buttons */}
             <Button
-              variant="ghost"
               size="icon"
               className="absolute left-4 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-background/80 hover:bg-background/90 md:flex hidden"
-              onClick={() => setCurrentIndex(prev => 
-                prev > 0 ? prev - 1 : filteredItems.length - 1
-              )}
+              onClick={() =>
+                setCurrentIndex((prev) =>
+                  prev > 0 ? prev - 1 : filteredItems.length - 1,
+                )
+              }
+              onKeyDown={handleKeyPress}
+              aria-label="Previous image"
             >
               <ChevronLeft className="h-8 w-8" />
             </Button>
             <Button
-              variant="ghost"
               size="icon"
               className="absolute right-4 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-background/80 hover:bg-background/90 md:flex hidden"
-              onClick={() => setCurrentIndex(prev => 
-                prev < filteredItems.length - 1 ? prev + 1 : 0
-              )}
+              onClick={() =>
+                setCurrentIndex((prev) =>
+                  prev < filteredItems.length - 1 ? prev + 1 : 0,
+                )
+              }
+              onKeyDown={handleKeyPress}
+              aria-label="Next image"
             >
               <ChevronRight className="h-8 w-8" />
             </Button>
@@ -319,12 +393,16 @@ export default function GalleryPage() {
 
         {/* Photo Blog CTA */}
         <div className="mt-16 text-center">
-          <h2 className="text-2xl font-semibold mb-4">Explore More Photography</h2>
+          <h2 className="text-2xl font-semibold mb-4">
+            Explore More Photography
+          </h2>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Visit my dedicated photo blog for an extensive collection of photography work, including landscapes, portraits, and creative projects.
+            Visit my dedicated photo blog for an extensive collection of
+            photography work, including landscapes, portraits, and creative
+            projects.
           </p>
           <Button size="lg" variant="outline" className="gap-2" asChild>
-            <a 
+            <a
               href="https://celaya-photo-blog.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"

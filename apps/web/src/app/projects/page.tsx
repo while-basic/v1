@@ -43,62 +43,47 @@ const categories = [
 
 const projects: Project[] = [
   {
-    title: "Med-Chat",
+    title: "MedChat",
     description:
-      "An AI-powered healthcare assistant designed to help medical professionals with patient care, diagnosis suggestions, and medical literature recommendations.",
+      "An AI-powered healthcare assistant designed to help individuals with diagnosis suggestions.",
     category: "Healthcare",
     image: "/images/projects/medchat.png",
     githubUrl: "",
     liveUrl: "",
-    technologies: [
-      "Python",
-      "Ollama",
-      "Llama 2",
-    ],
+    technologies: ["Python", "Ollama", "Llama 2"],
     featured: true,
     details: [
-      "Real-time medical assistance",
-      "Integration with medical databases",
-      "Secure patient data handling",
       "Custom medical knowledge base",
-      "HIPAA compliance",
+      "Real-time medical assistance",
+      "Saved conversation history",
     ],
   },
   {
     title: "Midi Saber",
-    description:
-      "A VR rhythm game that combines lightsaber combat with music, turning MIDI files into dynamic gameplay elements.",
+    description: "A custom made MIDI controlloer for creating Beat Saber maps.",
     category: "Game Development",
     image: "/images/projects/midi-saber.png",
     liveUrl: "https://www.youtube.com/watch?v=fW6c3pb60kE",
-    technologies: [
-      "Unity",
-      "C#",
-      "Steam VR",
-    ],
+    technologies: ["Unity", "C#", "Steam VR"],
     details: [
-      "Dynamic MIDI integration",
-      "Custom VR controls",
+      "Launchpad MIDI controller",
       "Real-time beat mapping",
-      "Multiplayer support",
-      "Cross-platform VR compatibility",
+      "Plug and play support",
     ],
   },
   {
     title: "Law-GPT",
     description:
-      "An AI-powered legal assistant that helps lawyers and legal professionals with case research, document analysis, and legal precedent search.",
+      "An AI-powered legal assistant that helps individuals with legal information and case law research via Apple Watch and voice input.",
     category: "AI & Machine Learning",
     image: "/images/projects/law-gpt.png",
     liveUrl: "https://www.youtube.com/watch?v=19iWJPfot6k",
-    technologies: [
-      "Swift",
-      "GPT-4",
-    ],
+    technologies: ["Swift", "GPT-4"],
     featured: true,
     details: [
-      "Case law research",
+      "Real-time voice input",
       "Secure data encryption",
+      "Apple Watch integration",
     ],
   },
   {
@@ -116,17 +101,14 @@ const projects: Project[] = [
       "Three.js",
     ],
     details: [
-      "Personality evolution",
       "Emotional AI system",
-      "Interactive 3D graphics",
-      "Cross-platform support",
-      "Real-time pet behavior adaptation",
+      "Events (feed, play, sleep, etc.)",
+      "Native web application",
     ],
   },
   {
     title: "ChatterSync",
-    description:
-      "Real-time natural language translation platform with support for multiple languages and dialects.",
+    description: "An instances of two chatbots communicating with each other.",
     category: "AI & Machine Learning",
     image: "/images/projects/chatter-sync.png",
     technologies: [
@@ -137,13 +119,7 @@ const projects: Project[] = [
       "TensorFlow",
       "WebSocket",
     ],
-    details: [
-      "Real-time translation",
-      "Voice recognition",
-      "Multi-language support",
-      "Low latency processing",
-      "Dialect recognition",
-    ],
+    details: ["No human intervention", "Low latency processing"],
   },
   {
     title: "Celaya Solutions",
@@ -169,8 +145,7 @@ const projects: Project[] = [
   },
   {
     title: "Stable Diffusion Artwork",
-    description:
-      "A platform for creating, showcasing, and trading AI-generated artwork using Stable Diffusion.",
+    description: "A collection of AI-generated artwork using Stable Diffusion.",
     category: "AI & Machine Learning",
     image: "/images/projects/old-man.webp",
     technologies: ["Stable Diffusion", "Python", "CUDA", "PyTorch", "React"],
@@ -183,26 +158,13 @@ const projects: Project[] = [
     ],
   },
   {
-    title: "Amica Medical",
+    title: "Amica",
     description:
       "Healthcare management platform for medical practices, focusing on patient care and practice administration.",
     category: "Healthcare",
     image: "/images/projects/amica.png",
-    technologies: [
-      "React",
-      "Node.js",
-      "PostgreSQL",
-      "Docker",
-      "AWS",
-      "HIPAA Compliance",
-    ],
-    details: [
-      "Patient management",
-      "Appointment scheduling",
-      "Medical records",
-      "Billing integration",
-      "Insurance verification",
-    ],
+    technologies: ["React", "Node.js", "PostgreSQL", "Docker", "AWS"],
+    details: ["TTS support", "Voice assistant", "Multimodal support"],
   },
   {
     title: "Top Level Blockchain Domain Name Service",
@@ -441,13 +403,13 @@ export default function ProjectsPage() {
       {/* Hero Section */}
       <section className="relative h-[50vh] flex items-center justify-center rounded-3xl overflow-hidden mb-12">
         {/* Background layers */}
-        <div 
+        <div
           className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1618477388954-7852f32655ec?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center"
           style={{ backgroundPosition: "center 30%" }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/50 to-background/95" />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-secondary/20" />
-        
+
         {/* Content */}
         <div className="container px-4 mx-auto relative z-10">
           <div className="max-w-3xl mx-auto text-center">
@@ -455,7 +417,8 @@ export default function ProjectsPage() {
               Projects
             </h1>
             <p className="text-xl text-muted-foreground mb-8 drop-shadow-lg max-w-2xl mx-auto">
-              Explore my portfolio of innovative projects spanning software development, audio production, and creative technology.
+              Explore my portfolio of innovative projects spanning software
+              development, audio production, and creative technology.
             </p>
           </div>
         </div>

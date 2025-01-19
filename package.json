@@ -9,7 +9,7 @@
     "dev": "turbo dev --parallel",
     "dev:web": "turbo dev --filter=@v1/web",
     "dev:jobs": "turbo jobs --filter=@v1/jobs",
-    "dev:app": "turbo dev --filter=@v1/app",
+    "dev:app": "bun turbo dev --filter=@v1/app",
     "start:web": "turbo start --filter=@v1/web",
     "start:app": "turbo start --filter=@v1/app",
     "test": "turbo test --parallel",
@@ -23,7 +23,8 @@
     "lint:staged": "biome check --staged",
     "typecheck": "turbo typecheck",
     "validate": "bun run lint && bun run typecheck && bun run format:check",
-    "convert-audio": "cd apps/web/scripts && npm run convert"
+    "convert-audio": "cd apps/web/scripts && npm run convert",
+    "codegen": "turbo codegen"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
@@ -34,7 +35,9 @@
     "prettier-plugin-tailwindcss": "^0.5.10",
     "sherif": "1.1.1",
     "turbo": "2.1.1",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.18"
   },
   "packageManager": "bun@1.1.26",
   "trustedDependencies": ["@biomejs/biome", "@sentry/cli", "protobufjs"],
@@ -46,6 +49,11 @@
     "@v1/env": "workspace:*",
     "@v1/supabase": "workspace:*",
     "@v1/analytics": "workspace:*",
-    "@v1/ui": "workspace:*"
+    "@v1/ui": "workspace:*",
+    "@vercel/analytics": "^1.2.2",
+    "react-intersection-observer": "^9.8.0"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
