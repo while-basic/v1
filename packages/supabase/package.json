@@ -1,9 +1,9 @@
 {
   "name": "@v1/supabase",
   "version": "0.0.0",
-  "main": "./server.ts",
-  "types": "./server.ts",
   "private": true,
+  "main": "./src/clients/server.ts",
+  "types": "./src/clients/server.ts",
   "scripts": {
     "clean": "rm -rf .turbo node_modules",
     "lint": "biome check .",
@@ -22,8 +22,7 @@
     "typescript": "^5.5.4"
   },
   "exports": {
-    ".": "./server.ts",
-    "./server": "./server.ts",
+    "./server": "./src/clients/server.ts",
     "./client": "./src/clients/client.ts",
     "./mutations": "./src/mutations/index.ts",
     "./middleware": "./src/clients/middleware.ts",

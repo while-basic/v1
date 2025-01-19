@@ -50,43 +50,17 @@ const Provider = () => {
   );
 };
 
-const track = async (
-  options: { event: string } & PostEventPayload["properties"],
-) => {
+export const track = (event: string, properties?: Record<string, any>) => {
   if (!validateConfig()) {
     return;
   }
 
-  const { track: openTrack } = useOpenPanel();
-
   if (!isProd) {
-    logger.info("Track (Development):", options);
+    logger.info("Track (Development):", { event, properties });
     return;
   }
 
-  let retries = 3;
-  const retryDelay = 1000; // 1 second
-
-  while (retries > 0) {
-    try {
-      const { event, ...rest } = options;
-      await openTrack(event, rest);
-      logger.info(`Successfully tracked event: ${event}`, { properties: rest });
-      return;
-    } catch (error: unknown) {
-      retries--;
-      if (retries === 0) {
-        logger.error(
-          "Failed to track event after all retries:",
-          error instanceof Error ? error.message : String(error),
-          { event: options.event },
-        );
-        return;
-      }
-      logger.warn(`Retrying event tracking... (${retries} attempts left)`);
-      await new Promise((resolve) => setTimeout(resolve, retryDelay));
-    }
-  }
+  console.log('Track event:', event, properties);
 };
 
-export { Provider, track };
+export { Provider };

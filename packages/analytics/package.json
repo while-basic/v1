@@ -1,10 +1,10 @@
 {
   "name": "@v1/analytics",
   "version": "0.0.0",
-  "main": "./client.ts",
-  "types": "./client.ts",
   "private": true,
   "sideEffects": false,
+  "main": "./src/client.tsx",
+  "types": "./src/client.tsx",
   "scripts": {
     "clean": "rm -rf .turbo node_modules",
     "lint": "biome check .",
@@ -17,8 +17,7 @@
     "@vercel/functions": "^1.4.1"
   },
   "exports": {
-    "./server": "./src/server.ts",
     "./client": "./src/client.tsx",
-    "./events": "./src/events.ts"
+    "./server": "./src/server.ts"
   }
 }

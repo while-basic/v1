@@ -1,10 +1,10 @@
 {
   "name": "@v1/ui",
   "version": "0.0.0",
-  "main": "./cn.ts",
-  "types": "./cn.ts",
   "private": true,
   "sideEffects": false,
+  "main": "./src/utils/cn.ts",
+  "types": "./src/utils/cn.ts",
   "files": ["tailwind.config.ts", "postcss.config.js", "globals.css"],
   "scripts": {
     "clean": "rm -rf .turbo node_modules",

@@ -42,6 +42,10 @@
   "dependencies": {
     "@react-email/components": "^0.0.32",
     "react-swipeable": "^7.0.2",
-    "resend": "^4.1.1"
+    "resend": "^4.1.1",
+    "@v1/env": "workspace:*",
+    "@v1/supabase": "workspace:*",
+    "@v1/analytics": "workspace:*",
+    "@v1/ui": "workspace:*"
   }
 }
