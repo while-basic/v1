@@ -28,109 +28,15 @@ interface GalleryItem {
 
 const galleryItems: GalleryItem[] = [
   // Electrical Distribution & Wiring
-  {
-    id: "2",
-    title: "Secondary Distribution Panel",
-    description:
-      "Secondary electrical distribution panel installation with proper wire management and labeling.",
-    imageUrl: "/images/electrical/panel2.jpg",
-    category: "Electrical",
-    tags: ["Electrical", "Distribution", "Panel"],
-  },
-  {
-    id: "3",
-    title: "Power Distribution System",
-    description:
-      "Main power distribution system installation with circuit protection and monitoring capabilities.",
-    imageUrl: "/images/electrical/dist1.jpg",
-    category: "Electrical",
-    tags: ["Power Distribution", "Industrial", "Electrical"],
-  },
-  {
-    id: "4",
-    title: "Industrial Wiring Implementation",
-    description:
-      "Complex industrial wiring implementation following best practices and safety standards.",
-    imageUrl: "/images/electrical/wiring-1.jpg",
-    category: "Electrical",
-    tags: ["Industrial", "Wiring", "Installation"],
-  },
-  {
-    id: "5",
-    title: "Control Panel Wiring",
-    description:
-      "Detailed control panel wiring with organized cable management and clear labeling.",
-    imageUrl: "/images/electrical/wiring-2.jpg",
-    category: "Electrical",
-    tags: ["Control Panel", "Wiring", "Industrial"],
-  },
-
-  // Mechanical Systems
-  {
-    id: "6",
-    title: "Engine Build",
-    description:
-      "Comprehensive engine system analysis and maintenance procedures.",
-    imageUrl: "/images/mechanical/engine1.jpg",
-    category: "Mechanical",
-    tags: ["Engine", "Maintenance", "Mechanical"],
-  },
-  {
-    id: "7",
-    title: "Engine VQ35HR Build",
-    description:
-      "Precision installation of critical engine components and systems.",
-    imageUrl: "/images/mechanical/engine.jpg",
-    category: "Mechanical",
-    tags: ["Engine", "Installation", "Components"],
-  },
-  {
-    id: "8",
-    title: "Mechanical System Integration",
-    description:
-      "Integration of complex mechanical systems with precise alignment and calibration.",
-    imageUrl: "/images/mechanical/engine3.jpg",
-    category: "Mechanical",
-    tags: ["Integration", "Mechanical", "Systems"],
-  },
-  {
-    id: "9",
-    title: "Engine Performance Optimization",
-    description:
-      "Performance tuning and optimization of engine systems for maximum efficiency.",
-    imageUrl: "/images/mechanical/engine4.jpg",
-    category: "Mechanical",
-    tags: ["Performance", "Optimization", "Engine"],
-  },
-
-  // Additional Electrical Projects
-  {
-    id: "10",
-    title: "Distribution System Layout",
-    description:
-      "Strategic layout and implementation of power distribution systems.",
-    imageUrl: "/images/electrical/dist4.jpg",
-    category: "Electrical",
-    tags: ["Distribution", "Layout", "Power Systems"],
-  },
-  {
-    id: "11",
-    title: "Advanced Control Wiring",
-    description:
-      "Sophisticated control system wiring with integrated safety features.",
-    imageUrl: "/images/electrical/wiring-5.jpg",
-    category: "Electrical",
-    tags: ["Control Systems", "Wiring", "Safety"],
-  },
-  {
-    id: "12",
-    title: "Industrial Power Systems",
-    description:
-      "High-capacity industrial power system installation and configuration.",
-    imageUrl: "/images/electrical/dist6.jpg",
-    category: "Electrical",
-    tags: ["Industrial", "Power Systems", "Installation"],
-  },
+  // {
+  //   id: "0",
+  //   title: "Image title",
+  //   description:
+  //     "Image description",
+  //   imageUrl: "/images/",
+  //   category: "",
+  //   tags: ["tag1", "tag2", "tag3"],
+  // },
 ];
 
 const galleryJsonLd = {
