@@ -43,6 +43,17 @@ const categories = [
 
 const projects: Project[] = [
   {
+    title: "BondMate",
+    description: "A mobile app designed for iPhone, iPad, and Mac that allows users to strengthen their professional, friend, family, and romantic relationships",
+    category: "Healthcare",
+    image: "/images/projects/bondmate.jpeg",
+    githubUrl: "",
+    liveUrl: "https://www.bondmate.app",
+    technologies: ["Swift", "SwiftUI", "Xcode", "iOS", "macOS"],
+    featured: true,
+    details: ["User authentication", "Relationship tracking", "AI-powered insights"],
+  },
+  {
     title: "MedChat",
     description:
       "An AI-powered healthcare assistant designed to help individuals with diagnosis suggestions.",
@@ -299,7 +310,7 @@ const projects: Project[] = [
     category: "Web Development",
     image: "/images/projects/e-commerce.png",
     githubUrl: "",
-    liveUrl: "https://storefront-production-5192.up.railway.app/us",
+    liveUrl: "",
     technologies: ["Next.js", "TypeScript", "Tailwind", "Stripe", "Vercel"],
     featured: true,
     details: [
@@ -317,7 +328,7 @@ const projects: Project[] = [
     category: "Web Development",
     image: "/images/projects/chat-bot-dashboard.png",
     githubUrl: "https://github.com/while-basic/celaya-chatbot",
-    liveUrl: "https://celaya-chatbot.vercel.app",
+    liveUrl: "",
     technologies: ["Next.js", "TypeScript", "Tailwind", "OpenAI", "Vercel"],
     featured: true,
     details: [

@@ -92,8 +92,9 @@ export function Header() {
             </Link>
           </nav>
 
+          {/* View More button on top right header */}
           <div className="flex items-center gap-4">
-            <a
+            {/* <a
               href="https://chriscelayacom.mintlify.app/docs/welcome/about"
               className="text-sm px-4 py-2 bg-primary text-secondary rounded-full font-medium"
               target="_blank"
@@ -101,7 +102,7 @@ export function Header() {
               onClick={handleViewMoreClick}
             >
               View More
-            </a>
+            </a> */}
 
             <Dialog>
               <DialogTrigger asChild>
