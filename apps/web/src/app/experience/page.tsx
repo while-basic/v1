@@ -43,6 +43,25 @@ interface AudioContent {
 
 const workExperience: WorkExperience[] = [
   {
+    title: "Wiring Technician | Quality Assurance",
+    company: "Schneider Electric",
+    period: "2016-2017, 2025-Present",
+    location: "El Paso, Texas",
+    responsibilities: [
+      "Troubleshoot electrical and electromechanical operations",
+      "Interpret point-to-point diagrams, bill of materials, and wiring schematics",
+      "Collaborate with engineering and assembly teams to resolve problems",
+      "Use various tools and software for ground fault detection",
+      "Oversee testing and assembly of low voltage electronic products for clients",
+    ],
+    technologies: [
+      "Quality Control",
+      "Electrical Systems",
+      "Technical Documentation",
+    ],
+    icon: WrenchIcon,
+  },
+  {
     title: "Data Center Technician II",
     company: "T5 Data Centers",
     period: "2021-2022",
@@ -84,25 +103,6 @@ const workExperience: WorkExperience[] = [
       "Automation",
     ],
     icon: Settings,
-  },
-  {
-    title: "Wiring Technician | Quality Assurance",
-    company: "Schneider Electric",
-    period: "2016-2017",
-    location: "El Paso, Texas",
-    responsibilities: [
-      "Troubleshoot electrical and electromechanical operations",
-      "Interpret point-to-point diagrams, bill of materials, and wiring schematics",
-      "Collaborate with engineering and assembly teams to resolve problems",
-      "Use various tools and software for ground fault detection",
-      "Oversee testing and assembly of low voltage electronic products for clients",
-    ],
-    technologies: [
-      "Quality Control",
-      "Electrical Systems",
-      "Technical Documentation",
-    ],
-    icon: WrenchIcon,
   },
   {
     title: "Maintenance Technician",
