@@ -21,7 +21,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--mono);
-  font-size: 14px;
+  font-size: 28px;
   line-height: 1.6;
   overflow-x: hidden;
   cursor: crosshair;
@@ -62,7 +62,7 @@ nav {
   transition: background 0.3s;
 }
 .nav-id {
-  font-size: 11px;
+  font-size: 20px;
   letter-spacing: 0.15em;
   color: var(--amber);
   text-transform: uppercase;
@@ -75,7 +75,7 @@ nav {
 .nav-links a {
   color: var(--text-dim);
   text-decoration: none;
-  font-size: 11px;
+  font-size: 20px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   transition: color 0.2s;
@@ -99,7 +99,7 @@ nav {
   animation: fadeUp 0.8s ease forwards;
 }
 .hero-label {
-  font-size: 10px;
+  font-size: 20px;
   letter-spacing: 0.25em;
   color: var(--amber);
   text-transform: uppercase;
@@ -118,7 +118,7 @@ nav {
 h1 {
   font-family: var(--serif);
   font-weight: 300;
-  font-size: clamp(42px, 6vw, 82px);
+  font-size: clamp(64px, 8vw, 120px);
   line-height: 1.0;
   letter-spacing: -0.02em;
   color: #f0ebe0;
@@ -136,25 +136,25 @@ h1 {
   flex-wrap: wrap;
 }
 .domain-node {
-  font-size: 10px;
+  font-size: 20px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-dim);
-  padding: 4px 10px;
+  padding: 6px 14px;
   border: 1px solid var(--border);
   background: var(--surface);
 }
 .domain-arrow {
   color: var(--amber-dim);
-  font-size: 12px;
+  font-size: 22px;
 }
 .hero-statement {
   font-family: var(--serif);
   font-weight: 300;
-  font-size: 18px;
+  font-size: 34px;
   line-height: 1.7;
   color: var(--text);
-  max-width: 480px;
+  max-width: 580px;
   margin-bottom: 48px;
 }
 .hero-statement em {
@@ -168,10 +168,10 @@ h1 {
 }
 .btn {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 20px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  padding: 12px 24px;
+  padding: 14px 28px;
   text-decoration: none;
   cursor: crosshair;
   transition: all 0.2s;
@@ -206,7 +206,7 @@ h1 {
   background: var(--surface);
   padding: 32px;
   width: 100%;
-  max-width: 420px;
+  max-width: 480px;
   position: relative;
   overflow: hidden;
 }
@@ -231,7 +231,7 @@ h1 {
   border-bottom: 1px solid var(--border);
 }
 .panel-title {
-  font-size: 10px;
+  font-size: 20px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--amber);
@@ -240,13 +240,13 @@ h1 {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 9px;
+  font-size: 18px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--green);
 }
 .pulse-dot {
-  width: 6px; height: 6px;
+  width: 8px; height: 8px;
   border-radius: 50%;
   background: var(--green);
   animation: pulse 1.2s ease-in-out infinite;
@@ -289,11 +289,11 @@ h1 {
 }
 .stat-block {
   background: var(--bg2);
-  padding: 12px;
+  padding: 14px;
   border: 1px solid var(--text-faint);
 }
 .stat-label {
-  font-size: 9px;
+  font-size: 18px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--text-dim);
@@ -301,7 +301,7 @@ h1 {
   margin-bottom: 6px;
 }
 .stat-value {
-  font-size: 22px;
+  font-size: 40px;
   color: var(--amber);
   font-weight: 500;
   letter-spacing: -0.02em;
@@ -310,7 +310,7 @@ h1 {
   gap: 4px;
 }
 .stat-unit {
-  font-size: 11px;
+  font-size: 20px;
   color: var(--text-dim);
 }
 .chain-hash {
@@ -318,7 +318,7 @@ h1 {
   padding: 10px;
   background: rgba(232,160,32,0.05);
   border: 1px solid var(--amber-dim);
-  font-size: 9px;
+  font-size: 16px;
   color: var(--text-dim);
   letter-spacing: 0.05em;
   word-break: break-all;
@@ -340,14 +340,14 @@ h1 {
 }
 .hbs-value {
   font-family: var(--serif);
-  font-size: 36px;
+  font-size: 64px;
   font-weight: 300;
   color: var(--text);
   display: block;
   line-height: 1;
 }
 .hbs-label {
-  font-size: 9px;
+  font-size: 18px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--text-dim);
@@ -373,7 +373,7 @@ section {
   margin-bottom: 64px;
 }
 .section-num {
-  font-size: 11px;
+  font-size: 20px;
   letter-spacing: 0.2em;
   color: var(--amber);
   writing-mode: vertical-rl;
@@ -383,20 +383,20 @@ section {
 .section-title {
   font-family: var(--serif);
   font-weight: 300;
-  font-size: clamp(28px, 4vw, 48px);
+  font-size: clamp(48px, 6vw, 80px);
   line-height: 1.1;
   color: #f0ebe0;
 }
 .section-sub {
-  font-size: 13px;
+  font-size: 24px;
   color: var(--text-dim);
   margin-top: 8px;
-  max-width: 600px;
+  max-width: 700px;
 }
 /* ── INSTRUMENTS ── */
 .instruments-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
@@ -433,17 +433,17 @@ section {
   margin-bottom: 20px;
 }
 .instrument-name {
-  font-size: 13px;
+  font-size: 24px;
   font-weight: 500;
   letter-spacing: 0.08em;
   color: var(--amber);
   text-transform: uppercase;
 }
 .instrument-status {
-  font-size: 9px;
+  font-size: 18px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 3px 8px;
+  padding: 4px 10px;
   border: 1px solid;
 }
 .status-active {
@@ -459,29 +459,29 @@ section {
 .instrument-desc {
   font-family: var(--serif);
   font-weight: 300;
-  font-size: 16px;
+  font-size: 30px;
   line-height: 1.6;
   color: var(--text);
   margin-bottom: 16px;
 }
 .instrument-domains {
   display: flex;
-  gap: 6px;
+  gap: 8px;
   flex-wrap: wrap;
 }
 .domain-tag {
-  font-size: 9px;
+  font-size: 18px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-dim);
-  padding: 2px 8px;
+  padding: 4px 10px;
   border: 1px solid var(--text-faint);
 }
 .instrument-reveal {
   margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid var(--border);
-  font-size: 12px;
+  font-size: 22px;
   color: var(--text-dim);
   opacity: 0;
   transform: translateY(8px);
@@ -506,7 +506,7 @@ section {
 }
 .synthesis-row {
   display: grid;
-  grid-template-columns: 220px 1fr auto;
+  grid-template-columns: 260px 1fr auto;
   align-items: center;
   border-bottom: 1px solid var(--border);
   min-height: 72px;
@@ -518,7 +518,7 @@ section {
 .syn-source {
   padding: 20px 24px;
   border-right: 1px solid var(--border);
-  font-size: 11px;
+  font-size: 20px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-dim);
@@ -541,12 +541,12 @@ section {
   content: '\25B6';
   position: absolute;
   right: -8px;
-  top: -6px;
-  font-size: 8px;
+  top: -8px;
+  font-size: 14px;
   color: var(--amber);
 }
 .syn-mechanism {
-  font-size: 13px;
+  font-size: 24px;
   color: var(--text);
   font-family: var(--serif);
   font-weight: 300;
@@ -555,8 +555,8 @@ section {
 .syn-output {
   padding: 20px 24px;
   border-left: 1px solid var(--border);
-  min-width: 200px;
-  font-size: 11px;
+  min-width: 240px;
+  font-size: 20px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--amber);
@@ -574,7 +574,7 @@ section {
   content: 'CELAYA SOLUTIONS';
   position: absolute;
   top: 30px; right: 40px;
-  font-size: 60px;
+  font-size: 80px;
   font-family: var(--serif);
   font-weight: 300;
   color: var(--text-faint);
@@ -583,10 +583,10 @@ section {
   white-space: nowrap;
 }
 .celaya-inner {
-  max-width: 680px;
+  max-width: 780px;
 }
 .celaya-tag {
-  font-size: 10px;
+  font-size: 20px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--amber);
@@ -596,7 +596,7 @@ section {
 .celaya-statement {
   font-family: var(--serif);
   font-weight: 300;
-  font-size: clamp(22px, 3vw, 32px);
+  font-size: clamp(38px, 5vw, 56px);
   line-height: 1.4;
   color: #f0ebe0;
   margin-bottom: 32px;
@@ -608,20 +608,20 @@ section {
   margin-top: 40px;
 }
 .tenet {
-  padding: 20px;
+  padding: 24px;
   border: 1px solid var(--border);
   background: var(--bg);
 }
 .tenet-label {
-  font-size: 9px;
+  font-size: 18px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--amber);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   display: block;
 }
 .tenet-desc {
-  font-size: 13px;
+  font-size: 24px;
   color: var(--text-dim);
   line-height: 1.6;
 }
@@ -644,26 +644,26 @@ section {
 }
 .contact-path:hover { background: var(--surface); }
 .contact-path-type {
-  font-size: 10px;
+  font-size: 20px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--amber);
 }
 .contact-path-title {
   font-family: var(--serif);
-  font-size: 28px;
+  font-size: 48px;
   font-weight: 300;
   color: #f0ebe0;
   line-height: 1.2;
 }
 .contact-path-desc {
-  font-size: 13px;
+  font-size: 24px;
   color: var(--text-dim);
   flex: 1;
 }
 .contact-path-action {
   display: inline-block;
-  font-size: 11px;
+  font-size: 20px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--amber);
@@ -682,7 +682,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 10px;
+  font-size: 18px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-faint);
@@ -764,13 +764,13 @@ footer a:hover { color: var(--amber); }
 .dot-amber { background: var(--amber-dim); }
 .dot-green { background: var(--green); }
 .terminal-title-text {
-  font-size: 10px;
+  font-size: 20px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--text-dim);
 }
 .terminal-model {
-  font-size: 9px;
+  font-size: 18px;
   letter-spacing: 0.1em;
   color: var(--text-faint);
 }
@@ -792,7 +792,7 @@ footer a:hover { color: var(--amber); }
   margin-bottom: 24px;
 }
 .boot-line {
-  font-size: 12px;
+  font-size: 22px;
   color: var(--text-dim);
   line-height: 2;
   opacity: 0;
@@ -826,10 +826,10 @@ footer a:hover { color: var(--amber); }
 }
 .user-cmd {
   color: #f0ebe0;
-  font-size: 13px;
+  font-size: 24px;
 }
 .terminal-response {
-  font-size: 13px;
+  font-size: 24px;
   color: var(--text);
   line-height: 1.8;
   padding-left: 20px;
@@ -865,7 +865,7 @@ footer a:hover { color: var(--amber); }
 .terminal-prompt-pre {
   color: var(--amber);
   font-weight: 500;
-  font-size: 13px;
+  font-size: 24px;
   flex-shrink: 0;
   white-space: nowrap;
 }
@@ -876,7 +876,7 @@ footer a:hover { color: var(--amber); }
   outline: none;
   color: #f0ebe0;
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 24px;
   caret-color: var(--amber);
   cursor: text;
 }
@@ -888,9 +888,9 @@ footer a:hover { color: var(--amber); }
   border: 1px solid var(--border);
   color: var(--text-dim);
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 20px;
   letter-spacing: 0.1em;
-  padding: 6px 14px;
+  padding: 8px 16px;
   cursor: crosshair;
   transition: all 0.2s;
   flex-shrink: 0;
@@ -905,17 +905,17 @@ footer a:hover { color: var(--amber); }
 }
 .terminal-suggestions {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   flex-wrap: wrap;
-  padding: 12px 24px;
+  padding: 14px 24px;
   border-top: 1px solid var(--text-faint);
   background: var(--bg);
 }
 .suggestion-chip {
-  font-size: 10px;
+  font-size: 20px;
   letter-spacing: 0.08em;
   color: var(--text-dim);
-  padding: 4px 10px;
+  padding: 6px 14px;
   border: 1px solid var(--text-faint);
   cursor: crosshair;
   transition: all 0.15s;
