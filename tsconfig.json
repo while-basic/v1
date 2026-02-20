@@ -21,8 +21,8 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@v1/supabase/*": ["packages/supabase/src/*"],
-      "@v1/ui/*": ["packages/ui/src/*"]
+      "@v1/supabase/*": ["./packages/supabase/src/*"],
+      "@v1/ui/*": ["./packages/ui/src/*"]
 }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
