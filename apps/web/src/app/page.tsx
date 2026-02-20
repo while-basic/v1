@@ -1026,10 +1026,16 @@ export default function Page() {
               might be the missing piece. Tell me what you&apos;re working on.
             </p>
             <a
-              href="mailto:chris@celayasolutions.com"
+              href="mailto:hello@celayasolutions.com"
               className="contact-path-action"
             >
-              chris@celayasolutions.com &rarr;
+              hello@celayasolutions.com &rarr;
+            </a>
+            <a
+              href="mailto:chris@chriscelaya.com"
+              className="contact-path-action"
+            >
+              chris@chriscelaya.com &rarr;
             </a>
           </div>
           <div className="contact-path">
