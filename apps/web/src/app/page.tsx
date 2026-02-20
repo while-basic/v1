@@ -209,17 +209,10 @@ export default function Page() {
       conversationHistory.push({ role: "user", content: cmd });
 
       try {
-        const res = await fetch("https://api.anthropic.com/v1/messages", {
+        const res = await fetch("/api/chat", {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "x-api-key": process.env.NEXT_PUBLIC_ANTHROPIC_API_KEY || "",
-            "anthropic-version": "2023-06-01",
-            "anthropic-dangerous-direct-browser-access": "true",
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            model: "claude-sonnet-4-6",
-            max_tokens: 1000,
             system: SYSTEM_PROMPT,
             messages: conversationHistory,
           }),
@@ -936,7 +929,7 @@ export default function Page() {
             <div className="terminal-title-text">
               CELAYA // RESEARCH TERMINAL v0.1
             </div>
-            <div className="terminal-model">claude-sonnet-4-6</div>
+            <div className="terminal-model">claude-haiku-4.5</div>
           </div>
           <div className="terminal-body" id="terminal-body">
             <div className="terminal-boot" id="terminal-boot" />
